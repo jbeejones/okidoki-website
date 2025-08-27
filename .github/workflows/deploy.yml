@@ -24,6 +24,13 @@ jobs:
       - name: Install OkiDoki
         run: npm install -g okidoki
         
+      - name: Verify OkiDoki version
+        run: |
+          echo "Installed OkiDoki version:"
+          okidoki --version
+          echo "NPM global packages:"
+          npm list -g --depth=0 | grep okidoki
+        
       - name: Generate site
         run: okidoki generate
         
