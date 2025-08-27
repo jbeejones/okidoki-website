@@ -3,11 +3,11 @@
 # Main navigation menu
 menu:
   - title: "Home"
-    document: /index.md
+    document: index.md
   - title: "🚀 Getting Started"
-    document: /start.md
+    document: start.md
   - title: "✨ Features"
-    document: /features.md
+    document: features.md
     hideMenu: false 
     badge:
       variant: "info"
@@ -17,13 +17,13 @@ menu:
     open: true
     items:
       - title: "Complete Reference"
-        document: /reference.md
+        document: reference.md
       - title: "Markdown Examples"
-        document: /markdown-examples.md
+        document: markdown-examples.md
       - title: "Deployment Guide"
-        document: /deployment.md
+        document: deployment.md
       - title: "Help & Troubleshooting"
-        document: /help.md
+        document: help.md
   - title: "Examples"
     open: true
     badge:
@@ -31,29 +31,29 @@ menu:
       text: "fake"
     items:
       - title: "Petshop API"
-        document: /examples/petshopapi.md
+        document: examples/petshopapi.md
       - title: "X Utilities"
-        document: /examples/xutil-install.md
+        document: examples/xutil-install.md
   - title: "GitHub Repository 🔗"
-    url: "https://github.com/example/repo"
+    url: "https://github.com/jbeejones/okidoki"
     
 # Top navigation bar items
 navbar:
   - title: "GitHub"
-    url: "https://github.com/okidoki-docs/okidoki"
+    url: "https://github.com/jbeejones/okidoki"
   - title: "Help"
-    document: /help.md
+    document: help.md
 
 # Footer links
 footer:
   - title: "Resources"
     items:
       - label: "Quick Start"
-        document: /start.md
+        document: start.md
       - label: "Documentation"
-        document: /reference.md
+        document: reference.md
       - label: "Examples"
-        document: /markdown-examples.md
+        document: markdown-examples.md
   - title: "Open Source"
     items:
       - label: "GitHub Repository"
