@@ -1,0 +1,66 @@
+# Sidebar Navigation Configuration
+
+# Main navigation menu
+menu:
+  - title: "Home"
+    document: /index.md
+  - title: "🚀 Getting Started"
+    document: /start.md
+  - title: "✨ Features"
+    document: /features.md
+    hideMenu: false 
+    badge:
+      variant: "info"
+      text: "new"
+    
+  - title: "Documentation"
+    open: true
+    items:
+      - title: "Complete Reference"
+        document: /reference.md
+      - title: "Markdown Examples"
+        document: /markdown-examples.md
+      - title: "Deployment Guide"
+        document: /deployment.md
+      - title: "Help & Troubleshooting"
+        document: /help.md
+  - title: "Examples"
+    open: true
+    badge:
+      variant: "secondary"
+      text: "fake"
+    items:
+      - title: "Petshop API"
+        document: /examples/petshopapi.md
+      - title: "X Utilities"
+        document: /examples/xutil-install.md
+  - title: "GitHub Repository 🔗"
+    url: "https://github.com/example/repo"
+    
+# Top navigation bar items
+navbar:
+  - title: "GitHub"
+    url: "https://github.com/okidoki-docs/okidoki"
+  - title: "Help"
+    document: /help.md
+
+# Footer links
+footer:
+  - title: "Resources"
+    items:
+      - label: "Quick Start"
+        document: /start.md
+      - label: "Documentation"
+        document: /reference.md
+      - label: "Examples"
+        document: /markdown-examples.md
+  - title: "Open Source"
+    items:
+      - label: "GitHub Repository"
+        url: "https://github.com/okidoki-docs/okidoki"
+      - label: "Report Issues"
+        url: "https://github.com/okidoki-docs/okidoki/issues"
+      - label: "Community Discussions"
+        url: "https://github.com/okidoki-docs/okidoki/discussions"
+      - label: "Contribute"
+        url: "https://github.com/okidoki-docs/okidoki/blob/main/CONTRIBUTING.md"
