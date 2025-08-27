@@ -1,11 +1,11 @@
 # Okidoki Configuration
 site:
-  title: OkiDoki
+  title: OkiDoki (official website)
   description: "Docs generated with Okidoki"
   theme:
     light: "fantasy"
     dark: "forest"
-  # baseUrl: "okidoki-website"
+  baseUrl: "/okidoki-website/"
 search:
   enabled: true
   placeholder: "Search stuff..."
