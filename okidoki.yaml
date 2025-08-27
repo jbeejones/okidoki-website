@@ -5,6 +5,7 @@ site:
   theme:
     light: "fantasy"
     dark: "forest"
+  # baseUrl: "okidoki-website"
 search:
   enabled: true
   placeholder: "Search stuff..."
