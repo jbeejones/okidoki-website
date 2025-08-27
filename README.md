@@ -1,84 +1,50 @@
-# OkiDoki Landing Page
+# OkiDoki Documentation Website
 
-A clean, developer-focused landing page for OkiDoki built with proper production Tailwind CSS compilation.
+The official documentation website for OkiDoki - a modern documentation generator that transforms Markdown files into beautiful, interactive websites.
 
-## 🛠️ Development Setup
+## 🌟 What's Inside
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm
+This repository contains the complete documentation for OkiDoki, including:
 
-### Installation
+- **Getting Started Guide** - Learn how to set up and use OkiDoki
+- **Feature Documentation** - Comprehensive guide to all OkiDoki features  
+- **API Examples** - Real-world examples like the Petshop API documentation
+- **Installation Guides** - Step-by-step installation instructions for various tools
+- **Reference Materials** - Complete API reference and configuration options
 
-1. Install dependencies:
-```bash
-npm install
-```
+## 🚀 Built With OkiDoki
 
-### Building CSS
+This website is itself built using OkiDoki, showcasing the power and flexibility of the documentation generator. It demonstrates:
 
-#### Development (with watch mode)
-```bash
-npm run build-css
-```
-This watches for changes and rebuilds CSS automatically.
+- ✅ **Handlebars templating** with dynamic content
+- ✅ **Interactive components** like tabs, alerts, and badges
+- ✅ **Code syntax highlighting** across multiple languages
+- ✅ **Responsive design** that works on all devices
+- ✅ **Search functionality** for finding documentation quickly
+- ✅ **Modern styling** with a clean, professional appearance
 
-#### Production (minified)
-```bash
-npm run build-css-prod
-```
-This creates a minified CSS file for production use.
+## 📖 Examples Included
 
-## 📁 Project Structure
+- **[Petshop API](docs/examples/petshopapi.md)** - Complete REST API documentation
+- **[XUtil CLI Installation](docs/examples/xutil-install.md)** - Cross-platform installation guide
+- Various other examples demonstrating OkiDoki's capabilities
 
-```
-├── assets/
-│   ├── index.html          # Landing page
-│   └── styles.css          # Generated CSS (don't edit directly)
-├── src/
-│   └── input.css           # Source CSS with Tailwind directives
-├── docs/
-│   └── images/             # Logo and image assets
-├── tailwind.config.js      # Tailwind configuration
-└── package.json            # Dependencies and scripts
-```
+## 🌐 Live Website
 
-## 🎨 Customization
+Visit the live documentation at: **[Github](https://jbeejones.github.io/okidoki-website/)** *(deployed automatically from this repository)*
 
-- **Tailwind Config**: Edit `tailwind.config.js` to customize themes and add plugins
-- **Custom Styles**: Add custom CSS to `src/input.css` 
-- **Content**: Tailwind scans `./assets/**/*.html` for class usage
+## 📝 Contributing
 
-## 🚀 Production Build
+Found an error or want to improve the documentation? We welcome contributions! Please feel free to:
 
-For production deployment:
+- Open an issue for bugs or suggestions
+- Submit pull requests with improvements
+- Add new examples or use cases
 
-1. Run production build:
-```bash
-npm run build-css-prod
-```
+## 📄 License
 
-2. Deploy the `assets/` folder with the compiled `styles.css`
+This documentation is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-## ✨ Features
+---
 
-- ✅ **Hybrid CSS approach** - compiled utilities + DaisyUI CDN
-- ✅ **No development warnings** - uses compiled Tailwind CSS
-- ✅ **DaisyUI components** - buttons, cards, navbar via CDN
-- ✅ **OS theme detection** with manual override
-- ✅ **Responsive design** with mobile-first approach
-- ✅ **Syntax highlighting** for code blocks
-- ✅ **Optimized performance** - only 7.2KB custom CSS
-
-## 🔧 Development Notes
-
-**Hybrid CSS Strategy:**
-- **`styles.css`** (7.2KB): Compiled Tailwind utilities + custom styles
-- **DaisyUI CDN**: Component styles (btn, navbar, card, etc.)
-
-The CSS is compiled from `src/input.css` which includes:
-- Tailwind base and utilities
-- Custom styles for code blocks and syntax highlighting
-- Optimized for only the classes used in the HTML
-
-After any changes to styles or HTML classes, rebuild the CSS with `npm run build-css-prod`. 
+**Learn more about OkiDoki:** Visit the main project repository or check out the documentation to get started with your own documentation website. 
