@@ -1,6 +1,6 @@
 # Okidoki Configuration
 site:
-  title: OkiDoki (official website)
+  title: OkiDoki (official docs)
   description: "Docs generated with Okidoki"
   theme:
     light: "fantasy"
