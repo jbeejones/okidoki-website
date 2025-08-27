@@ -9,7 +9,7 @@ search:
   enabled: true
   placeholder: "Search stuff..."
 build:
-  outputDir: "mywebsite"    
+  outputDir: "dist"    
   clean: true          
   minify: true         
 

@@ -1,5 +1,5 @@
 ---
-title: Petshop API
+title: Petshop API (example)
 handlebars: true
 ---
 
