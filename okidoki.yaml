@@ -10,7 +10,7 @@ search:
   enabled: true
   placeholder: "Search stuff..."
 build:
-  outputDir: "dist"    
+  outputDir: "dist/okidoki-website"    
   clean: true          
   minify: true         
 
