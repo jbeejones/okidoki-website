@@ -6,7 +6,7 @@ site:
     light: "fantasy"
     dark: "forest"
   baseUrl: "/okidoki-website/"
-  logo: "/okidoki-website/okidokilogo.svg",
+  logo: "/okidoki-website/okidokilogo.svg"
 search:
   enabled: true
   placeholder: "Search stuff..."
