@@ -46,7 +46,80 @@ export PATH=$(npm config get prefix)/bin:$PATH
 **Problem:** Build is slow or hangs
 - **Check:** Large image files in docs directory (compress them)
 - **Check:** Too many files in docs directory (organize in subdirectories)
-- **Solution:** Run `okidoki generate --verbose` for detailed output
+- **Solution:** Run `okidoki generate --verbose` (or `-v`) for detailed output
+
+## CLI Reference
+
+### Command: `okidoki init`
+
+Initialize a new documentation project with the following options:
+
+| Option | Short | Description | Default |
+|--------|-------|-------------|---------|
+| `--output` | `-o` | Output directory | (current directory) |
+| `--config` | `-c` | Path to create okidoki configuration file | `"okidoki.yaml"` |
+| `--sidebars` | `-b` | Path to create sidebars configuration file | `"sidebars.yaml"` |
+| `--dev` | `-d` | Create a package.json with development scripts (nodemon, concurrently) | `false` |
+| `--help` | | Show help information | |
+| `--version` | | Show version number | |
+
+#### Usage Examples
+
+```bash
+# Initialize in current directory
+okidoki init
+
+# Initialize in a specific directory
+okidoki init --output ./my-docs
+
+# Create with custom config file names
+okidoki init --config ./config.yaml --sidebars ./navigation.yaml
+
+# Include development setup with package.json
+okidoki init --dev
+
+# Initialize with all options
+okidoki init -o ./documentation -c ./my-config.yaml -b ./my-sidebars.yaml -d
+```
+
+The `init` command creates:
+- `okidoki.yaml` - Main configuration file
+- `sidebars.yaml` - Navigation structure file  
+- `docs/` directory with sample markdown files
+- `package.json` with development scripts (when using `--dev`)
+
+### Command: `okidoki generate`
+
+Generate documentation from markdown files with the following options:
+
+| Option | Short | Description | Default |
+|--------|-------|-------------|---------|
+| `--source` | `-s` | Source directory containing markdown files | `"docs"` |
+| `--output` | `-o` | Output directory for generated files | (auto-generated) |
+| `--config` | `-c` | Path to okidoki configuration file | `"okidoki.yaml"` |
+| `--sidebars` | `-b` | Path to sidebars configuration file | `"sidebars.yaml"` |
+| `--verbose` | `-v` | Enable verbose logging | `false` |
+| `--help` | | Show help information | |
+| `--version` | | Show version number | |
+
+#### Usage Examples
+
+```bash
+# Basic usage (uses default settings)
+okidoki generate
+
+# Specify custom directories
+okidoki generate --source ./documentation --output ./website
+
+# Use custom configuration files
+okidoki generate --config ./config/okidoki.yaml --sidebars ./config/nav.yaml
+
+# Enable verbose logging for troubleshooting
+okidoki generate -v
+
+# Combine multiple options
+okidoki generate -s ./docs -o ./public -c ./my-config.yaml -v
+```
 
 ## Frequently Asked Questions
 
@@ -227,7 +300,7 @@ Available badge variants: `info`, `success`, `warning`, `error`, `neutral`
 
 1. **Check this help page** - Many common issues are covered here
 2. **Review the error message** - Often contains helpful information
-3. **Try the verbose flag** - Run `okidoki generate --verbose` for detailed output
+3. **Try the verbose flag** - Run `okidoki generate --verbose` (or `-v`) for detailed output
 4. **Check file permissions** - Ensure OkiDoki can read/write necessary files
 
 ### Reporting Issues
@@ -252,8 +325,11 @@ When reporting a problem, please include:
 Enable verbose logging to troubleshoot build issues:
 
 ```bash
-# Enable debug output
+# Enable debug output (long form)
 okidoki generate --verbose
+
+# Enable debug output (short form)  
+okidoki generate -v
 
 # Alternative: set environment variable
 DEBUG=okidoki okidoki generate
