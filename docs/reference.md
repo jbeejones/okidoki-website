@@ -9,11 +9,37 @@ Complete reference for OkiDoki documentation generator.
 ## Commands
 
 ### `okidoki init`
-Initialize a new documentation project in the current directory.
+Initialize a new documentation project.
 
 **Usage:**
 ```bash
+okidoki init [options]
+```
+
+**CLI Options:**
+
+| Option | Short | Description | Default |
+|--------|-------|-------------|---------|
+| `--output` | `-o` | Output directory | (current directory) |
+| `--config` | `-c` | Path to create okidoki configuration file | `"okidoki.yaml"` |
+| `--sidebars` | `-b` | Path to create sidebars configuration file | `"sidebars.yaml"` |
+| `--dev` | `-d` | Create a package.json with development scripts | `false` |
+| `--help` | | Show help information | |
+| `--version` | | Show version number | |
+
+**Examples:**
+```bash
+# Initialize in current directory
 okidoki init
+
+# Initialize in specific directory
+okidoki init --output ./my-documentation
+
+# Custom config file names
+okidoki init -c ./config.yaml -b ./navigation.yaml
+
+# Include development setup
+okidoki init --dev
 ```
 
 **What it creates:**
@@ -21,13 +47,44 @@ okidoki init
 - `sidebars.yaml` - Navigation structure
 - `docs/` directory with sample content
 - `docs/index.md` - Homepage content
+- `package.json` - Development scripts (when using `--dev`)
 
 ### `okidoki generate`
 Generate the static documentation site.
 
 **Usage:**
 ```bash
+okidoki generate [options]
+```
+
+**CLI Options:**
+
+| Option | Short | Description | Default |
+|--------|-------|-------------|---------|
+| `--source` | `-s` | Source directory containing markdown files | `"docs"` |
+| `--output` | `-o` | Output directory for generated files | `"dist"` |
+| `--config` | `-c` | Path to okidoki configuration file | `"okidoki.yaml"` |
+| `--sidebars` | `-b` | Path to sidebars configuration file | `"sidebars.yaml"` |
+| `--verbose` | `-v` | Enable verbose logging | `false` |
+| `--help` | | Show help information | |
+| `--version` | | Show version number | |
+
+**Examples:**
+```bash
+# Basic usage (uses defaults)
 okidoki generate
+
+# Custom directories
+okidoki generate --source ./documentation --output ./website
+
+# Custom config files  
+okidoki generate -c ./config/okidoki.yaml -b ./config/nav.yaml
+
+# Enable verbose logging
+okidoki generate -v
+
+# Combine options
+okidoki generate -s ./docs -o ./public -v
 ```
 
 **Output:**
@@ -118,6 +175,14 @@ menu:
     items:
       - title: "Nested Page"
         document: "/nested/page.md"
+
+footer:
+  - title: "Links"
+    items:
+      - label: "Home"
+        url: /index.md
+      - label: "GitHub"
+        url: "https://github.com/example/repo"
 ```
 
 #### Menu Item Properties
@@ -184,6 +249,42 @@ menu:
       - title: "API Status"
         url: "https://status.example.com"
 ```
+
+#### Footer Configuration
+
+Add footer links that appear at the bottom of all pages:
+
+```yaml
+footer:
+  - title: "Resources"
+    items:
+      - label: "Quick Start"
+        url: /start.md
+      - label: "Documentation"
+        url: reference.md
+      - label: "Examples"
+        url: markdown-examples.md
+  - title: "Open Source"
+    items:
+      - label: "GitHub Repository"
+        url: "https://github.com/jbeejones/okidoki"
+      - label: "Report Issues"
+        url: "https://github.com/jbeejones/okidoki/issues"
+      - label: "Contribute"
+        url: "https://github.com/jbeejones/okidoki/blob/main/CONTRIBUTING.md"
+```
+
+**Footer Properties:**
+- `title` - Section header in footer
+- `items` - Array of footer links
+- `label` - Display text for the link
+- `url` - Internal document path (relative to docs/) or external URL
+
+**Footer Notes:**
+- Footer links are organized in columns by section
+- Internal links should start with `/` for root-relative paths
+- External links should use full URLs with `https://`
+- Footer appears on all pages unless `hideFooter: true` is set
 
 #### Page Layout Configuration
 
