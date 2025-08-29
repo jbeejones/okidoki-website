@@ -33,7 +33,8 @@ okidoki generate
 **Output:**
 - Creates `dist/` directory with generated HTML files
 - Copies assets and applies themes
-- Generates search index
+- Generates search index for full-text search
+- Creates `sitemap.xml` for SEO and search engine indexing
 - Build time: < 1 second
 
 **Development tip:** For automatic rebuilding during development, use:
@@ -54,7 +55,7 @@ site:
   description: "Site Description"  # Meta description for SEO
   logo: "path/to/logo.png"      # Optional: Custom logo
   favicon: "path/to/favicon.ico" # Optional: Custom favicon
-  url: "https://docs.example.com" # Optional: Base URL for absolute links
+  url: "https://docs.example.com" # Base URL for absolute links and sitemap.xml
 ```
 
 #### Theme Configuration
@@ -430,7 +431,7 @@ Place images in `docs/assets/images/` or any subdirectory:
 
 ## Deployment
 
-Generated files in `dist/` directory are static HTML/CSS/JS and can be deployed to:
+Generated files in `dist/` directory include HTML, CSS, JS, search index, and `sitemap.xml`. These static files can be deployed to:
 
 - **Static Hosting**: Netlify, Vercel, GitHub Pages
 - **CDN**: CloudFlare, AWS S3 + CloudFront

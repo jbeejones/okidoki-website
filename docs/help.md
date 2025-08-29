@@ -90,7 +90,13 @@ The `init` command creates:
 
 ### Command: `okidoki generate`
 
-Generate documentation from markdown files with the following options:
+Generate documentation from markdown files. This command automatically creates:
+- Static HTML files for all markdown documents
+- Search index for full-text search functionality
+- `sitemap.xml` for SEO and search engine indexing
+- Optimized CSS and JavaScript bundles
+
+Options:
 
 | Option | Short | Description | Default |
 |--------|-------|-------------|---------|

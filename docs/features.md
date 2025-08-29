@@ -1,6 +1,6 @@
 # Features
 
-OkiDoki is an **open source** documentation generator designed for developers who want powerful documentation without complexity. Built by the community for the community, it's free forever with no vendor lock-in. Here are the top 5 features that make it essential:
+OkiDoki is an **open source** documentation generator designed for developers who want powerful documentation without complexity. Built by the community for the community, it's free forever with no vendor lock-in. Here are the top 6 features that make it essential:
 
 ## 1. 📝 Markdown First
 
@@ -142,14 +142,33 @@ search:
 
 **Benefits:** Users find answers fast. Works offline and scales to thousands of pages.
 
+## 6. 🔍 SEO Optimization
+
+Built-in SEO features for better discoverability:
+
+- **Automatic sitemap.xml** - Generated with every build for search engine indexing
+- **Meta descriptions** - Configure in `okidoki.yaml` for better search results  
+- **Semantic HTML** - Clean, accessible markup for search engines
+- **Fast loading** - Optimized performance improves search rankings
+
+```yaml
+site:
+  title: "My Documentation"
+  description: "Complete API documentation and guides"  # Used in meta tags
+  url: "https://docs.example.com"  # Required for sitemap generation
+```
+
+**Benefits:** Better search engine visibility means more users find your documentation naturally.
+
 ---
 
 ## Why OkiDoki?
 
 - **Fast**: Generate docs in under 1 second
-- **Small**: ~50KB generated sites
+- **Small**: ~50KB generated sites  
 - **Simple**: Two config files, standard markdown
 - **Powerful**: Variables, themes, search, components
+- **SEO Ready**: Automatic sitemaps and optimized markup
 - **Flexible**: Deploy anywhere static files work
 - **Open Source**: Community-driven, transparent, and free forever
 

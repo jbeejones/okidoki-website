@@ -45,7 +45,7 @@ mydocs/
 ├── sidebars.yaml     # Navigation structure
 ├── docs/             # Your markdown files
 │   └── index.md      # Homepage content
-└── dist/             # Generated site (after build)
+└── dist/             # Generated site (includes sitemap.xml)
 ```
 
 ## Basic Configuration
