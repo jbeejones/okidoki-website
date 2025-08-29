@@ -150,13 +150,16 @@ Built-in SEO features for better discoverability:
 - **Meta descriptions** - Configure in `okidoki.yaml` for better search results  
 - **Semantic HTML** - Clean, accessible markup for search engines
 - **Fast loading** - Optimized performance improves search rankings
+- **Subdirectory support** - Configure `baseUrl` for hosting under paths like `/docs/`
 
 ```yaml
 site:
   title: "My Documentation"
   description: "Complete API documentation and guides"  # Used in meta tags
-  url: "https://docs.example.com"  # Required for sitemap generation
+  baseUrl: "/docs/"  # Optional: when hosting under a subdirectory
 ```
+
+Example: With `baseUrl: "/docs/"`, your site works at both `example.com/docs/` and `localhost:3000/docs/`.
 
 **Benefits:** Better search engine visibility means more users find your documentation naturally.
 

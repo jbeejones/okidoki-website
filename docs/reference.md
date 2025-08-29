@@ -55,8 +55,14 @@ site:
   description: "Site Description"  # Meta description for SEO
   logo: "path/to/logo.png"      # Optional: Custom logo
   favicon: "path/to/favicon.ico" # Optional: Custom favicon
-  url: "https://docs.example.com" # Base URL for absolute links and sitemap.xml
+  baseUrl: "/docs/"             # Optional: base path for subdirectory hosting
 ```
+
+**BaseUrl Configuration:**
+- Use `baseUrl` when hosting your documentation under a subdirectory (e.g., `example.com/docs/`)
+- Omit this field when hosting at the root domain (e.g., `docs.example.com`)
+- Must start and end with `/` when used (e.g., `"/docs/"`, `"/help/"`)
+- Affects all internal links and asset paths
 
 #### Theme Configuration
 ```yaml
