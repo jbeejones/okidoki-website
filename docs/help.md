@@ -42,6 +42,7 @@ export PATH=$(npm config get prefix)/bin:$PATH
 - **Check:** Verify all links in `sidebars.yaml` point to existing files
 - **Check:** Ensure file paths use forward slashes, even on Windows
 - **Check:** Verify image paths are correct relative to `docs/` directory
+- **GitHub Pages:** If deploying to `username.github.io/repository-name`, add `baseUrl: "/repository-name/"` to `okidoki.yaml`
 
 **Problem:** Build is slow or hangs
 - **Check:** Large image files in docs directory (compress them)

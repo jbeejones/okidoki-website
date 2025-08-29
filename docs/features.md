@@ -150,16 +150,16 @@ Built-in SEO features for better discoverability:
 - **Meta descriptions** - Configure in `okidoki.yaml` for better search results  
 - **Semantic HTML** - Clean, accessible markup for search engines
 - **Fast loading** - Optimized performance improves search rankings
-- **Subdirectory support** - Configure `baseUrl` for hosting under paths like `/docs/`
+- **Subdirectory support** - Configure `baseUrl` for hosting under subdirectories (required for GitHub Pages)
 
 ```yaml
 site:
   title: "My Documentation"
   description: "Complete API documentation and guides"  # Used in meta tags
-  baseUrl: "/docs/"  # Optional: when hosting under a subdirectory
+  baseUrl: "/my-repo/"  # Required for GitHub Pages: username.github.io/my-repo/
 ```
 
-Example: With `baseUrl: "/docs/"`, your site works at both `example.com/docs/` and `localhost:3000/docs/`.
+**GitHub Pages Example:** With `baseUrl: "/my-repo/"`, your site works correctly at `username.github.io/my-repo/`.
 
 **Benefits:** Better search engine visibility means more users find your documentation naturally.
 

@@ -58,6 +58,24 @@ jobs:
 - Source: "GitHub Actions"
 - Your site will be available at `https://username.github.io/repository-name`
 
+### 3. Configure baseUrl for GitHub Pages (if not using custom domain):
+
+If you're hosting at `username.github.io/repository-name` (not a custom domain), add this to your `okidoki.yaml`:
+
+```yaml
+site:
+  title: "My Documentation"
+  description: "Documentation for my project"
+  baseUrl: "/repository-name/"  # Replace with your actual repository name
+```
+
+**Example:**
+- Repository: `john/my-awesome-docs`
+- GitHub Pages URL: `https://john.github.io/my-awesome-docs`
+- Required baseUrl: `"/my-awesome-docs/"`
+
+**Note:** Skip this step if using a custom domain (e.g., `docs.example.com`).
+
 ## Netlify
 
 Deploy with automatic builds from Git or manual drag-and-drop:

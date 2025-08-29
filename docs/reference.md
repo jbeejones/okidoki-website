@@ -117,8 +117,9 @@ site:
 
 **BaseUrl Configuration:**
 - Use `baseUrl` when hosting your documentation under a subdirectory (e.g., `example.com/docs/`)
+- **GitHub Pages:** Required when hosting at `username.github.io/repository-name` (use `baseUrl: "/repository-name/"`)
 - Omit this field when hosting at the root domain (e.g., `docs.example.com`)
-- Must start and end with `/` when used (e.g., `"/docs/"`, `"/help/"`)
+- Must start and end with `/` when used (e.g., `"/docs/"`, `"/my-repo/"`)
 - Affects all internal links and asset paths
 
 #### Theme Configuration
@@ -540,7 +541,7 @@ Place images in `docs/assets/images/` or any subdirectory:
 
 Generated files in `dist/` directory include HTML, CSS, JS, search index, and `sitemap.xml`. These static files can be deployed to:
 
-- **Static Hosting**: Netlify, Vercel, GitHub Pages
+- **Static Hosting**: Netlify, Vercel, GitHub Pages (see [deployment guide](deployment.md) for GitHub Pages baseUrl setup)
 - **CDN**: CloudFlare, AWS S3 + CloudFront
 - **Web Servers**: Apache, Nginx
 - **Local**: Use `npx serve dist` for testing
