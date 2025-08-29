@@ -49,18 +49,16 @@ footer:
   - title: "Resources"
     items:
       - label: "Quick Start"
-        document: /start.md
+        url: /start.md
       - label: "Documentation"
-        document: /reference.md
+        url: reference.md
       - label: "Examples"
-        document: /markdown-examples.md
+        url: markdown-examples.md
   - title: "Open Source"
     items:
       - label: "GitHub Repository"
-        url: "https://github.com/okidoki-docs/okidoki"
+        url: "https://github.com/jbeejones/okidoki"
       - label: "Report Issues"
-        url: "https://github.com/okidoki-docs/okidoki/issues"
-      - label: "Community Discussions"
-        url: "https://github.com/okidoki-docs/okidoki/discussions"
+        url: "https://github.com/jbeejones/okidoki/issues"
       - label: "Contribute"
-        url: "https://github.com/okidoki-docs/okidoki/blob/main/CONTRIBUTING.md"
+        url: "https://github.com/jbeejones/okidoki/blob/main/CONTRIBUTING.md"
