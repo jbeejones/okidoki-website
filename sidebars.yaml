@@ -34,6 +34,11 @@ menu:
         document: /examples/petshopapi.md
       - title: "X Utilities"
         document: /examples/xutil-install.md
+      - title: "Museum API"
+        document: /examples/museum-api.md
+        badge:
+          variant: "success"
+          text: "new"
   - title: "GitHub Repository 🔗"
     url: "https://github.com/jbeejones/okidoki"
     

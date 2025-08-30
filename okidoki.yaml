@@ -3,8 +3,8 @@ site:
   title: OkiDoki
   description: "Docs generated with Okidoki"
   theme:
-    light: "fantasy"
-    dark: "forest"
+    light: "light"
+    dark: "dark"
   baseUrl: "/okidoki-website/"
   logo: "/okidoki-website/okidokilogo.svg"
 search:
