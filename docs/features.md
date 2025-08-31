@@ -2,7 +2,7 @@
 
 OkiDoki is an **open source** documentation generator designed for developers who want powerful documentation without complexity. Built by the community for the community, it's free forever with no vendor lock-in. Here are the top 6 features that make it essential:
 
-## 1. 📝 Markdown First
+## 1. Markdown First
 
 Write in standard markdown - no proprietary formats or vendor lock-in:
 
@@ -17,19 +17,21 @@ Just write **normal markdown** with `code blocks`, tables, and links.
 
 **Benefits:** Focus on content, not syntax. Your documentation remains portable and future-proof.
 
-## 2. 🔧 Dynamic Variables
+## 2. Dynamic Variables
 
 Inject dynamic content with global and local variables:
 
 ### Global Variables (`okidoki.yaml`)
 ```yaml
+site:
+  title: MyDocs
 globals:
   version: "2.1.0"
   api_url: "https://api.example.com"
   company: "Acme Corp"
 ```
 
-### Local Variables (Frontmatter)
+### Local Variables
 ```markdown
 ---
 title: "API Guide"
@@ -44,9 +46,9 @@ Updated: {{updated}}
 
 **Benefits:** Keep documentation up-to-date automatically. Change once, update everywhere.
 
-## 3. 🎨 Tabs, Badges and Admonitions
+## 3. Tabs, Badges and Admonitions
 
-Rich interactive components without HTML:
+Rich interactive components enhance your documentation with tabs, badges, and alerts - all using simple markdown-like syntax:
 
 ### Tabs
 
@@ -159,7 +161,7 @@ Warning alert with Handlebars helper
 
 ## 4. 🌗 Auto Light/Dark Themes
 
-Beautiful themes powered by Tailwind CSS and DaisyUI:
+Beautiful themes powered by [Tailwind CSS](https://tailwindcss.com/) and [DaisyUI](https://daisyui.com/):
 
 ```yaml
 site:
@@ -167,7 +169,7 @@ site:
     light: "fantasy"    # Light themes: light, cupcake, bumblebee, emerald, corporate, garden, lofi, pastel, fantasy, wireframe, cmyk, autumn, business, acid, lemonade, winter
     dark: "forest"      # Dark themes: dark, synthwave, retro, cyberpunk, valentine, halloween, forest, aqua, luxury, dracula, black, night, coffee, dim, nord, sunset
 ```
-Screenshot of the light theme and dark theme:
+Screenshot of the light theme and dark theme is shown below:
 
 ![Day vs Night theme comparison](/img/themes.png)
 

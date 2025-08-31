@@ -5,7 +5,7 @@ handlebars: true
 
 # {{title}}
 
-{{#alert type="info"}}
+{{#alert}}
 **XUtil** is a powerful cross-platform command-line utility for file manipulation, data processing, and system automation.
 
 **Current Version**: v2.1.4 | **Release Date**: December 2024
