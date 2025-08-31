@@ -1,6 +1,10 @@
 # Quick Start Guide
 
-Welcome to OkiDoki! Get your documentation site running in just 30 seconds.
+Welcome to OkiDoki! 
+
+Create beautiful documentation sites in seconds with this modern, open source documentation generator.
+
+Ready to get started? Let's create your documentation site in under 30 seconds! 🚀
 
 ## Installation
 
@@ -70,7 +74,7 @@ menu:
 
 ## Writing Your First Page
 
-Create a new markdown file in the `docs/` directory:
+Create a new markdown file `start.md` in the `docs/` directory:
 
 ```markdown
 # My First Page

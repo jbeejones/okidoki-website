@@ -1,6 +1,17 @@
 # Features
 
-OkiDoki is an **open source** documentation generator designed for developers who want powerful documentation without complexity. Built by the community for the community, it's free forever with no vendor lock-in. Here are the top 6 features that make it essential:
+OkiDoki is an **open source** documentation generator designed for developers who want powerful documentation without complexity. Built by the community for the community, it's free forever with no vendor lock-in. Here are the top 7 features that make it essential:
+
+1. **Markdown First**: Write standard markdown with no proprietary formats
+2. **Dynamic Variables**: Inject dynamic content with global and local variables
+3. **Tabs, Badges and Admonitions**: Rich interactive components for enhanced documentation
+4. **Auto Light/Dark Themes**: Beautiful themes powered by Tailwind CSS and DaisyUI
+5. **Full-Text Search**: Instant search across all documentation
+6. **SEO Optimization**: Built-in features for better discoverability
+7. **Host Anywhere**: Deploy anywhere static files are supported
+
+
+
 
 ## 1. Markdown First
 
@@ -103,39 +114,15 @@ OkiDoki provides **two ways** to create important message callouts:
 Pro tip: Use admonitions to highlight important information!
 :::
 
-:::info
-General information for your users.
-:::
-
 :::warning
 Important warning about potential issues.
-:::
-
-:::danger
-Critical error or dangerous action warning.
-:::
-
-:::success
-Positive confirmation or success message.
-:::
-
-:::neutral
-Neutral information without specific sentiment.
 :::
 ```
 
 ##### 2. Handlebars Alert Helper
 ```markdown
-{{#alert}}
-I am neutral with the Handlebars alert helper
-{{/alert}}
-
 {{#alert "info"}}
 Information alert using Handlebars syntax
-{{/alert}}
-
-{{#alert "warning"}}
-Warning alert with Handlebars helper
 {{/alert}}
 ```
 
@@ -218,7 +205,29 @@ site:
 
 **Benefits:** Better search engine visibility means more users find your documentation naturally.
 
+## 7. 🌐 Host Anywhere
+
+Deploy your documentation anywhere static files are supported - no server required:
+
+- **Pure static HTML** - No runtime dependencies or server-side processing
+- **Powered by Tailwind CSS** - Optimized, modern styling that loads instantly
+- **Zero dependencies** - Everything needed is built into the generated files
+- **Lightning fast** - Optimized assets and minimal payload for sub-second load times
+
+```yaml
+# Deploy to any of these platforms:
+- GitHub Pages
+- Netlify  
+- Vercel
+- AWS S3
+- Azure Static Web Apps
+- Your own CDN/server
+```
+
+**Benefits:** Maximum flexibility and performance. Host on free platforms or enterprise infrastructure - your choice. No vendor lock-in for hosting either.
+
 ---
+
 
 ## Why OkiDoki?
 
@@ -227,7 +236,7 @@ site:
 - **Simple**: Two config files, standard markdown
 - **Powerful**: Variables, themes, search, components
 - **SEO Ready**: Automatic sitemaps and optimized markup
-- **Flexible**: Deploy anywhere static files work
+- **Host Anywhere**: Pure static HTML with zero dependencies
 - **Open Source**: Community-driven, transparent, and free forever
 
 ### 🔓 Open Source Benefits
