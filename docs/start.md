@@ -55,13 +55,6 @@ mydocs/
 site:
   title: "My Documentation"
   description: "Documentation for my project"
-  theme:
-    light: "fantasy"
-    dark: "forest"
-
-globals:
-  version: "1.0.0"
-  api_url: "https://api.example.com"
 ```
 
 ### sidebars.yaml

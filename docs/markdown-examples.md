@@ -287,7 +287,13 @@ API endpoint: {{{api_url}}}
 
 Support email: {{{support_email}}}
 
-## Admonitions/Callouts
+## Important Messages & Callouts
+
+OkiDoki provides **two ways** to create important message callouts for your documentation:
+
+### 1. Markdown Admonitions
+
+Use the `:::type` syntax for markdown-native callouts:
 
 ````markdown
 :::info
@@ -306,14 +312,12 @@ This is a **warning** callout. Use it to highlight potential issues.
 This is a **danger** callout. Use it for critical warnings and errors.
 :::
 
-:::danger
-❌ **Error**: Critical code detected!
-```javascript
-console.log('Be careful with this');
-process.exit(1);
-```
+:::success
+This is a **success** callout. Use it for positive confirmations.
+:::
 
-Please check your [code file](index.js) and ensure that your code is sanitized.
+:::neutral
+This is a **neutral** callout. Use it for information without emotional context.
 :::
 ````
 
@@ -334,6 +338,82 @@ This is a **warning** callout. Use it to highlight potential issues.
 This is a **danger** callout. Use it for critical warnings and errors.
 :::
 
+:::success
+This is a **success** callout. Use it for positive confirmations.
+:::
+
+:::neutral
+This is a **neutral** callout. Use it for information without emotional context.
+:::
+
+### 2. Handlebars Alert Helper
+
+Use the `\{{#alert}}` helper for dynamic alert content:
+
+````markdown
+\{{#alert}}
+Default neutral alert using Handlebars helper
+\{{/alert}}
+
+\{{#alert "info"}}
+Information alert with Handlebars syntax
+\{{/alert}}
+
+\{{#alert "warning"}}
+Warning alert using the Handlebars helper
+\{{/alert}}
+
+\{{#alert "success"}}
+Success message with Handlebars helper
+\{{/alert}}
+````
+
+**Result:**
+{{#alert}}
+Default neutral alert using Handlebars helper
+{{/alert}}
+
+{{#alert "info"}}
+Information alert with Handlebars syntax
+{{/alert}}
+
+{{#alert "warning"}}
+Warning alert using the Handlebars helper
+{{/alert}}
+
+{{#alert "success"}}
+Success message with Handlebars helper
+{{/alert}}
+
+### Available Alert States
+
+- **info** - Blue, for general information
+- **tip** - Light blue, for helpful advice  
+- **warning** - Orange/yellow, for important warnings
+- **danger** - Red, for critical alerts
+- **success** - Green, for positive messages
+- **neutral** - Gray, for neutral information without sentiment
+
+### When to Use Each Approach
+
+- **Markdown Admonitions** (`:::info`) - Perfect for static content and markdown-first workflows
+- **Handlebars Alert Helper** (`\{{#alert}}`) - Great when you need dynamic content or integration with variables
+
+### Complex Example with Code
+
+````markdown
+:::danger
+❌ **Error**: Critical code detected!
+```javascript
+console.log('Be careful with this');
+process.exit(1);
+```
+
+Please check your [code file](index.js) and ensure that your code is sanitized.
+:::
+````
+
+**Result:**
 :::danger
 ❌ **Error**: Critical code detected!
 ```javascript

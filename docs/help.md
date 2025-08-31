@@ -143,8 +143,8 @@ A: Edit the `theme` section in your `okidoki.yaml` file:
 ```yaml
 site:
   theme:
-    light: "fantasy"  # or corporate, emerald, garden, lofi, pastel, cmyk
-    dark: "forest"    # or aqua, luxury, dracula, synthwave, halloween, coffee
+    light: "fantasy"  
+    dark: "forest"   
 ```
 
 **Q: Can I have multiple documentation sites?**

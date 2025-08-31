@@ -131,8 +131,35 @@ site:
 ```
 
 **Available Themes:**
-- Light themes: `fantasy`, `corporate`, `emerald`, `garden`, `lofi`, `pastel`, `cmyk`
-- Dark themes: `forest`, `aqua`, `luxury`, `dracula`, `synthwave`, `halloween`, `coffee`
+
+Based on [DaisyUI themes](https://v4.daisyui.com/docs/themes/), OkiDoki supports all 32+ themes:
+
+**Light Themes:**
+- `light`, `cupcake`, `bumblebee`, `emerald`, `corporate`, `garden`, `lofi`, `pastel`, `fantasy`, `wireframe`, `cmyk`, `autumn`, `business`, `acid`, `lemonade`, `winter`
+
+**Dark Themes:**  
+- `dark`, `synthwave`, `retro`, `cyberpunk`, `valentine`, `halloween`, `forest`, `aqua`, `luxury`, `dracula`, `black`, `night`, `coffee`, `dim`, `nord`, `sunset`
+
+**Popular Combinations:**
+```yaml
+# Modern & Clean
+site:
+  theme:
+    light: "corporate"
+    dark: "luxury"
+
+# Playful & Colorful  
+site:
+  theme:
+    light: "cupcake"
+    dark: "synthwave"
+
+# Developer Friendly
+site:
+  theme:
+    light: "wireframe"
+    dark: "dracula"
+```
 
 #### Global Variables
 ```yaml
@@ -192,6 +219,7 @@ footer:
 - `url` - External URL (alternative to document)
 - `items` - Array of nested menu items
 - `badge` - Optional badge configuration object
+- `exclude_from_search` - Boolean to exclude page content from search index (default: false)
 
 #### Badge Configuration
 
@@ -243,6 +271,15 @@ menu:
       - title: "Posts"
         document: "/api/posts.md"
   
+  - title: "Legal"
+    items:
+      - title: "Terms of Service"
+        document: "/legal/terms.md"
+        exclude_from_search: true  # Don't include legal docs in search
+      - title: "Privacy Policy"
+        document: "/legal/privacy.md"
+        exclude_from_search: true
+  
   - title: "External Resources"
     items:
       - title: "GitHub"
@@ -250,6 +287,38 @@ menu:
       - title: "API Status"
         url: "https://status.example.com"
 ```
+
+#### Search Configuration
+
+Use `exclude_from_search: true` to exclude specific pages from the search index:
+
+```yaml
+menu:
+  - title: "Important Documentation"
+    document: "/docs.md"
+    # This page will be searchable (default behavior)
+  
+  - title: "Legal Notice"
+    document: "/legal.md"
+    exclude_from_search: true
+    # This page won't appear in search results
+  
+  - title: "Archive"
+    items:
+      - title: "Old Version 1.0"
+        document: "/archive/v1.md"
+        exclude_from_search: true  # Exclude deprecated content
+      - title: "Current Version 2.0"
+        document: "/archive/v2.md"
+        # This will be included in search
+```
+
+**Common use cases for excluding from search:**
+- Legal documents (terms, privacy policies)
+- Deprecated or archived content
+- Administrative pages
+- Landing pages with minimal content
+- Placeholder or template pages
 
 #### Footer Configuration
 
@@ -380,11 +449,19 @@ Contact: {{{support_email}}}
 Use 3 curly brackets to `{{{encode_variable}}}`
 :::
 
-### Admonitions/Callouts
+### Important Messages & Callouts
+
+OkiDoki provides **two ways** to create styled message callouts:
+
+#### 1. Markdown Admonitions
 
 ```markdown
 :::info
 This is an info callout.
+:::
+
+:::tip
+This is a tip callout.
 :::
 
 :::warning
@@ -395,10 +472,51 @@ This is a warning callout.
 This is a danger callout.
 :::
 
-:::tip
-This is a tip callout.
+:::success
+This is a success callout.
+:::
+
+:::neutral
+This is a neutral callout.
 :::
 ```
+
+#### 2. Handlebars Alert Helper
+
+For use in pages with `handlebars: true` in frontmatter:
+
+```markdown
+{{#alert}}
+Default neutral alert
+{{/alert}}
+
+{{#alert "info"}}
+Information alert
+{{/alert}}
+
+{{#alert "warning"}}
+Warning alert
+{{/alert}}
+
+{{#alert "success"}}
+Success alert
+{{/alert}}
+```
+
+#### Available States
+
+- **info** - Blue background, for general information
+- **tip** - Light blue, for helpful advice
+- **warning** - Orange/yellow, for important warnings  
+- **danger** - Red, for critical alerts
+- **success** - Green, for positive confirmations
+- **neutral** - Gray, for neutral information without emotional context
+
+#### Usage Guidelines
+
+- **Markdown Admonitions** - Use for static content and markdown-first workflows
+- **Handlebars Alert Helper** - Use when you need dynamic content or variable integration
+- **Neutral State** - Perfect for displaying information without implying positive/negative sentiment
 
 ### Badges
 

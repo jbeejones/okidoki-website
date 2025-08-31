@@ -2,9 +2,9 @@
 site:
   title: OkiDoki
   description: "Docs generated with Okidoki"
-  theme:
-    light: "light"
-    dark: "dark"
+  #theme:
+  #  light: "fantasy"
+  #  dark: "forest"
   baseUrl: "/okidoki-website/"
   logo: "/okidoki-website/okidokilogo.svg"
 search:

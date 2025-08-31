@@ -9,9 +9,6 @@ menu:
   - title: "✨ Features"
     document: /features.md
     hideMenu: false 
-    badge:
-      variant: "info"
-      text: "new"
     
   - title: "Documentation"
     open: true
@@ -32,10 +29,13 @@ menu:
     items:
       - title: "Petshop API"
         document: /examples/petshopapi.md
+        exclude_from_search: true
       - title: "X Utilities"
         document: /examples/xutil-install.md
+        exclude_from_search: true
       - title: "Museum API"
         document: /examples/museum-api.md
+        exclude_from_search: true
         badge:
           variant: "success"
           text: "new"

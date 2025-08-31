@@ -415,7 +415,7 @@ hours = get_museum_hours(start_date=next_week, limit=7)
 
 Here are some of the exciting special events you can experience:
 
-:::info
+:::neutral
 **🏴‍☠️ Pirate Coding Workshop**  
 **Location:** Computer Room  
 **Price:** $45  
@@ -424,7 +424,7 @@ Here are some of the exciting special events you can experience:
 Captain Blackbeard shares his love of the C...language. And possibly Arrrrr (R lang). Perfect for developers who want to learn programming with a nautical twist!
 :::
 
-:::info
+:::neutral
 **🧜‍♀️ Mermaid Treasure Analysis**  
 **Location:** Room Sea-12  
 **Price:** $30  

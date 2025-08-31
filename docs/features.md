@@ -91,17 +91,69 @@ print('Ready ...')
 User API :::badge-primary GET ::: :::badge-success Stable :::
 ```
 
-#### Admonitions
+#### Admonitions & Alert Messages
+
+OkiDoki provides **two ways** to create important message callouts:
+
+##### 1. Markdown Admonitions
 ```markdown
 :::tip
 Pro tip: Use admonitions to highlight important information!
 :::
+
+:::info
+General information for your users.
+:::
+
+:::warning
+Important warning about potential issues.
+:::
+
+:::danger
+Critical error or dangerous action warning.
+:::
+
+:::success
+Positive confirmation or success message.
+:::
+
+:::neutral
+Neutral information without specific sentiment.
+:::
 ```
+
+##### 2. Handlebars Alert Helper
+```markdown
+{{#alert}}
+I am neutral with the Handlebars alert helper
+{{/alert}}
+
+{{#alert "info"}}
+Information alert using Handlebars syntax
+{{/alert}}
+
+{{#alert "warning"}}
+Warning alert with Handlebars helper
+{{/alert}}
+```
+
+##### Available States
+- **tip** - Light blue, for helpful advice
+- **info** - Blue, for general information  
+- **warning** - Orange/yellow, for important warnings
+- **danger** - Red, for critical alerts
+- **success** - Green, for positive messages
+- **neutral** - Gray, for neutral information
+
 :::tip
 **Advice:** Don't overuse it!
 :::
 
-**Benefits:** Professional documentation with zero configuration. Draw attention to important information with styled callouts.
+:::neutral
+**New:** The neutral state provides a clean way to display information without emotional context.
+:::
+
+**Benefits:** Professional documentation with zero configuration. Choose between markdown syntax or Handlebars helpers based on your preference. Draw attention to important information with beautifully styled callouts.
 
 
 
@@ -112,18 +164,19 @@ Beautiful themes powered by Tailwind CSS and DaisyUI:
 ```yaml
 site:
   theme:
-    light: "fantasy"    # Corporate, emerald, garden, lofi, pastel, cmyk
-    dark: "forest"      # Aqua, luxury, dracula, synthwave, halloween, coffee
+    light: "fantasy"    # Light themes: light, cupcake, bumblebee, emerald, corporate, garden, lofi, pastel, fantasy, wireframe, cmyk, autumn, business, acid, lemonade, winter
+    dark: "forest"      # Dark themes: dark, synthwave, retro, cyberpunk, valentine, halloween, forest, aqua, luxury, dracula, black, night, coffee, dim, nord, sunset
 ```
-Screenshot of the light theme `fantasy` and dark theme `forest`:
+Screenshot of the light theme and dark theme:
 
-<img src="img/themes.png" width="50%" alt="Day vs Night comparison" class="w-full" />
+![Day vs Night theme comparison](/img/themes.png)
 
 **Benefits:** 
 - Automatic OS theme detection
 - Toggle between themes
-- 14+ professional themes included
+- 32+ professional themes included
 - Fully responsive design
+- Based on [DaisyUI themes](https://v4.daisyui.com/docs/themes/)
 
 ## 5. ⚡ Full-Text Search
 
