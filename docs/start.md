@@ -1,3 +1,17 @@
+---
+keywords: [
+  "okidoki quick start",
+  "okidoki installation",
+  "okidoki setup guide",
+  "documentation generator tutorial",
+  "markdown docs setup",
+  "okidoki getting started",
+  "npm install okidoki",
+  "documentation site setup",
+  "okidoki init tutorial",
+  "beginner documentation guide"
+]
+---
 # Quick Start Guide
 
 Welcome to OkiDoki! 

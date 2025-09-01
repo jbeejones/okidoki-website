@@ -1,6 +1,19 @@
 ---
 title: Documentation Reference
 handlebars: true
+keywords: [
+  "okidoki reference",
+  "okidoki commands",
+  "okidoki configuration",
+  "okidoki.yaml reference",
+  "sidebars.yaml guide",
+  "documentation configuration",
+  "okidoki CLI reference",
+  "handlebars helpers",
+  "badge syntax",
+  "alert syntax",
+  "okidoki complete guide"
+]
 ---
 
 # Documentation Reference 

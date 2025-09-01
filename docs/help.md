@@ -1,3 +1,18 @@
+---
+keywords: [
+  "okidoki troubleshooting",
+  "okidoki help",
+  "okidoki errors",
+  "documentation generator problems",
+  "okidoki installation issues",
+  "okidoki build errors",
+  "markdown documentation help",
+  "okidoki FAQ",
+  "docs generator support",
+  "okidoki common issues"
+]
+---
+
 # Help & Troubleshooting
 
 Get help with common issues and questions about OkiDoki.

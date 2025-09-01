@@ -1,3 +1,18 @@
+---
+keywords: [
+  "okidoki features",
+  "documentation generator features",
+  "markdown documentation tools",
+  "static site generator features",
+  "open source documentation",
+  "documentation themes",
+  "documentation search",
+  "markdown variables",
+  "documentation hosting options",
+  "SEO documentation generator"
+]
+---
+
 # Features
 
 OkiDoki is an **open source** documentation generator designed for developers who want powerful documentation without complexity. Built by the community for the community, it's free forever with no vendor lock-in. Here are the top 7 features that make it essential:

@@ -1,3 +1,18 @@
+---
+keywords: [
+  "okidoki deployment",
+  "deploy documentation site",
+  "github pages deployment",
+  "netlify docs deployment",
+  "vercel documentation hosting",
+  "static site hosting",
+  "documentation hosting guide",
+  "docs deployment tutorial",
+  "github actions okidoki",
+  "documentation publishing"
+]
+---
+
 # Deployment
 
 OkiDoki generates static files in the `dist/` folder that can be deployed anywhere. Here are the most popular deployment options:

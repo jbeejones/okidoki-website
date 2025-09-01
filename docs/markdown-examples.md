@@ -1,5 +1,17 @@
 ---
 handlebars: true
+keywords: [
+  "okidoki markdown examples",
+  "markdown syntax guide",
+  "documentation examples",
+  "handlebars helpers examples",
+  "okidoki tabs syntax",
+  "okidoki badges examples",
+  "okidoki alerts examples",
+  "markdown formatting guide",
+  "documentation formatting",
+  "okidoki syntax reference"
+]
 ---
 
 # Markdown Examples

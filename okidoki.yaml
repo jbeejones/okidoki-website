@@ -12,7 +12,7 @@ build:
   clean: true          
   minify: true         
 
-okidoki_version: "1.0.37"
+okidoki_version: "1.0.38"
 
 plugins:
   enabled: true

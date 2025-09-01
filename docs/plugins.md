@@ -2,6 +2,18 @@
 title: "Plugin System"
 description: "How to create and use custom handlebars helpers with OkiDoki plugins"
 handlebars: false
+keywords: [
+  "okidoki plugins",
+  "custom handlebars helpers",
+  "okidoki extensions",
+  "documentation plugins",
+  "handlebars plugin development",
+  "okidoki customization",
+  "custom documentation helpers",
+  "okidoki plugin tutorial",
+  "handlebars helpers guide",
+  "documentation extensibility"
+]
 ---
 
 # Plugin System
