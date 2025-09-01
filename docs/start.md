@@ -88,6 +88,7 @@ function hello() {
   console.log("Hello, OkiDoki!");
 }
 ```
+The run the `okidoki generate` command again and refresh your browser to see the updated documentation site.
 
 
 ## Next Steps

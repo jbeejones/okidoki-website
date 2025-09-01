@@ -12,7 +12,7 @@ build:
   clean: true          
   minify: true         
 
-okidoki_version: "1.0.33"
+okidoki_version: "1.0.36"
 api_url: "https://api.example.com"
 support_email: "support@example.com"
 author: "**John Doe**"
