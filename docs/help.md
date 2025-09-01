@@ -321,9 +321,9 @@ When reporting a problem, please include:
 
 ### Community Resources
 
-- **Documentation:** [Reference Guide](reference.md)
-- **Examples:** [Markdown Examples](markdown-examples.md)
-- **Getting Started:** [Quick Start Guide](start.md)
+- **Documentation:** [Reference Guide](/reference.md)
+- **Examples:** [Markdown Examples](/markdown-examples.md)
+- **Getting Started:** [Quick Start Guide](/start.md)
 
 ## Debug Mode
 

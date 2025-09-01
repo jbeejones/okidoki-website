@@ -92,9 +92,9 @@ function hello() {
 
 ## Next Steps
 
-- Check out the [Documentation Reference](reference.md) for advanced features
-- Browse [Examples](markdown-examples.md) for inspiration  
-- Visit the [Help](help.md) section if you run into issues
+- Check out the [Documentation Reference](/reference.md) for advanced features
+- Browse [Examples](/markdown-examples.md) for inspiration  
+- Visit the [Help](/help.md) section if you run into issues
 
 ## Key Features
 
