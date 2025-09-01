@@ -174,7 +174,7 @@ print(f'Updated pet: {pet}')
   {{/tab}}
 {{/tabs}}
 
-### Delete Pet {{badge "DELETE" "danger"}}
+### Delete Pet {{badge "DELETE" "error"}}
 
 Remove a pet from the system.
 
@@ -545,7 +545,7 @@ print(f'Medical record created: {medical_record}')
 
 ## Error Handling
 
-{{#alert type="danger"}}
+{{#alert type="error"}}
 **Error Response Format**: All errors follow a consistent JSON structure
 {{/alert}}
 

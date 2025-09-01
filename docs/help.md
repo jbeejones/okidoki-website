@@ -212,13 +212,11 @@ A: Use standard markdown table syntax:
 ```
 
 **Q: How do I add badges to my documentation?**
-A: Use the new badge syntax with three colons:
+A: Use the Handlebars badge helper:
 ```markdown
-:::badge-primary
-My Badge Text
-:::
+\{{badge "My Badge Text" "primary"}}
 
-# Or inline: Some text :::badge-success Active ::: more text
+Or inline: Some text \{{badge "Active" "success"}} more text
 ```
 
 ## Common Error Messages
@@ -275,11 +273,11 @@ menu:
 Available badge variants: `info`, `success`, `warning`, `error`, `neutral`
 
 ### Badge syntax not working
-**Error:** `:::badge-primary My Badge :::` displays as raw text instead of a styled badge
+**Error:** `\{{badge "My Badge" "xxprimaryxx"}}` not rendering properly
 **Solutions:**
 1. Ensure you're using the correct badge syntax with three colons
 2. Check that badges are supported in your version of OkiDoki
-3. Try using inline badges: `:::badge-success Status: Active ::: within text`
+3. Try using inline badges: `\{{badge "Status: Active" "success"}} within text`
 4. Verify the badge type exists (primary, secondary, accent, info, success, warning, error)
 
 ## Performance Issues
@@ -350,13 +348,8 @@ This will show:
 
 ## Version Information
 
-Current OkiDoki version: **1.0.1**
+Current OkiDoki version: **{{okidoki_version}}**
 
-### What's New in 1.0.1
-- Improved error messages
-- Better theme compatibility
-- Faster build performance
-- Enhanced search functionality
 
 ### Compatibility
 - **Node.js:** Requires version 14 or higher

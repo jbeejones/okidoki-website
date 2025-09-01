@@ -4,7 +4,7 @@ OkiDoki is an **open source** documentation generator designed for developers wh
 
 1. **Markdown First**: Write standard markdown with no proprietary formats
 2. **Dynamic Variables**: Inject dynamic content with global and local variables
-3. **Tabs, Badges and Admonitions**: Rich interactive components for enhanced documentation
+3. **Tabs, Badges and Alerts**: Rich interactive components for enhanced documentation
 4. **Auto Light/Dark Themes**: Beautiful themes powered by Tailwind CSS and DaisyUI
 5. **Full-Text Search**: Instant search across all documentation
 6. **SEO Optimization**: Built-in features for better discoverability
@@ -51,98 +51,90 @@ updated: "2024-01-15"
 ---
 
 # {{title}} v{{globals.version}}
-Built by {{author}} for {{globals.company}}
-Updated: {{updated}}
+Built by \{{author}} for \{{globals.company}}
+Updated: \{{updated}}
 ```
 
 **Benefits:** Keep documentation up-to-date automatically. Change once, update everywhere.
 
-## 3. Tabs, Badges and Admonitions
+## 3. Tabs, Badges and Alerts
 
-Rich interactive components enhance your documentation with tabs, badges, and alerts - all using simple markdown-like syntax:
+Rich interactive components enhance your documentation with tabs, badges, and alerts - all using the simple [Handlebars](https://handlebarsjs.com/) syntax:
 
 ### Tabs
 
-<div>
-<pre>
-&#58;&#58;&#58;tabs
-&#58;&#58;&#58;tab JavaScript
-```js
-const api = new ApiClient('{{api_url}}');
-console.log('Ready ...')
-```
-&#58;&#58;&#58;
-&#58;&#58;&#58;tab Python
-```python
-api = ApiClient('{{api_url}}')
-print('Ready ...')
-```
-&#58;&#58;&#58;
-&#58;&#58;&#58;
-</pre>
-</div>
+````handlebars
+\{{#tabs}}
+    \{{#tab title="JavaScript"}}
+    ```js
+    const api = new ApiClient('{{api_url}}');
+    console.log('Ready ...')
+    ```
+    \{{/tab}}
 
-:::tabs
-:::tab JavaScript
-```js
-const api = new ApiClient('{{api_url}}');
-console.log('Ready ...')
-```
-:::
-:::tab Python
-```python
-api = ApiClient('{{api_url}}')
-print('Ready ...')
-```
-:::
-:::
+    \{{#tab title="Python"}}
+    ```python
+    api = ApiClient('{{api_url}}')
+    print('Ready ...')
+    ```
+    \{{/tab}}
+\{{/tabs}}
+````
 
-### Badges and Admonitions :::badge-primary cool ::: :::badge-success feature :::
+{{#tabs}}
+    {{#tab title="JavaScript"}}
+    ```js
+    const api = new ApiClient('{{api_url}}');
+    console.log('Ready ...')
+    ```
+    {{/tab}}
+
+    {{#tab title="Python"}}
+    ```python
+    api = ApiClient('{{api_url}}')
+    print('Ready ...')
+    ```
+    {{/tab}}
+{{/tabs}}
+
+### Badges and Alert Messages {{badge "cool" "primary"}} {{badge "feature" "success"}}
 
 #### Badges
-```markdown
-User API :::badge-primary GET ::: :::badge-success Stable :::
+```handlebars
+User API \{{badge "GET" "primary"}} \{{badge "Stable" "success"}}
 ```
 
-#### Admonitions & Alert Messages
+#### Alert Messages
 
-OkiDoki provides **two ways** to create important message callouts:
+Create important message callouts using Handlebars helpers:
 
-##### 1. Markdown Admonitions
-```markdown
-:::tip
-Pro tip: Use admonitions to highlight important information!
-:::
+```handlebars
+\{{alert "Use alerts to highlight important information!" "warning"}}
 
-:::warning
-Important warning about potential issues.
-:::
+\{{#alert type="info"}}
+Advice: Don't overuse alerts!
+\{{/alert}}
 ```
 
-##### 2. Handlebars Alert Helper
-```markdown
-{{#alert "info"}}
-Information alert using Handlebars syntax
-{{/alert}}
-```
-
-##### Available States
-- **tip** - Light blue, for helpful advice
+##### Available Alert Types
 - **info** - Blue, for general information  
-- **warning** - Orange/yellow, for important warnings
-- **danger** - Red, for critical alerts
 - **success** - Green, for positive messages
-- **neutral** - Gray, for neutral information
+- **warning** - Orange/yellow, for important warnings
+- **error** - Red, for critical alerts
+- **blank** - Gray, for neutral information (default)
 
-:::tip
-**Advice:** Don't overuse it!
-:::
+##### Available Badge Variants
+- **primary**, **secondary**, **accent** - Brand colors
+- **info**, **success**, **warning**, **error** - Status colors
+- **outline** - Transparent with border
 
-:::neutral
-**New:** The neutral state provides a clean way to display information without emotional context.
-:::
+{{#alert type="info"}}
+Advice: Don't overuse alerts!
+{{/alert}}
 
-**Benefits:** Professional documentation with zero configuration. Choose between markdown syntax or Handlebars helpers based on your preference. Draw attention to important information with beautifully styled callouts.
+{{alert "Important warning about potential issues." "warning"}}
+
+**Benefits:** Professional documentation with clean, consistent styling using Handlebars helpers for maximum flexibility.
 
 
 
@@ -250,8 +242,11 @@ OkiDoki is **100% open source**, which means:
 - **Free forever**: No licensing fees, usage limits, or hidden costs
 - **Trustworthy**: Audit the code, report issues, fix bugs together
 
-:::tip
-**Community matters**: Open source ensures OkiDoki evolves with developer needs, not corporate agendas. Join the community and help shape the future of documentation!
-:::
+{{#alert}}
+**Community matters**: 
+
+Open source ensures OkiDoki evolves with developer needs, not corporate agendas. Join the community and help shape the future of documentation!
+
+{{/alert}}
 
 Get started in 30 seconds: `npm install -g okidoki && okidoki init` 🚀 

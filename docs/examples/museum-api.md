@@ -9,15 +9,14 @@ handlebars: true
 
 # 🏛️ Museum API Documentation
 
-{{badge version}} {{badge "REST API" "success"}} 
+{{badge "v1.2.1" "info"}} {{badge "REST API" "success"}} 
 
 
 An imaginary, but delightful Museum API for interacting with museum services and information. 
 
-:::tip
-**🎯 Quick Start:**
-Ready to get started? Jump to [Authentication](#authentication) or explore our [Interactive Examples](#interactive-examples) below!
-:::
+{{#alert}}
+**🎯 Quick Start:** Ready to get started? Jump to [Authentication](#authentication) or explore our [Interactive Examples](#interactive-examples) below!
+{{/alert}}
 
 ## 📋 Overview
 
@@ -32,10 +31,7 @@ The Museum API offers a comprehensive set of endpoints to interact with museum s
 
 ## 🔐 Authentication
 
-:::warning 
-**Development Only**:
-This API uses basic HTTP authentication for demonstration purposes. In production, use secure authentication methods like OAuth 2.0 or API keys.
-:::
+{{alert "**Development Only**: This API uses basic HTTP authentication for demonstration purposes. In production, use secure authentication methods like OAuth 2.0 or API keys." "warning"}}
 
 ```bash
 curl -H "Authorization: Basic <credentials>" \
@@ -48,8 +44,8 @@ Discover and manage special events at the museum.
 
 ### List Special Events
 
-:::tabs
-:::tab cURL
+{{#tabs}}
+{{#tab title="cURL"}}
 ```bash
 # Get upcoming events
 curl -X GET "{{api_base_url}}/special-events" \
@@ -60,8 +56,8 @@ curl -X GET "{{api_base_url}}/special-events" \
 curl -X GET "{{api_base_url}}/special-events?startDate=2023-10-01&endDate=2023-12-31" \
   -H "Authorization: Basic <credentials>"
 ```
-:::
-:::tab JavaScript
+{{/tab}}
+{{#tab title="JavaScript"}}
 ```javascript
 const apiUrl = '{{api_base_url}}';
 
@@ -84,8 +80,8 @@ async function getSpecialEvents(startDate, endDate) {
 const events = await getSpecialEvents('2023-10-01', '2023-12-31');
 console.log('Upcoming events:', events);
 ```
-:::
-:::tab Python
+{{/tab}}
+{{#tab title="Python"}}
 ```python
 import requests
 from datetime import datetime
@@ -112,8 +108,8 @@ def get_special_events(start_date=None, end_date=None):
 events = get_special_events('2023-10-01', '2023-12-31')
 print(f"Found {len(events)} upcoming events")
 ```
-:::
-:::
+{{/tab}}
+{{/tabs}}
 
 **Response Example:**
 ```json
@@ -139,8 +135,8 @@ print(f"Found {len(events)} upcoming events")
 
 ### Create Special Event
 
-:::tabs
-:::tab cURL
+{{#tabs}}
+{{#tab title="cURL"}}
 ```bash
 curl -X POST "{{api_base_url}}/special-events" \
   -H "Authorization: Basic <credentials>" \
@@ -153,8 +149,8 @@ curl -X POST "{{api_base_url}}/special-events" \
     "price": 35
   }'
 ```
-:::
-:::tab JavaScript  
+{{/tab}}
+{{#tab title="JavaScript"}}
 ```javascript
 async function createSpecialEvent(eventData) {
   const response = await fetch('{{api_base_url}}/special-events', {
@@ -178,8 +174,8 @@ const newEvent = await createSpecialEvent({
   price: 35
 });
 ```
-:::
-:::tab Python
+{{/tab}}
+{{#tab title="Python"}}
 ```python
 def create_special_event(event_data):
     response = requests.post(
@@ -199,8 +195,8 @@ new_event = create_special_event({
     "price": 35
 })
 ```
-:::
-:::
+{{/tab}}
+{{/tabs}}
 
 ## 🎫 Ticketing System
 
@@ -208,8 +204,8 @@ Purchase tickets for general museum entry or special events.
 
 ### Buy Museum Tickets
 
-:::tabs
-:::tab General Entry
+{{#tabs}}
+{{#tab title="General Entry"}}
 ```bash
 # Buy general admission ticket
 curl -X POST "{{api_base_url}}/tickets" \
@@ -232,8 +228,8 @@ curl -X POST "{{api_base_url}}/tickets" \
   "confirmationCode": "ticket-general-e5e5c6-dce78"
 }
 ```
-:::
-:::tab Event Ticket
+{{/tab}}
+{{#tab title="Event Ticket"}}
 ```bash
 # Buy special event ticket
 curl -X POST "{{api_base_url}}/tickets" \
@@ -258,23 +254,23 @@ curl -X POST "{{api_base_url}}/tickets" \
   "confirmationCode": "ticket-event-9c55eg-8v82a"
 }
 ```
-:::
-:::
+{{/tab}}
+{{/tabs}}
 
 ### Get Ticket QR Code
 
 Generate a scannable QR code for museum entry:
 
-:::tabs
-:::tab cURL
+{{#tabs}}
+{{#tab title="cURL"}}
 ```bash
 curl -X GET "{{api_base_url}}/tickets/382c0820-0530-4f4b-99af-13811ad0f17a/qr" \
   -H "Authorization: Basic <credentials>" \
   -H "Accept: image/png" \
   --output ticket-qr.png
 ```
-:::
-:::tab JavaScript
+{{/tab}}
+{{#tab title="JavaScript"}}
 ```javascript
 async function getTicketQR(ticketId) {
   const response = await fetch(`{{api_base_url}}/tickets/${ticketId}/qr`, {
@@ -291,8 +287,8 @@ async function getTicketQR(ticketId) {
   document.getElementById('qr-code').src = imageUrl;
 }
 ```
-:::
-:::tab Python
+{{/tab}}
+{{#tab title="Python"}}
 ```python
 def download_ticket_qr(ticket_id, filename):
     response = requests.get(
@@ -309,13 +305,10 @@ def download_ticket_qr(ticket_id, filename):
 # Usage
 download_ticket_qr("382c0820-0530-4f4b-99af-13811ad0f17a", "my-ticket.png")
 ```
-:::
-:::
+{{/tab}}
+{{/tabs}}
 
-:::tip
-**📱 Mobile Integration:**
-The QR codes work great with mobile ticket wallets! Display the QR code in your mobile app for easy museum entry.
-:::
+{{alert "**📱 Mobile Integration:** The QR codes work great with mobile ticket wallets! Display the QR code in your mobile app for easy museum entry." "info"}}
 
 ## 🕐 Museum Operations
 
@@ -323,8 +316,8 @@ The QR codes work great with mobile ticket wallets! Display the QR code in your 
 
 Retrieve upcoming museum operating hours with flexible date filtering:
 
-:::tabs
-:::tab cURL
+{{#tabs}}
+{{#tab title="cURL"}}
 ```bash
 # Get hours for next 10 days
 curl -X GET "{{api_base_url}}/museum-hours" \
@@ -334,8 +327,8 @@ curl -X GET "{{api_base_url}}/museum-hours" \
 curl -X GET "{{api_base_url}}/museum-hours?startDate=2024-03-01&page=1&limit=20" \
   -H "Authorization: Basic <credentials>"
 ```
-:::
-:::tab JavaScript
+{{/tab}}
+{{#tab title="JavaScript"}}
 ```javascript
 async function getMuseumHours(startDate, page = 1, limit = 10) {
   const params = new URLSearchParams({
@@ -361,8 +354,8 @@ async function getMuseumHours(startDate, page = 1, limit = 10) {
 const hours = await getMuseumHours('2024-03-01', 1, 7);
 console.log('Museum hours:', hours);
 ```
-:::
-:::tab Python
+{{/tab}}
+{{#tab title="Python"}}
 ```python
 def get_museum_hours(start_date=None, page=1, limit=10):
     params = {
@@ -387,8 +380,8 @@ from datetime import datetime, timedelta
 next_week = (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d')
 hours = get_museum_hours(start_date=next_week, limit=7)
 ```
-:::
-:::
+{{/tab}}
+{{/tabs}}
 
 **Response Example:**
 ```json
@@ -415,38 +408,38 @@ hours = get_museum_hours(start_date=next_week, limit=7)
 
 Here are some of the exciting special events you can experience:
 
-:::neutral
+{{#alert}}
 **🏴‍☠️ Pirate Coding Workshop**  
 **Location:** Computer Room  
 **Price:** $45  
 **Dates:** Oct 29-31, 2023
 
 Captain Blackbeard shares his love of the C...language. And possibly Arrrrr (R lang). Perfect for developers who want to learn programming with a nautical twist!
-:::
+{{/alert}}
 
-:::neutral
+{{#alert}}
 **🧜‍♀️ Mermaid Treasure Analysis**  
 **Location:** Room Sea-12  
 **Price:** $30  
 **Dates:** Sep 5 & 8, 2023  
 
 Join us as we review and classify a rare collection of 20 thingamabobs, gadgets, gizmos, whoosits, and whatsits — kindly donated by Ariel.
-:::
+{{/alert}}
 
-:::tip
+{{#alert "info"}}
 **🦙 Llama Street Art Through the Ages**  
 **Location:** Auditorium  
 **Price:** $45  
 **Dates:** Oct 29-31, 2023
 
 Llama street art?! Alpaca my bags -- let's go! Explore the fascinating world of camelid-inspired urban art.
-:::
+{{/alert}}
 
 ## 📚 API Reference
 
 ### Operations
 
-#### :::badge-primary GET ::: `/museum-hours`
+#### {{badge "GET" "primary"}} `/museum-hours`
 
 Get upcoming museum operating hours with optional date filtering and pagination.
 
@@ -457,36 +450,32 @@ Get upcoming museum operating hours with optional date filtering and pagination.
 
 ### Events
 
-#### :::badge-success POST ::: `/special-events` 
+#### {{badge "POST" "success"}} `/special-events` 
 Create a new special event
 
-#### :::badge-primary GET ::: `/special-events`
+#### {{badge "GET" "primary"}} `/special-events`
 List upcoming special events
 
-#### :::badge-primary GET ::: `/special-events/{eventId}`
+#### {{badge "GET" "primary"}} `/special-events/{eventId}`
 Get details about a specific event
 
-#### :::badge-warning PATCH ::: `/special-events/{eventId}`
+#### {{badge "PATCH" "warning"}} `/special-events/{eventId}`
 Update event details
 
-#### :::badge-danger DELETE ::: `/special-events/{eventId}`
+#### {{badge "DELETE" "error"}} `/special-events/{eventId}`
 Cancel/delete an event
 
 ### Tickets
 
-#### :::badge-success POST ::: `/tickets`
+#### {{badge "POST" "success"}} `/tickets`
 Purchase museum tickets (general or event-specific)
 
-#### :::badge-primary GET ::: `/tickets/{ticketId}/qr`  
+#### {{badge "GET" "primary"}} `/tickets/{ticketId}/qr`  
 Generate scannable QR code for ticket
 
-:::tip
-**💡 Pro Tips:**
-- Use `ticketType: "general"` for regular museum admission
-- Use `ticketType: "event"` with an `eventId` for special events
+{{alert "**💡 Pro Tips:** Use `ticketType: \"general\"` for regular museum admission. Use `ticketType: \"event\"` with an `eventId` for special events." "info"}}
 - QR codes are returned as PNG images perfect for mobile wallets
 - All dates use ISO format (YYYY-MM-DD)
-:::
 
 ## 🏗️ Data Models
 
@@ -553,8 +542,8 @@ When a new special event is created or updated, a webhook is triggered:
 
 ### Complete Ticket Purchase Flow
 
-:::tabs
-:::tab Workflow
+{{#tabs}}
+{{#tab title="Workflow"}}
 ```javascript
 // 1. Get available events
 const events = await getSpecialEvents();
@@ -586,8 +575,8 @@ const qrResponse = await fetch(`{{api_base_url}}/tickets/${ticket.ticketId}/qr`,
 const qrBlob = await qrResponse.blob();
 // Display QR code in your app
 ```
-:::
-:::tab Museum Hours Check
+{{/tab}}
+{{#tab title="Hours"}}
 ```javascript
 // Get today's museum hours
 const today = new Date().toISOString().split('T')[0];
@@ -600,8 +589,8 @@ if (todayHours.length > 0) {
   console.log('Museum is closed today');
 }
 ```
-:::
-:::
+{{/tab}}
+{{/tabs}}
 
 ## 🚀 Getting Started
 
@@ -613,17 +602,5 @@ if (todayHours.length > 0) {
 3. **Test in Development**: Use the mock server at `{{api_base_url}}`
 4. **Implement Error Handling**: All endpoints return standard HTTP status codes
 
-:::note
-**📖 Learning Resource:**
-This API is designed by [Redocly](https://redocly.com/docs/resources/learning-openapi/) as an educational example for learning OpenAPI 3.1.0 specification. It's perfect for testing API documentation tools and learning REST API design patterns.
-:::
-
-## 📞 Support
-
-**Documentation:** [Redocly OpenAPI Learning Resources](https://redocly.com/docs/resources/learning-openapi/)  
-**Contact:** team@redocly.com  
-**License:** [MIT License](https://opensource.org/license/mit/)
-
----
 
 *Generated from OpenAPI 3.1.0 specification • Last updated: {{version}}* 

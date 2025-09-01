@@ -275,9 +275,7 @@ API endpoint: \{{{api_url}}}
 
 Support email: \{{{support_email}}}
 ```
-:::tip
-Use triple curly brackets to encode stuff `\{{{encoded_content}}}`.
-:::
+{{alert "Use triple curly brackets to encode stuff `{{{encoded_content}}}`." "info"}}
 
 **Result**
 
@@ -289,120 +287,62 @@ Support email: {{{support_email}}}
 
 ## Important Messages & Callouts
 
-OkiDoki provides **two ways** to create important message callouts for your documentation:
+Create important message callouts using Handlebars alert helpers:
 
-### 1. Markdown Admonitions
+### Simple Alert Syntax
 
-Use the `:::type` syntax for markdown-native callouts:
+For basic alerts with text only:
 
 ````markdown
-:::info
-This is an **informational** callout. Use it for neutral information.
-:::
-
-:::tip
-This is a **tip** callout. Great for helpful suggestions and best practices.
-:::
-
-:::warning  
-This is a **warning** callout. Use it to highlight potential issues.
-:::
-
-:::danger
-This is a **danger** callout. Use it for critical warnings and errors.
-:::
-
-:::success
-This is a **success** callout. Use it for positive confirmations.
-:::
-
-:::neutral
-This is a **neutral** callout. Use it for information without emotional context.
-:::
+\{{alert "This is an informational callout." "info"}}
+\{{alert "This is a success message." "success"}}
+\{{alert "This is a warning message." "warning"}}
+\{{alert "This is an error alert." "error"}}
+\{{alert "This is neutral information."}}
 ````
 
 **Result:**
-:::info
-This is an **informational** callout. Use it for neutral information.
-:::
+{{alert "This is an informational callout." "info"}}
+{{alert "This is a success message." "success"}}
+{{alert "This is a warning message." "warning"}}
+{{alert "This is an error alert." "error"}}
+{{alert "This is neutral information."}}
 
-:::tip
-This is a **tip** callout. Great for helpful suggestions and best practices.
-:::
+### Block Alert Syntax
 
-:::warning  
-This is a **warning** callout. Use it to highlight potential issues.
-:::
-
-:::danger
-This is a **danger** callout. Use it for critical warnings and errors.
-:::
-
-:::success
-This is a **success** callout. Use it for positive confirmations.
-:::
-
-:::neutral
-This is a **neutral** callout. Use it for information without emotional context.
-:::
-
-### 2. Handlebars Alert Helper
-
-Use the `\{{#alert}}` helper for dynamic alert content:
+For alerts with complex content including markdown:
 
 ````markdown
-\{{#alert}}
-Default neutral alert using Handlebars helper
+\{{#alert type="info"}}
+Information alert with **markdown** support and [links](https://example.com)
 \{{/alert}}
 
-\{{#alert "info"}}
-Information alert with Handlebars syntax
-\{{/alert}}
-
-\{{#alert "warning"}}
-Warning alert using the Handlebars helper
-\{{/alert}}
-
-\{{#alert "success"}}
-Success message with Handlebars helper
+\{{#alert type="warning"}}
+Warning alert with `code` and multiple lines of content
 \{{/alert}}
 ````
 
 **Result:**
-{{#alert}}
-Default neutral alert using Handlebars helper
+{{#alert type="info"}}
+Information alert with **markdown** support and [links](https://example.com)
 {{/alert}}
 
-{{#alert "info"}}
-Information alert with Handlebars syntax
+{{#alert type="warning"}}
+Warning alert with `code` and multiple lines of content
 {{/alert}}
 
-{{#alert "warning"}}
-Warning alert using the Handlebars helper
-{{/alert}}
-
-{{#alert "success"}}
-Success message with Handlebars helper
-{{/alert}}
-
-### Available Alert States
+### Available Alert Types
 
 - **info** - Blue, for general information
-- **tip** - Light blue, for helpful advice  
-- **warning** - Orange/yellow, for important warnings
-- **danger** - Red, for critical alerts
 - **success** - Green, for positive messages
-- **neutral** - Gray, for neutral information without sentiment
-
-### When to Use Each Approach
-
-- **Markdown Admonitions** (`:::info`) - Perfect for static content and markdown-first workflows
-- **Handlebars Alert Helper** (`\{{#alert}}`) - Great when you need dynamic content or integration with variables
+- **warning** - Orange/yellow, for important warnings
+- **error** - Red, for critical alerts
+- **blank** - Gray, for neutral information (default)
 
 ### Complex Example with Code
 
 ````markdown
-:::danger
+\{{#alert type="error"}}
 ❌ **Error**: Critical code detected!
 ```javascript
 console.log('Be careful with this');
@@ -410,11 +350,11 @@ process.exit(1);
 ```
 
 Please check your [code file](index.js) and ensure that your code is sanitized.
-:::
+\{{/alert}}
 ````
 
 **Result:**
-:::danger
+{{#alert "error"}}
 ❌ **Error**: Critical code detected!
 ```javascript
 console.log('Be careful with this');
@@ -422,7 +362,7 @@ process.exit(1);
 ```
 
 Please check your [code file](index.js) and ensure that your code is sanitized.
-:::
+{{/alert}}
 
 ## Badges
 
@@ -430,127 +370,83 @@ Here are some examples of the new badge functionality:
 
 ### Basic Badges
 ````markdown
-:::badge
-Default Badge
-:::
+\{{badge "Default Badge"}}
 ````
 
 **Result:**
-:::badge
-Default Badge
-:::
+{{badge "Default Badge"}}
 
 ### Colored Badges  
 ````markdown
-:::badge-primary
-Primary
-:::
-
-:::badge-secondary
-Secondary
-:::
-
-:::badge-accent
-Accent
-:::
-
-:::badge-info
-Info
-:::
-
-:::badge-success
-Success
-:::
-
-:::badge-warning
-Warning
-:::
-
-:::badge-error
-Error
-:::
+\{{badge "Primary" "primary"}}
+\{{badge "Secondary" "secondary"}}
+\{{badge "Accent" "accent"}}
+\{{badge "Info" "info"}}
+\{{badge "Success" "success"}}
+\{{badge "Warning" "warning"}}
+\{{badge "Error" "error"}}
 ````
 
 **Result:**
-:::badge-primary
-Primary
-:::
-
-:::badge-secondary
-Secondary
-:::
-
-:::badge-accent
-Accent
-:::
-
-:::badge-info
-Info
-:::
-
-:::badge-success
-Success
-:::
-
-:::badge-warning
-Warning
-:::
-
-:::badge-error
-Error
-:::
+{{badge "Primary" "primary"}}
+{{badge "Secondary" "secondary"}}
+{{badge "Accent" "accent"}}
+{{badge "Info" "info"}}
+{{badge "Success" "success"}}
+{{badge "Warning" "warning"}}
+{{badge "Error" "error"}}
 
 
 ### Badges in Text
 ````markdown
-You can use badges inline like this :::badge-success Status: Active ::: within your text content.
+You can use badges inline like this \{{badge "Status: Active" "success"}} within your text content.
 ````
 
 **Result:**
-You can use badges inline like this :::badge-success Status: Active ::: within your text content.
+You can use badges inline like this {{badge "Status: Active" "success"}} within your text content.
 
 ### Practical Examples
 
 #### API Documentation
-````markdown
-## Get User :::badge-primary GET :::
-## Create User :::badge-success POST :::
-## Update User :::badge-warning PUT :::
-## Delete User :::badge-error DELETE :::
-````
+```markdown
+## Get User \{{badge "GET" "primary"}}
+## Create User \{{badge "POST" "success"}}
+## Update User \{{badge "PUT" "warning"}}
+## Delete User \{{badge "DELETE" "error"}}
+```
 
 **Result:**
-## Get User :::badge-primary GET :::
-## Create User :::badge-success POST :::
-## Update User :::badge-warning PUT :::
-## Delete User :::badge-error DELETE :::
+## Get User {{badge "GET" "primary"}}
+## Create User {{badge "POST" "success"}}
+## Update User {{badge "PUT" "warning"}}
+## Delete User {{badge "DELETE" "error"}}
 
 #### Version and Status Indicators
-````markdown
-# My Project :::badge-info v2.1.0 ::: :::badge-success Stable :::
+```markdown
+# My Project \{{badge "v2.1.0" "info"}} \{{badge "Stable" "success"}}
 
 Features:
-- Authentication :::badge-success ✅ Complete :::
-- Dashboard :::badge-warning 🚧 In Progress :::
-- Analytics :::badge-outline 📋 Planned :::
-- Mobile App :::badge-error ❌ Deprecated :::
-````
+- Authentication \{{badge "✅ Complete" "success"}}
+- Dashboard \{{badge "🚧 In Progress" "warning"}}
+- Analytics \{{badge "📋 Planned" "outline"}}
+- Mobile App \{{badge "❌ Deprecated" "error"}}
+```
 
 **Result:**
-# My Project :::badge-info v2.1.0 ::: :::badge-success Stable :::
+# My Project {{badge "v2.1.0" "info"}} {{badge "Stable" "success"}}
 
 Features:
-- Authentication :::badge-success ✅ Complete :::
-- Dashboard :::badge-warning 🚧 In Progress :::
-- Analytics :::badge-outline 📋 Planned :::
-- Mobile App :::badge-error ❌ Deprecated :::
+- Authentication {{badge "✅ Complete" "success"}}
+- Dashboard {{badge "🚧 In Progress" "warning"}}
+- Analytics {{badge "📋 Planned" "outline"}}
+- Mobile App {{badge "❌ Deprecated" "error"}}
 
 ## HTML in Markdown
 
 You can also use HTML for more complex formatting:
 
 ```html
-<div style="background: #f0f0f0; padding: 20px; border-radius: 8px;">
+<div>
   <h4>Custom HTML Block</h4>
   <p>Sometimes you need more control over the formatting.</p>
   <ul>
@@ -560,7 +456,7 @@ You can also use HTML for more complex formatting:
 </div>
 ```
 **Result:**
-<div style="background: #f0f0f0; padding: 20px; border-radius: 8px;">
+<div>
   <h4>Custom HTML Block</h4>
   <p>Sometimes you need more control over the formatting.</p>
   <ul>
@@ -574,34 +470,32 @@ You can also use HTML for more complex formatting:
 
 This page demonstrates both the old Handlebars tabs syntax and the new markdown tabs syntax.
 
-## New Markdown Tabs Syntax
+## Tabs Syntax
 
-You can now use pure markdown syntax for tabs:
+Create interactive tabbed content using Handlebars helpers:
 
-<div>
-<pre>
-&#58;&#58;&#58;tabs
-&#58;&#58;&#58;tab JavaScript
+````markdown
+\{{#tabs}}
+\{{#tab title="JavaScript"}}
 ```javascript
 const message = "Hello from JavaScript!";
 console.log(message);
 // more code here
 ```
-&#58;&#58;&#58;
-&#58;&#58;&#58;tab Python
+\{{/tab}}
+\{{#tab title="Python"}}
 ```python
 def main():
 # more code here
 ```
-&#58;&#58;&#58;
-&#58;&#58;&#58;
-</pre>
-</div>
+\{{/tab}}
+\{{/tabs}}
+````
 
 **Result:**
 
-:::tabs
-:::tab JavaScript
+{{#tabs}}
+{{#tab title="JavaScript"}}
 ```javascript
 const message = "Hello from JavaScript!";
 console.log(message);
@@ -611,8 +505,8 @@ fetch('/api/users')
   .then(response => response.json())
   .then(data => console.log(data));
 ```
-:::
-:::tab Python
+{{/tab}}
+{{#tab title="Python"}}
 ```python
 def main():
     message = "Hello from Python!"
@@ -630,8 +524,8 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-:::
-:::tab cURL
+{{/tab}}
+{{#tab title="cURL"}}
 ```bash
 # Get users from API
 curl -X GET \
@@ -639,14 +533,14 @@ curl -X GET \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer your-token'
 ```
-:::
-:::
+{{/tab}}
+{{/tabs}}
 
 
 ## Another Example with Mixed Content
 
-:::tabs
-:::tab Overview
+{{#tabs}}
+{{#tab title="Overview"}}
 Here's some regular markdown content in a tab.
 
 - Feature A: Does something cool
@@ -654,8 +548,8 @@ Here's some regular markdown content in a tab.
 - Feature C: Does something amazing
 
 > **Note**: This tab contains mixed content - not just code!
-:::
-:::tab TypeScript
+{{/tab}}
+{{#tab title="TypeScript"}}
 ```typescript
 interface User {
   id: number;
@@ -670,8 +564,8 @@ class UserService {
   }
 }
 ```
-:::
-:::tab Configuration
+{{/tab}}
+{{#tab title="Configuration"}}
 ```yaml
 # config.yml
 api:
@@ -684,44 +578,9 @@ features:
   enableLogging: true
   enableMetrics: false
 ```
-:::
-:::
-
-## Tabs with Handlebars Syntax
-
-````
-\{{#tabs}}
-  \{{#tab title="JavaScript"}}
-    ```js
-    const oldWay = "This still works!";
-    console.log(oldWay);
-    ```
-  \{{/tab}}
-  \{{#tab title="Python"}}
-    ```python
-    old_way = "This still works!"
-    print(old_way)
-    ```
-  \{{/tab}}
-\{{/tabs}}
-````
-
-**Result:**
-
-{{#tabs}}
-  {{#tab title="JavaScript"}}
-    ```js
-    const oldWay = "This still works!";
-    console.log(oldWay);
-    ```
-  {{/tab}}
-  {{#tab title="Python"}}
-    ```python
-    old_way = "This still works!"
-    print(old_way)
-    ```
-  {{/tab}}
+{{/tab}}
 {{/tabs}}
+
 
 ## Best Practices
 

@@ -1,8 +1,11 @@
 ---
 title: Documentation Reference
+handlebars: true
 ---
 
-# Documentation Reference
+# Documentation Reference 
+
+{{badge okidoki_version}}
 
 Complete reference for OkiDoki documentation generator.
 
@@ -169,7 +172,7 @@ globals:
   support_email: "support@example.com"
 ```
 
-Use in markdown with `{{globals.version}}`, `{{{globals.api_url}}}`, etc.
+Use in markdown with `\{{globals.version}}`, `\{{globals.api_url}}`, etc.
 
 #### Search Configuration
 ```yaml
@@ -247,7 +250,7 @@ menu:
 ```
 
 **Badge Properties:**
-- `variant` - Badge style: `"info"`, `"success"`, `"warning"`, `"error"`, or `"neutral"`
+- `variant` - Badge style: `"info"`, `"success"`, `"warning"`, `"error"`, or `"outline"`
 - `text` - Badge text content (keep it short)
 
 #### Advanced Example
@@ -441,153 +444,90 @@ javascript, typescript, python, java, php, go, rust, c, cpp, html, css, yaml, js
 Use global variables defined in `okidoki.yaml`:
 
 ```markdown
-Current version: {{version}}
-API endpoint: {{{api_url}}}
-Contact: {{{support_email}}}
+Current version: \{{version}}
+API endpoint: \{{{api_url}}}
+Contact: \{{{support_email}}}
 ```
-:::tip
-Use 3 curly brackets to `{{{encode_variable}}}`
-:::
+{{alert "Use 3 curly brackets to encode {{{variables}}}"}}
 
 ### Important Messages & Callouts
 
-OkiDoki provides **two ways** to create styled message callouts:
-
-#### 1. Markdown Admonitions
+Create styled message callouts using Handlebars alert helpers:
 
 ```markdown
-:::info
-This is an info callout.
-:::
+\{{alert "This is an info callout." "info"}}
 
-:::tip
-This is a tip callout.
-:::
+\{{alert "This is a success callout." "success"}}
 
-:::warning
-This is a warning callout.
-:::
+\{{alert "This is a warning callout." "warning"}}
 
-:::danger
-This is a danger callout.
-:::
+\{{alert "This is a danger callout." "error"}}
 
-:::success
-This is a success callout.
-:::
-
-:::neutral
-This is a neutral callout.
-:::
+\{{alert "This is a neutral callout."}}
 ```
 
-#### 2. Handlebars Alert Helper
+#### For Complex Content
 
-For use in pages with `handlebars: true` in frontmatter:
+For alerts with markdown content, use the block syntax:
 
 ```markdown
-{{#alert}}
-Default neutral alert
-{{/alert}}
+\{{#alert}}
+Default neutral alert with **markdown** support
+\{{/alert}}
 
-{{#alert "info"}}
-Information alert
-{{/alert}}
-
-{{#alert "warning"}}
-Warning alert
-{{/alert}}
-
-{{#alert "success"}}
-Success alert
-{{/alert}}
+\{{#alert "info"}}
+Information alert with [links](https://example.com) and `code`
+\{{/alert}}
 ```
 
-#### Available States
+#### Available Alert Types
 
-- **info** - Blue background, for general information
-- **tip** - Light blue, for helpful advice
-- **warning** - Orange/yellow, for important warnings  
-- **danger** - Red, for critical alerts
+- **info** - Blue, for general information
 - **success** - Green, for positive confirmations
-- **neutral** - Gray, for neutral information without emotional context
-
-#### Usage Guidelines
-
-- **Markdown Admonitions** - Use for static content and markdown-first workflows
-- **Handlebars Alert Helper** - Use when you need dynamic content or variable integration
-- **Neutral State** - Perfect for displaying information without implying positive/negative sentiment
+- **warning** - Orange/yellow, for important warnings  
+- **error** - Red, for critical alerts
+- **blank** - Gray, for neutral information (default)
 
 ### Badges
 
-Badges are small visual indicators that can be used to show status, versions, categories, or other metadata.
+Use Handlebars badge helpers for status indicators, versions, and metadata:
 
 #### Basic Badge Syntax
 
 ```markdown
-:::badge
-Default Badge
-:::
+\{{badge "Default Badge"}}
 ```
 
 #### Colored Badges
 
 ```markdown
-:::badge-primary
-Primary
-:::
-
-:::badge-secondary
-Secondary
-:::
-
-:::badge-accent
-Accent
-:::
-
-:::badge-info
-Info
-:::
-
-:::badge-success
-Success
-:::
-
-:::badge-warning
-Warning
-:::
-
-:::badge-error
-Error
-:::
+\{{badge "Primary" "primary"}}
+\{{badge "Secondary" "secondary"}}
+\{{badge "Accent" "accent"}}
+\{{badge "Info" "info"}}
+\{{badge "Success" "success"}}
+\{{badge "Warning" "warning"}}
+\{{badge "Error" "error"}}
 ```
-
 
 #### Inline Badges
 
-You can use badges inline within text content:
-
 ```markdown
-You can use badges inline like this :::badge-success Status: Active ::: within your text content.
+You can use badges inline like this \{{badge "Status: Active" "success"}} within your content.
 ```
 
 #### Common Use Cases
 
-- **Version indicators**: `:::badge-info v2.1.0 :::`
-- **Status badges**: `:::badge-success Stable :::`
-- **API method badges**: `:::badge-primary GET :::`
-- **Feature flags**: `:::badge-warning Beta :::`
-- **Categories**: `:::badge-secondary API :::`
+- **Version indicators**: `\{{badge "v2.1.0" "info"}}`
+- **Status badges**: `\{{badge "Stable" "success"}}`
+- **API method badges**: `\{{badge "GET" "primary"}}`
+- **Feature flags**: `\{{badge "Beta" "warning"}}`
 
-#### Sidebar vs Content Badges
+#### Sidebar Badges
 
-Content badges work in markdown files as shown above, while sidebar badges are configured in `sidebars.yaml` using a different format:
+Sidebar badges are configured in `sidebars.yaml`:
 
 ```yaml
-# Content badges (in markdown files)
-:::badge-info New Feature :::
-
-# Sidebar badges (in sidebars.yaml)
 menu:
   - title: "Getting Started"
     document: /start.md
@@ -595,8 +535,6 @@ menu:
       variant: "info"
       text: "new feature"
 ```
-
-Both approaches allow you to highlight important information, with sidebar badges appearing in navigation and content badges appearing inline in your documentation.
 
 ### Tables
 
@@ -666,6 +604,6 @@ Generated files in `dist/` directory include HTML, CSS, JS, search index, and `s
 
 ## Version Information
 
-- Current Version: 1.0.1
+- Current Version: {{okidoki_version}}
 - Node.js: Requires Node 14+
 - Browser Support: Modern browsers (Chrome, Firefox, Safari, Edge) 
