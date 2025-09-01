@@ -19,6 +19,11 @@ menu:
         document: /markdown-examples.md
       - title: "Deployment Guide"
         document: /deployment.md
+      - title: "Plugins"
+        document: /plugins.md
+        badge:
+          variant: "success"
+          text: "new"
       - title: "Help & Troubleshooting"
         document: /help.md
   - title: "Examples"
@@ -36,9 +41,7 @@ menu:
       - title: "Museum API"
         document: /examples/museum-api.md
         exclude_from_search: true
-        badge:
-          variant: "success"
-          text: "new"
+        
   - title: "GitHub Repository 🔗"
     url: "https://github.com/jbeejones/okidoki"
     
