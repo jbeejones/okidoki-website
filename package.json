@@ -1,6 +1,6 @@
 {
   "name": "okidoki-landing",
-  "version": "1.0.0",
+  "version": "1.0.44",
   "description": "OkiDoki landing page with compiled Tailwind CSS",
   "type": "module",
   "scripts": {
