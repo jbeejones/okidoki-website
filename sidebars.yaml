@@ -19,6 +19,11 @@ menu:
         document: /markdown-examples.md
       - title: "Deployment Guide"
         document: /deployment.md
+      #- title: "Tool Comparison"
+      #  document: /documentation-generator-comparison.md
+      #  badge:
+      #    variant: "info"
+      #    text: "new"
       - title: "Plugins"
         document: /plugins.md
         badge:
