@@ -103,27 +103,13 @@ Example screenshot from [Codehooks.io](https://codehooks.io) using Docusaurus fo
 - **Multi-Language Products**: International products requiring comprehensive i18n support
 - **Long-Term Projects**: Documentation sites that will evolve significantly over time
 
+**Getting Started:**
 ```bash
-# Create new Docusaurus project
 npx create-docusaurus@latest my-website classic
-
-# Start development server with hot reload
-cd my-website
-npm start
-
-# Add custom React component
-echo 'export default function CustomDemo() { return <div>Interactive Demo</div>; }' > src/components/CustomDemo.js
-
-# Use in markdown with MDX
-echo '# API Documentation\n\nimport CustomDemo from "@site/src/components/CustomDemo";\n\n<CustomDemo />' > docs/api.md
-
-# Build for production with optimizations
-npm run build
-
-# Deploy with various providers
-npm run deploy # GitHub Pages
-# or use build output in 'build/' folder for other hosting
+cd my-website && npm start
 ```
+
+**Workflow:** Create docs in `/docs` folder, customize React components in `/src`, configure plugins in `docusaurus.config.js`. The magic happens when you need complex features like versioning or want to embed interactive React components directly in your markdown using MDX syntax.
 
 ---
 
@@ -199,46 +185,13 @@ VitePress leverages Vite's lightning-fast build system and Vue's reactive compon
 - **Interactive Documentation**: Projects requiring rich interactive examples and component demos
 - **Medium to Large Projects**: Documentation sites that need scalability without complexity overhead
 
+**Getting Started:**
 ```bash
-# Initialize new VitePress project
 npm init vitepress@latest my-docs
-cd my-docs
-
-# Install dependencies
-npm install
-
-# Start development server with instant HMR
-npm run docs:dev
-
-# Create Vue component for interactive demo
-cat > .vitepress/components/ApiDemo.vue << 'EOF'
-<template>
-  <div class="api-demo">
-    <input v-model="apiKey" placeholder="Enter API key" />
-    <button @click="testApi">Test API</button>
-    <pre v-if="response">{{ response }}</pre>
-  </div>
-</template>
-
-<script setup>
-import { ref } from 'vue'
-const apiKey = ref('')
-const response = ref(null)
-const testApi = () => {
-  response.value = { success: true, key: apiKey.value }
-}
-</script>
-EOF
-
-# Use component in markdown
-echo '# API Documentation\n\n<script setup>\nimport ApiDemo from "../.vitepress/components/ApiDemo.vue"\n</script>\n\n<ApiDemo />' > docs/api.md
-
-# Build optimized production site
-npm run docs:build
-
-# Preview production build locally
-npm run docs:preview
+cd my-docs && npm run docs:dev
 ```
+
+**Workflow:** Write markdown files in `/docs`, configure in `.vitepress/config.js`. The standout feature is seamless Vue component integration - you can create `.vue` components and use them directly in markdown with Vue's template syntax, powered by Vite's lightning-fast development server.
 
 ---
 
@@ -249,7 +202,7 @@ npm run docs:preview
 **Core Philosophy & Workflow:**
 GitBook transforms documentation from a developer-centric activity into a collaborative team process. It's designed for organizations where non-technical team members (product managers, technical writers, customer success teams) need to contribute to documentation alongside developers, creating a unified knowledge base that serves both internal and external audiences.
 
-![GitBook Documentation Interface](/img/gitbook-screenshot.png "GitBook's polished collaborative interface with real-time editing and team features"]
+![GitBook Documentation Interface](/img/gitbook-screenshot.png "GitBook's polished collaborative interface with real-time editing and team features")
 
 **Key Features & Capabilities:**
 
@@ -315,27 +268,14 @@ GitBook transforms documentation from a developer-centric activity into a collab
 - **Content-Heavy Projects**: Documentation sites with extensive multimedia content and complex organization
 - **Regulated Industries**: Organizations requiring audit trails, access controls, and compliance documentation
 
-**Workflow Example:**
+**Getting Started:**
 ```bash
-# GitBook workflow (primarily web-based)
-
-# 1. Create space and invite team members
-# 2. Set up Git synchronization (one-time setup)
+# Create space on GitBook.com
+# Optional: Connect Git repository for two-way sync
 git remote add gitbook https://gitbook.com/organization/space.git
-
-# 3. Developers work locally with Git
-echo "# API Reference" > api-docs.md
-git add api-docs.md
-git commit -m "Add API documentation"
-git push origin main
-
-# 4. GitBook automatically syncs and publishes
-# 5. Non-technical team members edit in GitBook web interface
-# 6. All changes sync bidirectionally
-
-# 7. Analytics and insights available in dashboard
-# 8. Custom domain and professional publishing
 ```
+
+**Workflow:** Primarily web-based collaboration through GitBook's visual editor. Developers can work in their IDE with Git sync, while non-technical team members edit directly in the browser. The key advantage is real-time collaborative editing with professional publishing and team management features.
 
 ---
 
@@ -346,7 +286,7 @@ git push origin main
 **Core Philosophy & Workflow:**
 MkDocs embraces the Python philosophy of simplicity and readability, providing a documentation system that's powerful enough for complex projects yet simple enough for quick personal wikis. It's particularly beloved in the Python community for its clean configuration, extensive plugin ecosystem, and the stunning Material theme that sets the gold standard for technical documentation design.
 
-![MkDocs Material Theme Interface](/img/mkdocs-screenshot.png "MkDocs with Material theme showing its beautiful Material Design interface and navigation"]
+![MkDocs Material Theme Interface](/img/mkdocs-screenshot.png "MkDocs with Material theme showing its beautiful Material Design interface and navigation")
 
 **Key Features & Capabilities:**
 
@@ -412,104 +352,14 @@ MkDocs embraces the Python philosophy of simplicity and readability, providing a
 - **Academic & Research**: Ideal for research documentation, tutorials, and educational content
 - **Corporate Documentation**: Professional appearance suitable for enterprise documentation standards
 
-````bash
-# Complete MkDocs setup with Material theme
-pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-git-revision-date-localized-plugin
-
-# Create new project
+**Getting Started:**
+```bash
+pip install mkdocs-material
 mkdocs new my-project-docs
-cd my-project-docs
-
-# Configure Material theme with advanced features
-cat > mkdocs.yml << 'EOF'
-site_name: My Project Documentation
-theme:
-  name: material
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.code.annotate
-    - content.code.copy
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-plugins:
-  - search
-  - awesome-pages
-  - git-revision-date-localized:
-      type: date
-
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - admonition
-  - pymdownx.details
-  - pymdownx.tabbed:
-      alternate_style: true
-  - attr_list
-  - md_in_html
-EOF
-
-# Start development server
-mkdocs serve
-
-# Add content with advanced features
-cat > docs/advanced-example.md << 'EOF'
-# Advanced Features Demo
-
-## Tabbed Content
-=== "Python"
-    ```python
-    def hello_world():
-        print("Hello, World!")
-    ```
-=== "JavaScript"
-    ```javascript
-    function helloWorld() {
-        console.log("Hello, World!");
-    }
-    ```
-
-## Mermaid Diagram
-```mermaid
-graph TD
-    A[Start] --> B{Decision}
-    B -->|Yes| C[Action 1]
-    B -->|No| D[Action 2]
+cd my-project-docs && mkdocs serve
 ```
 
-!!! note "Professional Admonition"
-    This is a professional-looking note block with Material Design styling.
-EOF
-
-# Build optimized production site
-mkdocs build
-
-# Deploy to GitHub Pages
-mkdocs gh-deploy
-````
+**Workflow:** Configure everything in `mkdocs.yml`, write markdown in `/docs`. The Material theme transforms your content into a beautiful, responsive site with features like tabbed content blocks (`=== "Tab Name"`), admonition blocks (`!!! note`), and automatic code documentation from Python docstrings. The plugin ecosystem handles everything from search to PDF generation.
 
 ---
 
@@ -520,7 +370,7 @@ mkdocs gh-deploy
 **Core Philosophy & Workflow:**
 Nextra bridges the gap between the flexibility of Next.js and the simplicity of static site generation, creating a documentation platform that feels familiar to React developers while maintaining the ease of markdown-based content creation. It leverages Next.js's full-stack capabilities to create documentation sites that can scale from simple static pages to complex interactive applications.
 
-![Nextra Documentation Interface](/img/nextra-screenshot.png "Nextra's modern Next.js-powered interface with clean design and React integration"]
+![Nextra Documentation Interface](/img/nextra-screenshot.png "Nextra's modern Next.js-powered interface with clean design and React integration")
 
 **Key Features & Capabilities:**
 
@@ -587,80 +437,13 @@ Nextra bridges the gap between the flexibility of Next.js and the simplicity of 
 - **Scalable Documentation**: Projects that may grow from simple docs to complex interactive platforms
 - **Enterprise Applications**: Large-scale applications needing authentication, analytics, and advanced features
 
+**Getting Started:**
 ```bash
-# Create new Nextra project
 npx create-nextra-app@latest my-docs --theme=docs
-
-# Or add to existing Next.js project
-cd my-nextjs-app
-npm install nextra nextra-theme-docs
-
-# Configure next.config.js
-cat > next.config.js << 'EOF'
-const withNextra = require('nextra')({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx'
-})
-
-module.exports = withNextra()
-EOF
-
-# Configure theme
-cat > theme.config.tsx << 'EOF'
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
-
-const config: DocsThemeConfig = {
-  logo: <span>My Documentation</span>,
-  project: {
-    link: 'https://github.com/my-org/my-repo',
-  },
-  footer: {
-    text: 'My Documentation © 2024',
-  },
-}
-
-export default config
-EOF
-
-# Create interactive MDX content
-cat > pages/api-reference.mdx << 'EOF'
-import { useState } from 'react'
-
-# API Reference
-
-<ApiDemo />
-
-export function ApiDemo() {
-  const [response, setResponse] = useState(null)
-  
-  return (
-    <div className="border p-4 rounded-lg">
-      <button 
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-        onClick={() => setResponse({ message: "API call successful!" })}
-      >
-        Test API
-      </button>
-      {response && (
-        <pre className="mt-4 bg-gray-100 p-2 rounded">
-          {JSON.stringify(response, null, 2)}
-        </pre>
-      )}
-    </div>
-  )
-}
-EOF
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Deploy to Vercel
-npx vercel --prod
+cd my-docs && npm run dev
 ```
+
+**Workflow:** Create `.mdx` files in `/pages` with Next.js file-based routing. Configure in `theme.config.tsx`. The power comes from MDX - you can import React components, use hooks like `useState`, and create fully interactive documentation with server-side capabilities. Perfect when your docs need to be more than static content.
 
 ---
 
@@ -671,7 +454,7 @@ npx vercel --prod
 **Core Philosophy & Workflow:**
 Slate revolutionizes API documentation with its signature three-column layout that presents documentation, code examples, and language-specific samples in a unified, scannable interface. It's specifically engineered for API documentation workflows, where developers need to quickly understand endpoints, see request/response examples, and copy working code in their preferred programming language.
 
-![Slate API Documentation Interface](/img/slate-screenshot.png "Slate's distinctive three-column layout optimized for API documentation with code examples"]
+![Slate API Documentation Interface](/img/slate-screenshot.png "Slate's distinctive three-column layout optimized for API documentation with code examples")
 
 **Key Features & Capabilities:**
 
@@ -748,177 +531,14 @@ Slate revolutionizes API documentation with its signature three-column layout th
 - **Multi-Language API Support**: APIs with client libraries in multiple programming languages  
 - **Professional API Products**: Commercial APIs requiring polished, professional documentation presentation
 
-````bash
-# Clone Slate repository
+**Getting Started:**
+```bash
 git clone https://github.com/slatedocs/slate.git my-api-docs
-cd my-api-docs
-
-# Install Ruby dependencies
-bundle install
-
-# Start development server with live reload
+cd my-api-docs && bundle install
 bundle exec middleman server
-
-# Customize API documentation
-cat > source/index.html.md << 'EOF'
----
-title: My API Reference
-
-language_tabs:
-  - shell: cURL
-  - javascript: Node.js
-  - python: Python
-  - ruby: Ruby
-
-toc_footers:
-  - <a href='#'>Sign Up for Developer Key</a>
-  - <a href='https://github.com/my-company/api-docs'>Documentation Source</a>
-
-includes:
-  - errors
-
-search: true
-
-code_clipboard: true
----
-
-# Introduction
-
-Welcome to the My API documentation! You can use our API to access My API endpoints.
-
-We have language bindings in Shell, JavaScript, Python, and Ruby! You can view code examples in the dark area to the right, and you can switch the programming language with the tabs in the top right.
-
-# Authentication
-
-> To authorize, use this code:
-
-```shell
-curl "https://api.myservice.com/v1/endpoint" \
-  -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-```javascript
-const response = await fetch('https://api.myservice.com/v1/endpoint', {
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY'
-  }
-});
-```
-
-```python
-import requests
-
-headers = {
-    'Authorization': 'Bearer YOUR_API_KEY'
-}
-response = requests.get('https://api.myservice.com/v1/endpoint', headers=headers)
-```
-
-```ruby
-require 'net/http'
-require 'uri'
-
-uri = URI('https://api.myservice.com/v1/endpoint')
-http = Net::HTTP.new(uri.host, uri.port)
-http.use_ssl = true
-
-request = Net::HTTP::Get.new(uri)
-request['Authorization'] = 'Bearer YOUR_API_KEY'
-response = http.request(request)
-```
-
-> Make sure to replace `YOUR_API_KEY` with your API key.
-
-Our API uses API keys to allow access to the API. You can register a new API key at our [developer portal](https://developers.myservice.com).
-
-Our API expects the API key to be included in all API requests in a header that looks like the following:
-
-`Authorization: Bearer YOUR_API_KEY`
-
-# Users
-
-## Get All Users
-
-```shell
-curl "https://api.myservice.com/v1/users" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
-
-```javascript
-const response = await fetch('https://api.myservice.com/v1/users', {
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY'
-  }
-});
-const users = await response.json();
-```
-
-```python
-import requests
-
-headers = {'Authorization': 'Bearer YOUR_API_KEY'}
-response = requests.get('https://api.myservice.com/v1/users', headers=headers)
-users = response.json()
-```
-
-```ruby
-require 'net/http'
-require 'json'
-
-uri = URI('https://api.myservice.com/v1/users')
-http = Net::HTTP.new(uri.host, uri.port)
-http.use_ssl = true
-
-request = Net::HTTP::Get.new(uri)
-request['Authorization'] = 'Bearer YOUR_API_KEY'
-response = http.request(request)
-users = JSON.parse(response.body)
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john@example.com",
-    "created_at": "2024-01-15T10:30:00Z"
-  },
-  {
-    "id": 2,
-    "name": "Jane Smith", 
-    "email": "jane@example.com",
-    "created_at": "2024-01-16T14:20:00Z"
-  }
-]
-```
-
-This endpoint retrieves all users.
-
-### HTTP Request
-
-`GET https://api.myservice.com/v1/users`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-limit | 10 | Number of users to return
-offset | 0 | Number of users to skip
-sort | created_at | Field to sort by
-order | desc | Sort order (asc or desc)
-EOF
-
-# Build optimized production site
-bundle exec middleman build --clean
-
-# Deploy to GitHub Pages (if configured)
-bundle exec middleman deploy
-
-# Deploy to custom hosting
-rsync -avz build/ user@server:/var/www/api-docs/
-````
+**Workflow:** Edit everything in one file `source/index.html.md` with special YAML frontmatter for language tabs. The signature three-column layout automatically displays your documentation on the left and code examples in multiple languages on the right. Perfect for REST APIs where you want to show the same endpoint in cURL, JavaScript, Python, etc.
 
 ---
 
@@ -939,7 +559,7 @@ OkiDoki follows the "convention over configuration" principle, designed for deve
 
 - 🎨 **DaisyUI Theme System**: Comes with 30+ built-in themes powered by DaisyUI and Tailwind CSS. Switch between light/dark modes, seasonal themes, or professional corporate looks with a single configuration change.
 
-- 🧩 **Handlebars Helper System**: Leverage the familiar Handlebars templating system that millions of developers already know. Use built-in helpers like `{{alert}}`, `{{badge}}`, `{{tabs}}` for rich content, or create custom helpers for specialized functionality. No proprietary templating language to learn.
+- 🧩 **Handlebars Helper System**: Leverage the familiar Handlebars templating system that millions of developers already know. Use built-in helpers like `\{{alert}}`, `\{{badge}}`, `\{{tabs}}` for rich content, or create custom helpers for specialized functionality. No proprietary templating language to learn.
 
 - 🔍 **Client-Side Full-Text Search**: Generates a search index at build time that enables instant, full-text search without requiring a server. Works completely offline and provides search suggestions and result highlighting.
 
@@ -950,7 +570,7 @@ OkiDoki follows the "convention over configuration" principle, designed for deve
 **Developer Workflow:**
 1. **Initialize**: `okidoki init` creates the basic structure with example content
 2. **Write**: Create `.md` files in the `docs/` folder using standard markdown syntax
-3. **Preview**: `okidoki serve` provides live reload during development
+3. **Preview**: `npx serve dist` provides live reload during development
 4. **Build**: `okidoki generate` creates the complete static site in the `dist/` folder
 5. **Deploy**: Upload the `dist/` folder to any hosting service
 
@@ -976,60 +596,15 @@ OkiDoki follows the "convention over configuration" principle, designed for deve
 - **Performance-Critical Sites**: When site speed and build time are priorities
 - **Flexible Deployment**: Projects that need to deploy across multiple environments or CDNs
 
-**Example setup:**
+**Getting Started:**
 ```bash
-# Global installation
 npm install -g okidoki
-
-# Initialize new docs project
 mkdir my-project-docs && cd my-project-docs
-okidoki init
-
-# Start writing immediately with Handlebars helpers
-cat > docs/index.md << 'EOF'
----
-title: "My API Documentation"
-handlebars: true
----
-
-# My API Documentation
-
-{{alert "success" "Welcome to our comprehensive API documentation!"}}
-
-## Quick Start
-
-{{#tabs}}
-{{#tab "JavaScript"}}
-```javascript
-const api = new MyAPI('your-api-key');
-const response = await api.getData();
+okidoki init 
+okidoki generate && npx serve dist
 ```
-{{/tab}}
-{{#tab "Python"}}
-```python
-from myapi import Client
-client = Client('your-api-key')
-response = client.get_data()
-```
-{{/tab}}
-{{/tabs}}
 
-## Status {{badge "v2.1" "primary"}}
-
-Our API is {{badge "Active" "success"}} and ready for production use.
-EOF
-
-echo "# Getting Started Guide" > docs/getting-started.md
-
-# Preview with live reload
-okidoki serve
-
-# Build for production
-okidoki generate
-
-# Deploy to any static host
-cp -r dist/* /var/www/html/
-```
+**Workflow:** Write markdown files in `/docs` folder, add Handlebars helpers like `\{{alert}}`, `\{{badge}}`, and `\{{#tabs}}` for rich content. The magic is in the simplicity - no configuration files, no build processes to learn, just markdown with helpful extras. Run `okidoki generate` and deploy the `/dist` folder anywhere.
 
 ---
 
@@ -1074,7 +649,7 @@ cp -r dist/* /var/www/html/
 ## Getting Started Recommendations
 
 {{#tabs}}
-{{#tab "Beginner"}}
+{{#tab title="Beginner"}}
 **Just want docs quickly?**
 
 1. **GitBook** - If you prefer web interface
@@ -1084,7 +659,7 @@ cp -r dist/* /var/www/html/
 Start simple, upgrade later if needed.
 {{/tab}}
 
-{{#tab "Developer"}}
+{{#tab title="Developer"}}
 **Technical team with specific needs?**
 
 1. **Docusaurus** - For React projects
@@ -1095,7 +670,7 @@ Start simple, upgrade later if needed.
 Match your existing tech stack.
 {{/tab}}
 
-{{#tab "Enterprise"}}
+{{#tab title="Enterprise"}}
 **Large team with complex requirements?**
 
 1. **GitBook** - For non-technical collaboration
@@ -1110,10 +685,8 @@ Consider collaboration needs vs. customization requirements.
 
 ## Migration Path
 
-{{alert "success" "**Pro Tip:** You can always start simple with OkiDoki and migrate to more complex tools as your needs grow. Your markdown content is portable across all these platforms."}}
+{{alert "**Pro Tip:** You can always start simple with OkiDoki and migrate to more complex tools as your needs grow. Your markdown content is portable across all these platforms."}}
 
 Most documentation generators support standard markdown, so you're not locked into your first choice. Start with the simplest solution that meets your immediate needs.
 
 ---
-
-*This comparison is updated regularly. Last updated: {{settings.okidoki_version}}* 
