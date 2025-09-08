@@ -40,7 +40,13 @@ Choosing the right documentation generator can make or break your documentation 
 
 ### **Docusaurus** - Feature-Rich Powerhouse
 
-**Open Source** • **React** • **Meta/Facebook**
+{{badge "Open Source" "success"}} {{badge "React" "info"}} {{badge "Meta/Facebook" "neutral"}}
+
+**Links & Resources:**
+- **Main Website:** [docusaurus.io](https://docusaurus.io)
+- **Documentation:** [docusaurus.io/docs](https://docusaurus.io/docs)
+- **GitHub Repository:** [facebook/docusaurus](https://github.com/facebook/docusaurus)
+- **Showcase:** [docusaurus.io/showcase](https://docusaurus.io/showcase)
 
 **Core Philosophy & Workflow:**
 Docusaurus is built for large-scale documentation projects that need enterprise-grade features like versioning, internationalization, and complex content management. It embraces React's component model, allowing developers to create rich, interactive documentation experiences that go far beyond static content.
@@ -115,7 +121,13 @@ cd my-website && npm start
 
 ### **VitePress** - Vue-Powered Speed
 
-**Open Source** • **Vue** • **Evan You**
+{{badge "Open Source" "success"}} {{badge "Vue" "info"}} {{badge "Evan You" "neutral"}}
+
+**Links & Resources:**
+- **Main Website:** [vitepress.dev](https://vitepress.dev)
+- **Documentation:** [vitepress.dev/guide](https://vitepress.dev/guide)
+- **GitHub Repository:** [vuejs/vitepress](https://github.com/vuejs/vitepress)
+- **Examples:** [vitepress.dev/guide/examples](https://vitepress.dev/guide/examples)
 
 **Core Philosophy & Workflow:**
 VitePress leverages Vite's lightning-fast build system and Vue's reactive component model to create documentation sites that excel in both developer experience and end-user performance. It's designed for teams who want modern tooling without sacrificing simplicity, offering the perfect balance between power and ease of use.
@@ -197,7 +209,13 @@ cd my-docs && npm run docs:dev
 
 ### **GitBook** - Collaborative Platform
 
-**Commercial** • **SaaS** • **Team-Focused**
+{{badge "Commercial" "warning"}} {{badge "SaaS" "info"}} {{badge "Team-Focused" "neutral"}}
+
+**Links & Resources:**
+- **Main Website:** [gitbook.com](https://www.gitbook.com)
+- **Documentation:** [docs.gitbook.com](https://docs.gitbook.com)
+- **Pricing:** [gitbook.com/pricing](https://www.gitbook.com/pricing)
+- **GitHub Integration:** [docs.gitbook.com/integrations/git-sync](https://docs.gitbook.com/integrations/git-sync)
 
 **Core Philosophy & Workflow:**
 GitBook transforms documentation from a developer-centric activity into a collaborative team process. It's designed for organizations where non-technical team members (product managers, technical writers, customer success teams) need to contribute to documentation alongside developers, creating a unified knowledge base that serves both internal and external audiences.
@@ -281,7 +299,13 @@ git remote add gitbook https://gitbook.com/organization/space.git
 
 ### **MkDocs** - Python Ecosystem Favorite
 
-**Open Source** • **Python** • **Material Theme**
+{{badge "Open Source" "success"}} {{badge "Python" "info"}} {{badge "Material Theme" "neutral"}}
+
+**Links & Resources:**
+- **Main Website:** [mkdocs.org](https://www.mkdocs.org)
+- **Material Theme:** [squidfunk.github.io/mkdocs-material](https://squidfunk.github.io/mkdocs-material)
+- **GitHub Repository:** [mkdocs/mkdocs](https://github.com/mkdocs/mkdocs)
+- **Plugin Catalog:** [github.com/mkdocs/catalog](https://github.com/mkdocs/catalog)
 
 **Core Philosophy & Workflow:**
 MkDocs embraces the Python philosophy of simplicity and readability, providing a documentation system that's powerful enough for complex projects yet simple enough for quick personal wikis. It's particularly beloved in the Python community for its clean configuration, extensive plugin ecosystem, and the stunning Material theme that sets the gold standard for technical documentation design.
@@ -365,7 +389,13 @@ cd my-project-docs && mkdocs serve
 
 ### **Nextra** - Next.js Integration
 
-**Open Source** • **Next.js** • **Vercel**
+{{badge "Open Source" "success"}} {{badge "Next.js" "info"}} {{badge "Vercel" "neutral"}}
+
+**Links & Resources:**
+- **Main Website:** [nextra.site](https://nextra.site)
+- **Documentation:** [nextra.site/docs](https://nextra.site/docs)
+- **GitHub Repository:** [shuding/nextra](https://github.com/shuding/nextra)
+- **Examples:** [nextra.site/docs/guide/organize-files](https://nextra.site/docs/guide/organize-files)
 
 **Core Philosophy & Workflow:**
 Nextra bridges the gap between the flexibility of Next.js and the simplicity of static site generation, creating a documentation platform that feels familiar to React developers while maintaining the ease of markdown-based content creation. It leverages Next.js's full-stack capabilities to create documentation sites that can scale from simple static pages to complex interactive applications.
@@ -449,7 +479,13 @@ cd my-docs && npm run dev
 
 ### **Slate** - API Documentation Specialist
 
-**Open Source** • **Ruby/Middleman** • **API-Focused**
+{{badge "Open Source" "success"}} {{badge "Ruby/Middleman" "info"}} {{badge "API-Focused" "neutral"}}
+
+**Links & Resources:**
+- **GitHub Repository:** [slatedocs/slate](https://github.com/slatedocs/slate)
+- **Live Example:** [slatedocs.github.io/slate](https://slatedocs.github.io/slate)
+- **Getting Started:** [github.com/slatedocs/slate/wiki](https://github.com/slatedocs/slate/wiki)
+- **Showcase:** Popular sites using Slate include Stripe, Shopify, and NASA APIs
 
 **Core Philosophy & Workflow:**
 Slate revolutionizes API documentation with its signature three-column layout that presents documentation, code examples, and language-specific samples in a unified, scannable interface. It's specifically engineered for API documentation workflows, where developers need to quickly understand endpoints, see request/response examples, and copy working code in their preferred programming language.
@@ -544,12 +580,17 @@ bundle exec middleman server
 
 ### **OkiDoki** - Simple & Fast
 
-**Open Source** • **Node.js** • **Zero Dependencies in Output**
+{{badge "Open Source" "success"}} {{badge "Node.js" "info"}} {{badge "Zero Dependencies in Output" "neutral"}}
+
+**Links & Resources:**
+- **Main Website:** [OkiDoki](https://jbeejones.github.io/okidoki-website/index.html)
+- **GitHub Repository:** [https://github.com/jbeejones/okidoki](https://github.com/jbeejones/okidoki)
+- **NPM Package:** [npmjs.com/package/okidoki](https://www.npmjs.com/package/okidoki)
 
 **Core Philosophy & Workflow:**
 OkiDoki follows the "convention over configuration" principle, designed for developers who want to start writing documentation immediately without wrestling with complex setups or learning new templating languages. The workflow is intentionally minimal: create markdown files, run one command, and get a production-ready documentation site.
 
-![OkiDoki Documentation Interface](/img/okidoki-screenshot.png "OkiDoki's clean, fast documentation interface with built-in search and theme switching")
+![OkiDoki Documentation Interface](https://github.com/jbeejones/okidoki/raw/main/screenshots/okidoki.png "OkiDoki's clean, fast documentation interface with built-in search and theme switching")
 
 **Key Features & Capabilities:**
 
