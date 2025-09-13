@@ -24,28 +24,36 @@ menu:
         document: /help.md
   - title: Examples
     open: true
-    badge:
-      variant: secondary
-      text: fake
     items:
       - title: Petshop API
         document: /examples/petshopapi.md
         exclude_from_search: true
-      - title: X Utilities
+      - title: XUtil CLI
         document: /examples/xutil-install.md
         exclude_from_search: true
       - title: Museum API
         document: /examples/museum-api.md
         exclude_from_search: true
+      - title: OpenAPI Examples
+        open: true
+        items:
+          - title: OpenAPI Example
+            document: /examples/openapiexample.md
+            exclude_from_search: true
+          - title: Train Travel API
+            document: /examples/train-travel-api.md
+            exclude_from_search: true
+          - title: Museum API
+            document: /examples/museum-openapi.md
+            exclude_from_search: true
   - title: GitHub Repository 🔗
     url: https://github.com/jbeejones/okidoki
-
+  
 navbar:
   - title: GitHub
     url: https://github.com/jbeejones/okidoki
   - title: Help
     document: /help.md
-
 footer:
   - title: Resources
     items:

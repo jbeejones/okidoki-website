@@ -7,7 +7,7 @@ api_base_url: "https://redocly.com/_mock/docs/openapi/museum-api"
 handlebars: true
 ---
 
-# 🏛️ Museum API Documentation
+# 🏛️ Museum API Documentation (example)
 
 {{badge "v1.2.1" "info"}} {{badge "REST API" "success"}} 
 
