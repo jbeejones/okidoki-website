@@ -12,6 +12,15 @@ keywords: [
   "documentation formatting",
   "okidoki syntax reference"
 ]
+local_version: "1.0.1"
+api_url: "https://api.example.com"
+support_email: "support@example.com"
+author: "**John Doe**"
+author_url: "https://example.com"
+author_image: "https://example.com/avatar.png"
+author_bio: "John Doe is a good man"
+author_twitter: "https://twitter.com/johndoe"
+author_linkedin: "https://linkedin.com/in/johndoe"
 ---
 
 # Markdown Examples
@@ -29,7 +38,7 @@ This page demonstrates various markdown formatting and documentation patterns yo
 ###### H6 - Smallest Heading
 ```
 
-**Result:**
+**Result:** 👇
 
 # H1 - Main Title
 ## H2 - Section Title  
@@ -48,7 +57,8 @@ This page demonstrates various markdown formatting and documentation patterns yo
 `Inline code`
 ```
 
-**Result:**
+**Result:** 👇
+
 **Bold text**, *italic text*, ***bold and italic***, ~~strikethrough text~~, `inline code`
 
 ## Lists
@@ -62,7 +72,8 @@ This page demonstrates various markdown formatting and documentation patterns yo
 - Third item
 ```
 
-**Result:**
+**Result:** 👇
+
 - First item
 - Second item
   - Nested item
@@ -78,7 +89,7 @@ This page demonstrates various markdown formatting and documentation patterns yo
 3. Third step
 ```
 
-**Result:**
+**Result:** 👇
 1. First step
 2. Second step
    1. Nested step
@@ -97,7 +108,7 @@ This page demonstrates various markdown formatting and documentation patterns yo
 ![Alt text](okidokilogo.svg)
 ```
 
-**Result:**
+**Result:** 👇
 
 [Link text](https://example.com)
 
@@ -128,7 +139,7 @@ console.log(`Total: $${calculateTotal(cartItems)}`);
 ```
 ````
 
-**Result:**
+**Result:** 👇
 
 ```javascript
 function calculateTotal(items) {
@@ -218,7 +229,7 @@ npm test
 | DELETE | `/users/{id}` | Delete user | Yes |
 ```
 
-**Result:**
+**Result:** 👇
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
 | GET    | `/users` | List all users | Yes |
@@ -236,7 +247,7 @@ npm test
 > **Tip:** You can also use blockquotes for tips and warnings.
 ```
 
-**Result:**
+**Result:** 👇
 > This is a blockquote. It can be used for highlighting important information,
 > quotes, or notes.
 
@@ -251,7 +262,7 @@ npm test
 
 ___
 ```
-**Result:**
+**Result:** 👇
 
 ---
 
@@ -268,7 +279,7 @@ site:
     light: "fantasy"
     dark: "forest"
 
-version: "1.0.1"
+local_version: "1.0.1"
 api_url: "https://api.example.com"
 support_email: "support@example.com"
 author: "**John Doe**"
@@ -281,21 +292,22 @@ author_linkedin: "https://linkedin.com/in/johndoe"
 Reference them in your markdown file:
 
 ```markdown
-Current version: \{{version}}
+Current version: \{{local_version}}
 
-API endpoint: \{{{api_url}}}
+API endpoint: \{{api_url}}
 
-Support email: \{{{support_email}}}
+Support email: \{{support_email}}
 ```
-{{alert "Use triple curly brackets to encode stuff `{{{encoded_content}}}`." "info"}}
 
-**Result**
+**Result:** 👇
 
-Current version: {{version}}
+Current version: {{local_version}}
 
-API endpoint: {{{api_url}}}
+API endpoint: {{api_url}}
 
-Support email: {{{support_email}}}
+Support email: {{support_email}}
+
+{{alert "Use triple curly brackets to encode stuff `{{{encoded_content_variable_here}}}`."}}
 
 ## Important Messages & Callouts
 
@@ -313,7 +325,7 @@ For basic alerts with text only:
 \{{alert "This is neutral information."}}
 ````
 
-**Result:**
+**Result:** 👇
 {{alert "This is an informational callout." "info"}}
 {{alert "This is a success message." "success"}}
 {{alert "This is a warning message." "warning"}}
@@ -334,7 +346,7 @@ Warning alert with `code` and multiple lines of content
 \{{/alert}}
 ````
 
-**Result:**
+**Result:** 👇
 {{#alert type="info"}}
 Information alert with **markdown** support and [links](https://example.com)
 {{/alert}}
@@ -365,7 +377,7 @@ Please check your [code file](index.js) and ensure that your code is sanitized.
 \{{/alert}}
 ````
 
-**Result:**
+**Result:** 👇
 {{#alert "error"}}
 ❌ **Error**: Critical code detected!
 ```javascript
@@ -385,7 +397,7 @@ Here are some examples of the new badge functionality:
 \{{badge "Default Badge"}}
 ````
 
-**Result:**
+**Result:** 👇
 {{badge "Default Badge"}}
 
 ### Colored Badges  
@@ -399,7 +411,7 @@ Here are some examples of the new badge functionality:
 \{{badge "Error" "error"}}
 ````
 
-**Result:**
+**Result:** 👇
 {{badge "Primary" "primary"}}
 {{badge "Secondary" "secondary"}}
 {{badge "Accent" "accent"}}
@@ -414,7 +426,7 @@ Here are some examples of the new badge functionality:
 You can use badges inline like this \{{badge "Status: Active" "success"}} within your text content.
 ````
 
-**Result:**
+**Result:** 👇
 You can use badges inline like this {{badge "Status: Active" "success"}} within your text content.
 
 ### Practical Examples
@@ -427,7 +439,7 @@ You can use badges inline like this {{badge "Status: Active" "success"}} within 
 ## Delete User \{{badge "DELETE" "error"}}
 ```
 
-**Result:**
+**Result:** 👇
 ## Get User {{badge "GET" "primary"}}
 ## Create User {{badge "POST" "success"}}
 ## Update User {{badge "PUT" "warning"}}
@@ -444,7 +456,7 @@ Features:
 - Mobile App \{{badge "❌ Deprecated" "error"}}
 ```
 
-**Result:**
+**Result:** 👇
 # My Project {{badge "v2.1.0" "info"}} {{badge "Stable" "success"}}
 
 Features:
@@ -467,7 +479,7 @@ You can also use HTML for more complex formatting:
   </ul>
 </div>
 ```
-**Result:**
+**Result:** 👇
 <div>
   <h4>Custom HTML Block</h4>
   <p>Sometimes you need more control over the formatting.</p>
@@ -504,7 +516,7 @@ def main():
 \{{/tabs}}
 ````
 
-**Result:**
+**Result:** 👇
 
 {{#tabs}}
 {{#tab title="JavaScript"}}

@@ -143,6 +143,44 @@ okidoki generate -v
 okidoki generate -s ./docs -o ./public -c ./my-config.yaml -v
 ```
 
+### Command: `okidoki openapi`
+
+Convert OpenAPI specification files to structured markdown documentation. This command automatically:
+- Parses OpenAPI 3.x specification files (JSON or YAML format)
+- Generates comprehensive API documentation
+- Integrates seamlessly with your existing documentation structure
+- Updates navigation configuration automatically
+
+Options:
+
+| Option | Short | Description | Default |
+|--------|-------|-------------|---------|
+| `--input` | `-i` | Path to OpenAPI specification file (JSON or YAML) | (required) |
+| `--output` | `-o` | Output markdown file path | (auto-generated) |
+| `--title` | `-t` | Title for the generated documentation | (auto-generated) |
+| `--description` | `-d` | Description for the generated documentation | (auto-generated) |
+| `--docs` | | Target docs directory | `"docs"` |
+| `--sidebars` | `-b` | Path to sidebars configuration file | `"sidebars.yaml"` |
+| `--config` | `-c` | Path to okidoki configuration file | `"okidoki.yaml"` |
+| `--help` | | Show help information | |
+| `--version` | | Show version number | |
+
+#### Usage Examples
+
+```bash
+# Convert OpenAPI spec to markdown (basic usage)
+okidoki openapi -i api-spec.yaml
+
+# Specify custom output file and title
+okidoki openapi -i api-spec.json -o my-api-docs.md -t "My API Reference"
+
+# Full customization with description
+okidoki openapi -i openapi.yaml -o api-reference.md -t "Complete API Guide" -d "Full documentation for our REST API"
+
+# Custom docs directory and config files
+okidoki openapi -i spec.yaml --docs documentation -c config/okidoki.yaml -b config/nav.yaml
+```
+
 ## Frequently Asked Questions
 
 ### General Questions

@@ -41,6 +41,8 @@ Just write **normal markdown** with `code blocks`, tables, and links.
 - Version control friendly
 ```
 
+{{badge "New" "info"}} Convert OpenAPI specifications to markdown with `okidoki openapi -i spec.yaml` - automatically generates comprehensive API documentation in standard markdown format.
+
 **Benefits:** Focus on content, not syntax. Your documentation remains portable and future-proof.
 
 ## 2. Dynamic Variables

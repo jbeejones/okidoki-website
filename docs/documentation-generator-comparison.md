@@ -28,6 +28,7 @@ keywords: [
   "markdown documentation tools",
   "static site generator for docs"
 ]
+searchable: false
 ---
 
 # {{title}}

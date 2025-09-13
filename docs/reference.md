@@ -115,6 +115,53 @@ okidoki generate -s ./docs -o ./public -v
 npx nodemon -w ./docs -w okidoki.yaml -w sidebars.yaml -e md,png,jpg,jpeg,gif,svg,webp,yaml,yml --exec "okidoki generate && npx serve dist"
 ```
 
+### `okidoki openapi`
+Convert OpenAPI specification to markdown documentation.
+
+**Usage:**
+```bash
+okidoki openapi [options]
+```
+
+**CLI Options:**
+
+| Option | Short | Description | Default |
+|--------|-------|-------------|---------|
+| `--input` | `-i` | Path to OpenAPI specification file (JSON or YAML) | (required) |
+| `--output` | `-o` | Output markdown file path | (auto-generated) |
+| `--title` | `-t` | Title for the generated documentation | (auto-generated) |
+| `--description` | `-d` | Description for the generated documentation | (auto-generated) |
+| `--docs` | | Target docs directory | `"docs"` |
+| `--sidebars` | `-b` | Path to sidebars configuration file | `"sidebars.yaml"` |
+| `--config` | `-c` | Path to okidoki configuration file | `"okidoki.yaml"` |
+| `--help` | | Show help information | |
+| `--version` | | Show version number | |
+
+**Examples:**
+```bash
+# Convert OpenAPI spec to markdown
+okidoki openapi -i api-spec.yaml
+
+# Specify custom output file
+okidoki openapi -i api-spec.json -o custom-api-docs.md
+
+# Set custom title and description
+okidoki openapi -i spec.yaml -t "My API Documentation" -d "Complete API reference"
+
+# Custom docs directory and config files
+okidoki openapi -i spec.yaml --docs documentation -c config.yaml -b nav.yaml
+```
+
+**What it does:**
+- Parses OpenAPI 3.x specification files (JSON or YAML format)
+- Generates structured markdown documentation with:
+  - API overview and metadata
+  - Endpoint documentation with methods, parameters, and responses
+  - Schema definitions and examples
+  - Authentication requirements
+- Automatically integrates with your existing documentation structure
+- Updates sidebars configuration to include the generated documentation
+
 ## Configuration Files
 
 ### okidoki.yaml
