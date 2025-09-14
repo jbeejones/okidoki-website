@@ -106,7 +106,11 @@ This page demonstrates various markdown formatting and documentation patterns yo
 
 [Link with title](https://example.com "Example Website")
 
-![Alt text](okidokilogo.svg)
+68px image: ![small image](okidokilogo.svg =68x68)
+
+Full size image: ![full size image](okidokilogo.svg)
+
+Clickable image: [![small image with link](okidokilogo.svg =32x32)](https://example.com)
 ```
 
 **Result:** 👇
@@ -117,7 +121,11 @@ This page demonstrates various markdown formatting and documentation patterns yo
 
 [Link with title](https://example.com "Example Website")
 
-![Alt text](okidokilogo.svg)
+68px image: ![small image](okidokilogo.svg =68x68)
+
+Full size image: ![full size image](okidokilogo.svg)
+
+Clickable image: [![small image with link](okidokilogo.svg =32x32)](https://example.com)
 
 ## Code Blocks
 
@@ -181,6 +189,28 @@ print(fibonacci(10))
 ```
 ````
 
+**Result:** 👇
+
+```python
+def fibonacci(n):
+    """Generate Fibonacci sequence up to n terms."""
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    
+    fib_seq = [0, 1]
+    for i in range(2, n):
+        fib_seq.append(fib_seq[i-1] + fib_seq[i-2])
+    
+    return fib_seq
+
+# Generate first 10 Fibonacci numbers
+print(fibonacci(10))
+```
+
 ### YAML Configuration
 ````markdown
 ```yaml
@@ -200,6 +230,23 @@ search:
   placeholder: "Search API docs..."
 ```
 ````
+**Result:** 👇
+```yaml
+site:
+  title: "My API Documentation"
+  description: "Complete API reference and guides"
+  theme:
+    light: "fantasy"
+    dark: "forest"
+  
+globals:
+  version: "2.1.0"
+  api_base: "https://api.example.com/v1"
+  
+search:
+  enabled: true
+  placeholder: "Search API docs..."
+```
 
 ### Shell Commands
 ````markdown
@@ -217,6 +264,21 @@ npm run build
 npm test
 ```
 ````
+**Result:** 👇
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production  
+npm run build
+
+# Run tests
+npm test
+```
 
 ## Tables
 
@@ -269,7 +331,15 @@ ___
 
 ## Global Variables
 
-Use variables defined in your `okidoki.yaml`:
+Use variables defined in your `okidoki.yaml` configuration file to inject dynamic content into your markdown documentation. This powerful feature allows you to:
+
+- Maintain consistent values across all documentation
+- Update information in one place
+- Keep sensitive data like API keys in configuration
+- Create reusable content blocks
+- Support multiple environments (dev/staging/prod)
+
+For example, you can define variables for:
 
 ```yaml
 # Okidoki Configuration
@@ -310,9 +380,34 @@ Support email: {{support_email}}
 
 {{alert "Use triple curly brackets to encode stuff `{{{encoded_content_variable_here}}}`."}}
 
+### Page Variables (Frontmatter)
+
+You can also define page-specific variables in the frontmatter section at the top of each markdown file:
+
+```
+---
+author: Jane Doe
+---
+
+Some markdown content here written by \{{author}}
+```
+
+
+
+
 ## Important Messages & Callouts
 
-Create important message callouts using Handlebars alert helpers:
+Create important message callouts using Handlebars alert helpers to enhance your documentation with visually distinct notifications, warnings, and informational blocks. These alerts help draw attention to critical information, warnings, success messages, and other important content.
+
+The alert system supports both simple one-line messages and complex blocks with full markdown formatting. You can use them to:
+
+- Highlight important warnings or notices
+- Display success/error messages
+- Show informational callouts
+- Create attention-grabbing notes
+- Add status indicators
+
+Choose from multiple alert styles to convey different types of messages with appropriate visual emphasis.
 
 ### Simple Alert Syntax
 
@@ -391,7 +486,9 @@ Please check your [code file](index.js) and ensure that your code is sanitized.
 
 ## Badges
 
-Here are some examples of the new badge functionality:
+Here are some examples of the badge functionality. Badges are a powerful way to highlight important information, status indicators, or metadata in your documentation. They can be used standalone, inline with text, or to enhance headings and sections.
+
+You can customize badges with different colors and styles to create visual hierarchies and improve the scannability of your documentation. The following examples demonstrate various ways to use badges effectively:
 
 ### Basic Badges
 ````markdown
@@ -471,7 +568,7 @@ Features:
 You can also use HTML for more complex formatting:
 
 ```html
-<div>
+<div class="bg-base-300" style="padding: 2em; margin-bottom: 2em">
   <h4>Custom HTML Block</h4>
   <p>Sometimes you need more control over the formatting.</p>
   <ul>
@@ -481,7 +578,7 @@ You can also use HTML for more complex formatting:
 </div>
 ```
 **Result:** 👇
-<div>
+<div class="bg-base-300" style="padding: 2em; margin-bottom: 2em">
   <h4>Custom HTML Block</h4>
   <p>Sometimes you need more control over the formatting.</p>
   <ul>
@@ -493,7 +590,15 @@ You can also use HTML for more complex formatting:
 
 # Tabs Demo
 
-This page demonstrates both the old Handlebars tabs syntax and the new markdown tabs syntax.
+This page demonstrates the powerful Handlebars tabs syntax, which allows you to create interactive tabbed content perfect for:
+
+- Showing code examples in multiple programming languages
+- Displaying platform-specific instructions (Windows/Mac/Linux)
+- Organizing related content in a space-efficient way
+- Creating interactive API documentation with different response types
+- Presenting multiple configuration formats
+
+The tabs are fully responsive, keyboard accessible, and maintain their selected state during page navigation.
 
 ## Tabs Syntax
 
@@ -563,6 +668,52 @@ curl -X GET \
 
 
 ## Another Example with Mixed Content
+
+````markdown
+\{{#tabs}}
+\{{#tab title="Overview"}}
+Here's some regular markdown content in a tab.
+
+- Feature A: Does something cool
+- Feature B: Does something else
+- Feature C: Does something amazing
+
+> **Note**: This tab contains mixed content - not just code!
+\{{/tab}}
+\{{#tab title="TypeScript"}}
+```typescript
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+class UserService {
+  async getUser(id: number): Promise<User> {
+    const response = await fetch(`/api/users/${id}`);
+    return response.json();
+  }
+}
+```
+\{{/tab}}
+\{{#tab title="Configuration"}}
+```yaml
+# config.yml
+api:
+  baseUrl: "https://api.example.com"
+  timeout: 30000
+  retries: 3
+
+features:
+  enableCache: true
+  enableLogging: true
+  enableMetrics: false
+```
+\{{/tab}}
+\{{/tabs}}
+````
+
+**Result:** 👇
 
 {{#tabs}}
 {{#tab title="Overview"}}
