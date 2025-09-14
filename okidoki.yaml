@@ -7,13 +7,13 @@ site:
   logo: "/okidoki-website/okidokilogo.svg"
 search:
   enabled: true
-  placeholder: "Search stuff..."
+  placeholder: "Search docs"
 build:
   outputDir: "dist"    
   clean: true          
   minify: true         
 
-okidoki_version: "1.0.52"
+okidoki_version: "1.0.53"
 
 plugins:
   enabled: true
