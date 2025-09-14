@@ -1,6 +1,8 @@
 ---
 title: API Reference
 description: API documentation generated from OpenAPI specification
+pagenav:
+  levels: 2
 ---
 
 # Train Travel API

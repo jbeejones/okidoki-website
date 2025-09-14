@@ -1,6 +1,7 @@
 ---
 title: Documentation Reference
-handlebars: true
+pagenav:
+  levels: 4
 keywords: [
   "okidoki reference",
   "okidoki commands",

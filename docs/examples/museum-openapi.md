@@ -1,6 +1,8 @@
 ---
 title: API Reference
 description: API documentation generated from OpenAPI specification
+pagenav:
+  levels: 1
 ---
 
 # Redocly Museum API

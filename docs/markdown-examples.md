@@ -1,5 +1,6 @@
 ---
-handlebars: true
+pagenav:
+  levels: 1
 keywords: [
   "okidoki markdown examples",
   "markdown syntax guide",
