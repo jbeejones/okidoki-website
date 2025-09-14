@@ -1,7 +1,7 @@
 # Okidoki Configuration
 site:
   title: OkiDoki
-  description: "Docs generated with Okidoki"
+  description: "Open source, simple, fast documentation generator that turns your markdown files into beautiful docs"
   url: "https://jbeejones.github.io"  # Full domain for absolute sitemap URLs
   baseUrl: "/okidoki-website/"
   logo: "/okidoki-website/okidokilogo.svg"
