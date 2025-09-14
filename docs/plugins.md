@@ -313,13 +313,22 @@ export default function(handlebarsInstance) {
 
 OkiDoki comes with several built-in helpers you can reference or extend:
 
+### Utility Helpers
 - `{{eq a b}}` - Equality comparison
 - `{{isArray value}}` - Check if value is array
 - `{{isObject value}}` - Check if value is object  
 - `{{joinUrl baseUrl path}}` - URL joining with slash handling
-- `{{alert "text" "type"}}` - Generate alert components
+
+### Component Helpers
+- `{{alert "text" "type"}}` - Generate alert components (inline)
+- `{{#alert "type"}}content{{/alert}}` - Generate alert components (block)
 - `{{badge "text" "type"}}` - Generate badge components
 - `{{include "filename.html"}}` - Include HTML files from assets
 - `{{searchComponent variant="desktop"}}` - Generate search components
+
+### Interactive Components
+- `{{#tabs}}...{{/tabs}}` - Create tabbed content container
+- `{{#tab title="Tab Name"}}content{{/tab}}` - Individual tab within tabs container
+
 
 Your custom helpers work alongside these built-in ones, giving you complete flexibility to create the documentation experience you need. 
