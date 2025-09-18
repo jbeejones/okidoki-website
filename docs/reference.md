@@ -597,7 +597,41 @@ menu:
       text: "new feature"
 ```
 
+### YouTube Videos
+
+Embed YouTube videos directly in your documentation using the built-in YouTube helper:
+
+
+```markdown
+\{{youtube "1XJ8bN7Cn9w"}}
+```
+
+#### Available Parameters
+
+- **videoId** (required) - YouTube video ID from the URL
+- **width** (optional) - Video player width (default: "560")
+- **height** (optional) - Video player height (default: "315") 
+- **start** (optional) - Start time in seconds (e.g., "61" for 1 minute 1 second)
+
+#### Usage Tips
+
+- Use `width="100%"` for responsive videos that fill their container
+- Start parameter accepts numeric values in seconds
+- Extract video ID from URLs: `https://www.youtube.com/watch?v=1XJ8bN7Cn9w` → `1XJ8bN7Cn9w`
+- Perfect for tutorials, demonstrations, and product showcases
+
 ### Tables
+
+```markdown
+| Feature | Supported | Notes |
+|---------|-----------|--------|
+| Headers | ✅ | H1-H6 |
+| Links | ✅ | Internal & external |
+| Images | ✅ | Local & remote |
+| Code | ✅ | Syntax highlighting |
+```
+
+**Result:** 👇
 
 | Feature | Supported | Notes |
 |---------|-----------|--------|

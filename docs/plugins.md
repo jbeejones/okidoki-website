@@ -181,13 +181,13 @@ No author information
 
 ```javascript
 export default function(handlebarsInstance) {
-    handlebarsInstance.registerHelper('youtube', function(videoId, options) {
-        const width = options.hash.width || '560';
-        const height = options.hash.height || '315';
+    handlebarsInstance.registerHelper('icon', function(iconName, options) {
+        const size = options.hash.size || '16';
+        const color = options.hash.color || 'currentColor';
         
-        const html = `<iframe width="${width}" height="${height}" 
-            src="https://www.youtube.com/embed/${videoId}" 
-            frameborder="0" allowfullscreen></iframe>`;
+        const html = `<svg width="${size}" height="${size}" fill="${color}" viewBox="0 0 24 24">
+            <use href="#icon-${iconName}"></use>
+        </svg>`;
             
         return new handlebarsInstance.SafeString(html);
     });
@@ -196,7 +196,7 @@ export default function(handlebarsInstance) {
 
 Usage in markdown:
 ```markdown
-{{{youtube "dQw4w9WgXcQ" width="800" height="450"}}}
+{{{icon "check" size="24" color="green"}}}
 ```
 
 ### Text Processing
@@ -325,6 +325,10 @@ OkiDoki comes with several built-in helpers you can reference or extend:
 - `{{badge "text" "type"}}` - Generate badge components
 - `{{include "filename.html"}}` - Include HTML files from assets
 - `{{searchComponent variant="desktop"}}` - Generate search components
+### Media Helpers
+- `{{youtube "videoId"}}` - Embed responsive YouTube video
+- `{{#youtube width="560" height="315"}}videoId{{/youtube}}` - Embed with custom dimensions
+
 
 ### Interactive Components
 - `{{#tabs}}...{{/tabs}}` - Create tabbed content container

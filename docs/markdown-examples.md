@@ -588,7 +588,7 @@ You can also use HTML for more complex formatting:
 </div>
 
 
-# Tabs Demo
+## Tabs Demo
 
 This page demonstrates the powerful Handlebars tabs syntax, which allows you to create interactive tabbed content perfect for:
 
@@ -600,7 +600,7 @@ This page demonstrates the powerful Handlebars tabs syntax, which allows you to 
 
 The tabs are fully responsive, keyboard accessible, and maintain their selected state during page navigation.
 
-## Tabs Syntax
+### Tabs Syntax
 
 Create interactive tabbed content using Handlebars helpers:
 
@@ -667,7 +667,7 @@ curl -X GET \
 {{/tabs}}
 
 
-## Another Example with Mixed Content
+### Another Example with Mixed Content
 
 ````markdown
 \{{#tabs}}
@@ -756,6 +756,25 @@ features:
 ```
 {{/tab}}
 {{/tabs}}
+
+## YouTube Videos
+
+Embed YouTube videos directly in your documentation using the built-in YouTube helper:
+
+### Basic Video Embed
+
+```markdown
+\{{youtube "1XJ8bN7Cn9w"}}
+```
+
+**Result:** 👇
+{{youtube "1XJ8bN7Cn9w"}}
+
+### Custom Dimensions
+
+```markdown
+\{{youtube "1XJ8bN7Cn9w" width="100%" height="420"}}
+```
 
 
 ## Best Practices
