@@ -497,6 +497,7 @@ You can customize badges with different colors and styles to create visual hiera
 ````
 
 **Result:** 👇
+
 {{badge "Default Badge"}}
 
 ### Colored Badges  
@@ -511,6 +512,7 @@ You can customize badges with different colors and styles to create visual hiera
 ````
 
 **Result:** 👇
+
 {{badge "Primary" "primary"}}
 {{badge "Secondary" "secondary"}}
 {{badge "Accent" "accent"}}
@@ -526,6 +528,7 @@ You can use badges inline like this \{{badge "Status: Active" "success"}} within
 ````
 
 **Result:** 👇
+
 You can use badges inline like this {{badge "Status: Active" "success"}} within your text content.
 
 ### Practical Examples
