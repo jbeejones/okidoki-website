@@ -502,6 +502,26 @@ function greet(name) {
 ```
 ````
 
+### Tables
+
+```markdown
+| Feature | Supported | Notes |
+|---------|-----------|--------|
+| Headers | ✅ | H1-H6 |
+| Links | ✅ | Internal & external |
+| Images | ❌ | Local & remote |
+| Code | ✅ | Syntax highlighting |
+```
+
+**Result:** 👇
+
+| Feature | Supported | Notes |
+|---------|-----------|--------|
+| Headers | ✅ | H1-H6 |
+| Links | ✅ | Internal & external |
+| Images | ❌ | Local & remote |
+| Code | ✅ | Syntax highlighting |
+
 **Supported Languages:**
 javascript, typescript, python, java, php, go, rust, c, cpp, html, css, yaml, json, bash, shell, sql, and many more.
 
@@ -515,6 +535,19 @@ API endpoint: \{{{api_url}}}
 Contact: \{{{support_email}}}
 ```
 {{alert "Use 3 curly brackets to encode {{{variables}}}"}}
+
+### Page Variables (Frontmatter)
+
+You can also define page-specific variables in the frontmatter section at the top of each markdown file:
+
+```
+---
+author: Jane Doe
+---
+
+Some markdown content here written by \{{author}}
+```
+{{alert "A global variable with the same name will overwrite the page variable"}}
 
 ### Important Messages & Callouts
 
@@ -618,32 +651,23 @@ Embed YouTube videos directly in your documentation using the built-in YouTube h
 - **height** (optional) - Video player height (default: "315") 
 - **start** (optional) - Start time in seconds (e.g., "61" for 1 minute 1 second)
 
+#### Example with All Parameters
+
+```markdown
+\{{youtube "1XJ8bN7Cn9w" width="800" height="450" start="120"}}
+```
+
+This example:
+- Uses video ID `1XJ8bN7Cn9w`
+- Sets width to 800px and height to 450px
+- Starts playback at 2 minutes (120 seconds)
+
 #### Usage Tips
 
 - Use `width="100%"` for responsive videos that fill their container
 - Start parameter accepts numeric values in seconds
 - Extract video ID from URLs: `https://www.youtube.com/watch?v=1XJ8bN7Cn9w` → `1XJ8bN7Cn9w`
 - Perfect for tutorials, demonstrations, and product showcases
-
-### Tables
-
-```markdown
-| Feature | Supported | Notes |
-|---------|-----------|--------|
-| Headers | ✅ | H1-H6 |
-| Links | ✅ | Internal & external |
-| Images | ❌ | Local & remote |
-| Code | ✅ | Syntax highlighting |
-```
-
-**Result:** 👇
-
-| Feature | Supported | Notes |
-|---------|-----------|--------|
-| Headers | ✅ | H1-H6 |
-| Links | ✅ | Internal & external |
-| Images | ❌ | Local & remote |
-| Code | ✅ | Syntax highlighting |
 
 ## File Organization
 
@@ -677,14 +701,83 @@ docs/
 Place images in `docs/assets/images/` or any subdirectory:
 
 ```markdown
-![Alt text](assets/images/screenshot.png)
-![Logo](images/logo.png)
+![Alt text](/assets/images/screenshot.png)
+![Logo](/images/logo.png)
 ```
 
 ### Other Assets
 - PDFs, downloads: `docs/assets/files/`
 - Stylesheets: `docs/assets/css/`
 - Scripts: `docs/assets/js/`
+
+### Custom Home Page
+
+OkiDoki allows you to completely override the default home page by creating a root-level `assets/` folder with custom HTML files and resources.
+
+#### Setup
+
+1. Create an `assets/` folder in your project root (same level as `okidoki.yaml`)
+2. Add an `index.html` file with your custom home page content
+3. Include any additional resources (CSS, JS, images) in the same folder
+
+#### Example Structure
+
+```
+project-root/
+├── okidoki.yaml
+├── sidebars.yaml
+├── docs/              # Regular documentation
+│   └── start.md
+└── assets/            # Custom home page assets
+    ├── index.html     # Custom home page
+    ├── styles.css     # Custom styles
+    ├── custom.js      # Custom scripts
+    └── images/        # Home page images
+        └── hero.png
+```
+
+#### How It Works
+
+- When users visit your site root, they'll see your custom `index.html` instead of the generated documentation home page
+- Your custom home page can link to the documentation using relative paths (e.g., `./docs/start.html`)
+- All files in the `assets/` folder are copied directly to the output directory
+- This approach gives you complete design freedom for your landing page
+
+#### Use Cases
+
+- **Marketing Landing Pages**: Create a polished front page with branding, CTAs, and feature highlights
+- **Product Showcases**: Display screenshots, demos, and key benefits before users enter the docs
+- **Multi-Product Sites**: Create a hub page that links to different documentation sections
+- **Custom Branding**: Implement your exact design requirements without theme limitations
+
+#### Example Custom Home Page
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Product - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Product</h1>
+        <p>The best solution for your needs</p>
+    </header>
+    <main>
+        <div class="cta-buttons">
+            <a href="/start.html" class="btn-primary">Get Started</a>
+            <a href="/reference.html" class="btn-secondary">API Reference</a>
+        </div>
+    </main>
+</body>
+</html>
+```
+
+This is exactly how this site, the [OkiDoki](https://jbeejones.github.io/okidoki-website/index.html) official website, creates its custom home page while maintaining the documentation functionality.
+
 
 ## Performance
 

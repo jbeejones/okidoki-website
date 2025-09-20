@@ -327,7 +327,7 @@ OkiDoki comes with several built-in helpers you can reference or extend:
 - `{{searchComponent variant="desktop"}}` - Generate search components
 ### Media Helpers
 - `{{youtube "videoId"}}` - Embed responsive YouTube video
-- `{{#youtube width="560" height="315"}}videoId{{/youtube}}` - Embed with custom dimensions
+dimensions
 
 
 ### Interactive Components

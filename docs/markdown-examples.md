@@ -331,7 +331,7 @@ ___
 
 ## Global Variables
 
-Use variables defined in your `okidoki.yaml` configuration file to inject dynamic content into your markdown documentation. This powerful feature allows you to:
+Use variables defined in your `okidoki.yaml` configuration file, or in the markdown heading, to inject dynamic content into your markdown documentation. This powerful feature allows you to:
 
 - Maintain consistent values across all documentation
 - Update information in one place
@@ -379,19 +379,6 @@ API endpoint: {{api_url}}
 Support email: {{support_email}}
 
 {{alert "Use triple curly brackets to encode stuff `{{{encoded_content_variable_here}}}`."}}
-
-### Page Variables (Frontmatter)
-
-You can also define page-specific variables in the frontmatter section at the top of each markdown file:
-
-```
----
-author: Jane Doe
----
-
-Some markdown content here written by \{{author}}
-```
-
 
 
 
@@ -772,7 +759,7 @@ Embed YouTube videos directly in your documentation using the built-in YouTube h
 ```
 
 **Result:** 👇
-{{youtube "1XJ8bN7Cn9w"}}
+{{youtube "1XJ8bN7Cn9w" width="100%" height="420"}}
 
 ### Custom Dimensions
 
