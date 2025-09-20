@@ -481,21 +481,26 @@ Navbar items appear in the top navigation bar and are perfect for external links
 ### Standard Markdown
 All standard markdown syntax is supported:
 
-- **Headers** (H1-H6)
-- **Bold** and *italic* text
-- `Code spans` and code blocks
-- [Links](reference.md) and Images ![images](https://m.media-amazon.com/images/I/4109Z8PEn8L.jpg)
-- Lists (ordered and unordered)
-- Tables
-- Blockquotes
+```markdown
+# Headers (H1-H6)
+**Bold** and *italic* text
+`Code spans` and ```code blocks```
+[Links](reference.md) and ![Images](image.jpg)
+- Lists (unordered)
+1. Lists (ordered)
+| Tables | With | Columns |
+> Blockquotes
+```
 
 ### Code Blocks with Syntax Highlighting
 
+````markdown
 ```javascript
 function greet(name) {
   console.log(`Hello, ${name}!`);
 }
 ```
+````
 
 **Supported Languages:**
 javascript, typescript, python, java, php, go, rust, c, cpp, html, css, yaml, json, bash, shell, sql, and many more.
@@ -627,7 +632,7 @@ Embed YouTube videos directly in your documentation using the built-in YouTube h
 |---------|-----------|--------|
 | Headers | ✅ | H1-H6 |
 | Links | ✅ | Internal & external |
-| Images | ✅ | Local & remote |
+| Images | ❌ | Local & remote |
 | Code | ✅ | Syntax highlighting |
 ```
 
@@ -637,7 +642,7 @@ Embed YouTube videos directly in your documentation using the built-in YouTube h
 |---------|-----------|--------|
 | Headers | ✅ | H1-H6 |
 | Links | ✅ | Internal & external |
-| Images | ✅ | Local & remote |
+| Images | ❌ | Local & remote |
 | Code | ✅ | Syntax highlighting |
 
 ## File Organization

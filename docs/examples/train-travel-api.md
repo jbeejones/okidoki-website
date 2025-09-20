@@ -19,6 +19,7 @@ okidoki openapi -i openapi/train-travel-api.yaml -o docs/examples/train-travel-a
 ```
 {{/alert}}
 
+
 ## Run in Postman
 
 Experiment with this API in Postman, using our Postman Collection.

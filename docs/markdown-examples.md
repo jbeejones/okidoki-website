@@ -476,8 +476,9 @@ Please check your [code file](index.js) and ensure that your code is sanitized.
 **Result:** 👇
 {{#alert "error"}}
 ❌ **Error**: Critical code detected!
-```javascript
-console.log('Be careful with this');
+```js
+let msg = "error";
+console.log('Be careful with this', msg);
 process.exit(1);
 ```
 
