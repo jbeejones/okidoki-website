@@ -2,6 +2,10 @@
 
 The official documentation website for OkiDoki - a modern documentation generator that transforms Markdown files into beautiful, interactive websites.
 
+🌐 **[View the live documentation site →](https://jbeejones.github.io/okidoki-website/)**
+
+
+
 ## 🌟 What's Inside
 
 This repository contains the complete documentation for OkiDoki, including:
@@ -14,7 +18,7 @@ This repository contains the complete documentation for OkiDoki, including:
 
 ## 🚀 Built With OkiDoki
 
-This website is itself built using OkiDoki, showcasing the power and flexibility of the documentation generator. It demonstrates:
+This website is itself built using [OkiDoki](https://github.com/jbeejones/okidoki), an open source documentation generator that transforms Markdown files into beautiful, interactive websites. It showcases the power and flexibility of the tool and demonstrates:
 
 - ✅ **Handlebars templating** with dynamic content
 - ✅ **Interactive components** like tabs, alerts, and badges
@@ -47,4 +51,22 @@ This documentation is licensed under the MIT License. See [LICENSE](LICENSE) for
 
 ---
 
-**Learn more about OkiDoki:** Visit the main project repository or check out the documentation to get started with your own documentation website. 
+## 🔗 About OkiDoki
+
+**OkiDoki** is a modern, open-source documentation generator that makes it easy to create beautiful documentation websites from Markdown files.
+
+### Key Features
+- ⚡ **Lightning Fast** - Generates sites in under 1 second
+- 🎨 **Beautiful Themes** - 32+ built-in themes with light/dark mode
+- 🔍 **Full-Text Search** - Instant client-side search
+- 📱 **Mobile Responsive** - Works perfectly on all devices
+- 🛠️ **Simple Configuration** - YAML-based setup
+- 📝 **Markdown First** - Write in standard Markdown
+
+### Get Started with OkiDoki
+
+- **[GitHub Repository](https://github.com/jbeejones/okidoki)** - Source code and documentation
+- **[NPM Package](https://www.npmjs.com/package/okidoki)** - Install with `npm install -g okidoki`
+- **[Live Documentation](https://jbeejones.github.io/okidoki-website/)** - This website showcasing OkiDoki in action
+
+Start building your own documentation website today with just a few commands! 
