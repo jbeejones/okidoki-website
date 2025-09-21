@@ -67,7 +67,7 @@ author: "John Doe"
 updated: "2024-01-15"
 ---
 
-# {{title}} v{{globals.version}}
+# \{{title}} v\{{globals.version}}
 Built by \{{author}} for \{{globals.company}}
 Updated: \{{updated}}
 ```
