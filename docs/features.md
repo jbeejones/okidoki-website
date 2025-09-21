@@ -162,8 +162,8 @@ Beautiful themes powered by [Tailwind CSS](https://tailwindcss.com/) and [DaisyU
 ```yaml
 site:
   theme:
-    light: "fantasy"    # Light themes: light, cupcake, bumblebee, emerald, corporate, garden, lofi, pastel, fantasy, wireframe, cmyk, autumn, business, acid, lemonade, winter
-    dark: "forest"      # Dark themes: dark, synthwave, retro, cyberpunk, valentine, halloween, forest, aqua, luxury, dracula, black, night, coffee, dim, nord, sunset
+    light: "fantasy"    # All 35 themes: light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter, dim, nord, sunset, caramellatte, abyss, silk
+    dark: "forest"      # Choose any theme for light/dark mode - DaisyUI doesn't restrict themes to specific modes
 ```
 Screenshot of the light theme and dark theme is shown below:
 
@@ -174,7 +174,7 @@ Screenshot of the light theme and dark theme is shown below:
 - Toggle between themes
 - 32+ professional themes included
 - Fully responsive design
-- Based on [DaisyUI themes](https://v4.daisyui.com/docs/themes/)
+- Based on [DaisyUI themes](https://daisyui.com/docs/themes/#list-of-themes)
 
 ## 5. ⚡ Full-Text Search
 

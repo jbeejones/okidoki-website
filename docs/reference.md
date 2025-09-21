@@ -196,13 +196,10 @@ site:
 
 **Available Themes:**
 
-Based on [DaisyUI themes](https://v4.daisyui.com/docs/themes/), OkiDoki supports all 32+ themes:
+Based on [DaisyUI themes](https://daisyui.com/docs/themes/), OkiDoki supports all 35 themes:
 
-**Light Themes:**
-- `light`, `cupcake`, `bumblebee`, `emerald`, `corporate`, `garden`, `lofi`, `pastel`, `fantasy`, `wireframe`, `cmyk`, `autumn`, `business`, `acid`, `lemonade`, `winter`
-
-**Dark Themes:**  
-- `dark`, `synthwave`, `retro`, `cyberpunk`, `valentine`, `halloween`, `forest`, `aqua`, `luxury`, `dracula`, `black`, `night`, `coffee`, `dim`, `nord`, `sunset`
+**All Available Themes:**
+- `light`, `dark`, `cupcake`, `bumblebee`, `emerald`, `corporate`, `synthwave`, `retro`, `cyberpunk`, `valentine`, `halloween`, `garden`, `forest`, `aqua`, `lofi`, `pastel`, `fantasy`, `wireframe`, `black`, `luxury`, `dracula`, `cmyk`, `autumn`, `business`, `acid`, `lemonade`, `night`, `coffee`, `winter`, `dim`, `nord`, `sunset`, `caramellatte`, `abyss`, `silk`
 
 **Popular Combinations:**
 ```yaml
@@ -223,6 +220,18 @@ site:
   theme:
     light: "wireframe"
     dark: "dracula"
+
+# Warm & Cozy (New DaisyUI 5.0 themes)
+site:
+  theme:
+    light: "caramellatte"
+    dark: "abyss"
+
+# Elegant & Refined
+site:
+  theme:
+    light: "silk"
+    dark: "nord"
 ```
 
 #### Global Variables
