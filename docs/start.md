@@ -52,6 +52,9 @@ npm install -g okidoki
    ```
    Your documentation will be available at `http://localhost:3000`
 
+   You should see this page in your browser:
+   ![okidoki start page](/img/okidoki-startpage.jpeg)
+
 
 ## Project Structure
 
@@ -59,11 +62,14 @@ After running `okidoki init`, you'll have:
 
 ```
 mydocs/
-├── okidoki.yaml      # Main configuration
-├── sidebars.yaml     # Navigation structure
-├── docs/             # Your markdown files
-│   └── index.md      # Homepage content
-└── dist/             # Generated site (includes sitemap.xml)
+├── docs/
+│   ├── index.md        # Beautiful homepage
+│   ├── start.md        # This getting started guide
+│   ├── help.md         # Help and support page
+│   └── test.md         # Sample content page
+├── okidoki.yaml        # Main configuration
+├── sidebars.yaml       # Navigation structure
+└── dist/               # Generated site (after build)
 ```
 
 ## Basic Configuration
