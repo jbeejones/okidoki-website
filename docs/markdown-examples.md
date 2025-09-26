@@ -283,23 +283,21 @@ npm test
 ## Tables
 
 ```markdown
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET    | `/users` | List all users | Yes |
-| POST   | `/users` | Create new user | Yes |
-| GET    | `/users/{id}` | Get user by ID | Yes |
-| PUT    | `/users/{id}` | Update user | Yes |
-| DELETE | `/users/{id}` | Delete user | Yes |
+| Method   | Endpoint          | Parameters         | Response         | Notes            |
+|:---------|:------------------|:-------------------|:-----------------|:-----------------|
+| `GET`    | `/api/users`      | `?limit=10&page=1` | User array       | Fast             |
+| `POST`   | `/api/users`      | User object        | Created user     | Auth required    |
+| `PUT`    | `/api/users/{id}` | User ID + data     | Updated user     | Idempotent       |
+| `DELETE` | `/api/users/{id}` | User ID only       | `204 No Content` | Permanent        |
 ```
 
 **Result:** 👇
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET    | `/users` | List all users | Yes |
-| POST   | `/users` | Create new user | Yes |
-| GET    | `/users/{id}` | Get user by ID | Yes |
-| PUT    | `/users/{id}` | Update user | Yes |
-| DELETE | `/users/{id}` | Delete user | Yes |
+| Method   | Endpoint          | Parameters         | Response         | Notes            |
+|:---------|:------------------|:-------------------|:-----------------|:-----------------|
+| `GET`    | `/api/users`      | `?limit=10&page=1` | User array       | Fast             |
+| `POST`   | `/api/users`      | User object        | Created user     | Auth required    |
+| `PUT`    | `/api/users/{id}` | User ID + data     | Updated user     | Idempotent       |
+| `DELETE` | `/api/users/{id}` | User ID only       | `204 No Content` | Permanent        |
 
 ## Blockquotes
 

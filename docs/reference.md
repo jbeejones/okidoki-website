@@ -511,28 +511,34 @@ function greet(name) {
 ```
 ````
 
-### Tables
-
-```markdown
-| Feature | Supported | Notes |
-|---------|-----------|--------|
-| Headers | ✅ | H1-H6 |
-| Links | ✅ | Internal & external |
-| Images | ❌ | Local & remote |
-| Code | ✅ | Syntax highlighting |
-```
-
-**Result:** 👇
-
-| Feature | Supported | Notes |
-|---------|-----------|--------|
-| Headers | ✅ | H1-H6 |
-| Links | ✅ | Internal & external |
-| Images | ❌ | Local & remote |
-| Code | ✅ | Syntax highlighting |
-
 **Supported Languages:**
 javascript, typescript, python, java, php, go, rust, c, cpp, html, css, yaml, json, bash, shell, sql, and many more.
+
+
+### Tables
+
+Markdown tables support various formatting options and content types:
+
+```markdown
+| Feature                           | Status | Priority | Description                    | Example                           |
+|:----------------------------------|:------:|:--------:|:-------------------------------|:----------------------------------|
+| Headers                           |  YES   |   High   | H1-H6 support                  | `# Title`                         |
+| **Bold Text**                     |  YES   |  Medium  | Emphasis in cells              | **Important**                     |
+| *Italic Text*                     |  YES   |   Low    | Styling support                | *emphasis*                        |
+| `Code Spans`                      |  YES   |   High   | Inline code                    | `console.log()`                   |
+| [Links](reference.md)             |  YES   |   High   | Internal & external            | [GitHub](https://github.com)      |
+| Line breaks<br>Multiple lines     |  YES   |  Medium  | HTML `<br>` tags               | Content<br>on new line            |
+| Long content that wraps naturally |  YES   |   Low    | Automatic wrapping             | Text wraps within cell boundaries |
+| Numbers & Calculations            |  YES   |  Medium  | Numeric data                   | 1,234.56                          |
+| Emojis & Unicode                  |  YES   |   Low    | Special characters             | Rocket star plus                  |
+| Empty cells                       |        |          | Leave blank                    |                                   |
+```
+
+**Table Alignment Options:**
+- `:---` - Left aligned (default)
+- `:---:` - Center aligned  
+- `---:` - Right aligned
+
 
 ### Global Variables
 
