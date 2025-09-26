@@ -539,7 +539,6 @@ Markdown tables support various formatting options and content types:
 - `:---:` - Center aligned  
 - `---:` - Right aligned
 
-
 ### Global Variables
 
 Use global variables defined in `okidoki.yaml`:

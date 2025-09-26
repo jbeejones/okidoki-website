@@ -52,11 +52,10 @@ npm install -g okidoki
    ```
    Your documentation will be available at `http://localhost:3000`
 
-   You should see this page in your browser:
-   <div style="border: 1px solid #ccc; padding: 10px;">
-     <img src="/img/okidoki-startpage.jpeg" alt="okidoki start page">
-   </div>
-
+     You should see this page in your browser:
+  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
+    <img src="/img/okidoki-startpage.jpeg" alt="okidoki start page" style="border-radius: 8px; display: block; width: 100%">
+  </div>
 
 ## Project Structure
 
