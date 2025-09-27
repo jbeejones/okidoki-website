@@ -25,6 +25,11 @@ menu:
   - title: Examples
     open: true
     items:
+      - title: Custom Pricing Page
+        document: /examples/custom-pricing-page-example.md
+        badge:
+          variant: info
+          text: new
       - title: Petshop API
         document: /examples/petshopapi.md
         exclude_from_search: true

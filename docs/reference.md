@@ -724,17 +724,65 @@ Place images in `docs/assets/images/` or any subdirectory:
 - Stylesheets: `docs/assets/css/`
 - Scripts: `docs/assets/js/`
 
-### Custom Home Page
+### Custom Pages
 
-OkiDoki allows you to completely override the default home page by creating a root-level `assets/` folder with custom HTML files and resources.
+OkiDoki provides two methods for creating custom pages with complete design freedom. Both approaches allow you to override the default page layout and styling.
 
-#### Setup
+#### Method 1: Frontmatter Configuration (Recommended)
+
+The simplest way to create custom pages is by using frontmatter configuration in your markdown files. This method allows you to embed custom HTML directly in markdown files while controlling layout options.
+
+See a complete example in [Custom Page Example](examples/custom-pricing-page-example.html).
+
+
+**Setup:**
+
+Add configuration to the frontmatter of any markdown file:
+
+````
+---
+description: Your documentation is now ready
+handlebars: true
+hideMenu: true           # Hide navigation sidebar
+hideBreadcrumbs: true    # Hide breadcrumb navigation
+hideFooter: true         # Hide page footer
+customHTML: true         # Allow custom HTML without prose constraints
+---
+<div class="hero min-h-[35vh] relative overflow-hidden bg-gradient-to-br from-purple-900 to-blue-900">
+  <div class="hero-content text-center text-white">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Welcome to My Product</h1>
+      <p class="mb-5">The best solution for your documentation needs</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+````
+
+**Frontmatter Options:**
+- `customHTML: true` - Removes prose styling constraints, allows full HTML flexibility
+- `handlebars: true` - Enables Handlebars template processing for variables and helpers
+- `hideMenu: true` - Removes the navigation sidebar
+- `hideBreadcrumbs: true` - Hides breadcrumb navigation
+- `hideFooter: true` - Removes the page footer
+
+**Benefits:**
+- Quick and easy setup within existing documentation structure
+- Full access to TailwindCSS and DaisyUI classes
+- Can still use markdown content alongside custom HTML
+- Integrates seamlessly with existing navigation and configuration
+
+#### Method 2: Custom Assets Folder
+
+For complete control over the home page with separate HTML files, create a root-level `assets/` folder with custom resources.
+
+**Setup:**
 
 1. Create an `assets/` folder in your project root (same level as `okidoki.yaml`)
-2. Add an `index.html` file with your custom home page content
+2. Add an `index.html` file with your custom home page content, or any file you want to override
 3. Include any additional resources (CSS, JS, images) in the same folder
 
-#### Example Structure
+**Example Structure:**
 
 ```
 project-root/
@@ -750,21 +798,21 @@ project-root/
         └── hero.png
 ```
 
-#### How It Works
+**How It Works:**
 
 - When users visit your site root, they'll see your custom `index.html` instead of the generated documentation home page
 - Your custom home page can link to the documentation using relative paths (e.g., `./docs/start.html`)
 - All files in the `assets/` folder are copied directly to the output directory
 - This approach gives you complete design freedom for your landing page
 
-#### Use Cases
+**Use Cases:**
 
 - **Marketing Landing Pages**: Create a polished front page with branding, CTAs, and feature highlights
 - **Product Showcases**: Display screenshots, demos, and key benefits before users enter the docs
 - **Multi-Product Sites**: Create a hub page that links to different documentation sections
 - **Custom Branding**: Implement your exact design requirements without theme limitations
 
-#### Example Custom Home Page
+**Example Custom Home Page:**
 
 ```html
 <!DOCTYPE html>
@@ -791,6 +839,22 @@ project-root/
 ```
 
 This is exactly how this site, the [OkiDoki](https://jbeejones.github.io/okidoki-website/index.html) official website, creates its custom home page while maintaining the documentation functionality.
+
+#### Choosing Between Methods
+
+**Use Method 1 (Frontmatter Configuration) when:**
+- You want to create custom pages within your existing documentation structure
+- You need access to global variables and Handlebars helpers
+- You want to mix markdown content with custom HTML
+- You prefer working within the familiar markdown file structure
+- You need multiple custom pages throughout your documentation
+
+**Use Method 2 (Custom Assets Folder) when:**
+- You need complete control over the home page HTML structure
+- You want to use custom CSS frameworks or external dependencies
+- You're creating a marketing landing page that's completely separate from documentation
+- You need custom JavaScript functionality
+- You want to override only the site root page
 
 
 ## Performance
