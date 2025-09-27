@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+# ✅ Explicitly allow sitemap access
+Allow: /sitemap.xml
+Allow: /okidoki-website/sitemap.xml
 
 # 🚫 Prevent duplicate indexing of /index.html
 Disallow: /index.html
