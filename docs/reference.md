@@ -565,6 +565,71 @@ Some markdown content here written by \{{author}}
 ```
 {{alert "A global variable with the same name will overwrite the page variable"}}
 
+### Page Navigation Configuration
+
+Control the page navigation (table of contents) that appears on individual pages using the `pagenav` frontmatter setting:
+
+```yaml
+---
+title: My Page
+pagenav: true        # Default: show all heading levels (H1-H6)
+---
+
+# OR specify a custom depth:
+
+---
+title: My Page  
+pagenav:
+  levels: 3         # Include headings from H1 to H3 only
+---
+```
+
+**Configuration Options:**
+- `pagenav: true` - **Default behavior**: Shows all heading levels (H1-H6) in page navigation
+- `pagenav: false` - Disables page navigation entirely
+- `pagenav.levels: 1-6` - Limits navigation to specific heading depth
+  - `1` - Only H1 headings
+  - `2` - H1 and H2 headings  
+  - `3` - H1, H2, and H3 headings
+  - `4` - H1 through H4 headings
+  - And so on...
+
+**Usage Examples:**
+
+```yaml
+# Default - show all headings (most common)
+---
+title: Documentation Page
+pagenav: true
+---
+
+# Limit navigation depth for complex pages
+---
+title: API Reference
+pagenav:
+  levels: 4
+---
+
+# Simple pages with minimal structure
+---
+title: OpenAPI Generated Docs
+pagenav:
+  levels: 1
+---
+
+# Disable navigation completely
+---
+title: Landing Page
+pagenav: false
+---
+```
+
+**When to Use Different Settings:**
+- **`pagenav: true`** (default): Most documentation pages - let readers navigate all headings
+- **`levels: 1-2`**: Simple pages, landing pages, or OpenAPI generated docs with minimal structure
+- **`levels: 3-4`**: Complex reference pages where deep navigation might be overwhelming
+- **`pagenav: false`**: Landing pages, custom HTML pages, or pages without meaningful headings
+
 ### Important Messages & Callouts
 
 Create styled message callouts using Handlebars alert helpers:
