@@ -151,7 +151,7 @@ export default function(handlebarsInstance) {
 
 Usage in markdown:
 ```markdown
-Last updated: {{raw-helper}}{{formatDate "2024-01-15" "long"}}{{/raw-helper}}
+Last updated: {{formatDate "2024-01-15" "long"}}
 ```
 
 ### Conditional Logic

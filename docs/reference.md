@@ -21,7 +21,9 @@ keywords: [
 
 {{badge okidoki_version}}
 
-Complete reference for OkiDoki documentation generator.
+Complete reference for OkiDoki documentation generator. 
+
+Want to see how this official documentation site is built? Check out the [complete source code](https://github.com/jbeejones/okidoki-website).
 
 ## Commands
 
@@ -733,6 +735,8 @@ OkiDoki provides two methods for creating custom pages with complete design free
 The simplest way to create custom pages is by using frontmatter configuration in your markdown files. This method allows you to embed custom HTML directly in markdown files while controlling layout options.
 
 See a complete example in [Custom Page Example](examples/custom-pricing-page-example.html).
+
+See the [source code](https://github.com/jbeejones/okidoki-website/blob/main/docs/examples/custom-pricing-page-example.md?plain=1) for the Custom Page Example.
 
 
 **Setup:**
