@@ -750,6 +750,70 @@ This example:
 - Extract video ID from URLs: `https://www.youtube.com/watch?v=1XJ8bN7Cn9w` → `1XJ8bN7Cn9w`
 - Perfect for tutorials, demonstrations, and product showcases
 
+### Interactive Tabs
+
+Create interactive tabbed content using Handlebars tab helpers. Perfect for organizing related content, showing code examples in multiple languages, or displaying platform-specific instructions.
+
+#### Basic Tabs Syntax
+
+````markdown
+\{{#tabs}}
+\{{#tab title="JavaScript"}}
+```javascript
+const message = "Hello from JavaScript!";
+console.log(message);
+```
+\{{/tab}}
+\{{#tab title="Python"}}
+```python
+message = "Hello from Python!"
+print(message)
+```
+\{{/tab}}
+\{{/tabs}}
+````
+
+#### Tab Content Types
+
+Tabs can contain any markdown content, not just code blocks:
+
+````markdown
+\{{#tabs}}
+\{{#tab title="Overview"}}
+Here's some regular markdown content in a tab.
+
+- Feature A: Does something cool
+- Feature B: Does something else
+- Feature C: Does something amazing
+
+> **Note**: This tab contains mixed content!
+\{{/tab}}
+\{{#tab title="Configuration"}}
+```yaml
+api:
+  baseUrl: "https://api.example.com"
+  timeout: 30000
+```
+\{{/tab}}
+\{{/tabs}}
+````
+
+#### Common Use Cases
+
+- **Multi-language code examples**: Show the same functionality in JavaScript, Python, Go, etc.
+- **Platform-specific instructions**: Windows/Mac/Linux installation steps
+- **API documentation**: Request/response examples for different endpoints
+- **Configuration formats**: YAML, JSON, TOML versions of the same config
+- **Before/after comparisons**: Show old vs. new code or different approaches
+
+#### Features
+
+- **Responsive design**: Works seamlessly on desktop and mobile devices
+- **Keyboard accessible**: Navigate with tab and arrow keys
+- **State persistence**: Selected tab remains active during page navigation
+- **Nested content support**: Full markdown formatting including alerts, badges, and links
+- **Performance optimized**: Content lazy-loaded for better page performance
+
 ## File Organization
 
 ### Recommended Structure

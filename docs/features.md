@@ -1,4 +1,5 @@
 ---
+title: Features
 keywords: [
   "okidoki features",
   "documentation generator features",
