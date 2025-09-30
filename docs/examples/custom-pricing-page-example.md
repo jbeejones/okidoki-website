@@ -6,6 +6,7 @@ customHTML: true
 hideMenu: true
 hideBreadcrumbs: true
 hideFooter: true
+searchable: false
 ---
 
 <!-- Hero Section -->

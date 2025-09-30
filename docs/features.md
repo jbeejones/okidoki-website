@@ -12,6 +12,7 @@ keywords: [
   "documentation hosting options",
   "SEO documentation generator"
 ]
+pagenav: true
 ---
 
 # Features
