@@ -224,7 +224,6 @@ Deploy your documentation anywhere static files are supported - no server requir
 - **Zero dependencies** - Everything needed is built into the generated files
 - **Lightning fast** - Optimized assets and minimal payload for sub-second load times
 
-```yaml
 # Deploy to any of these platforms:
 - GitHub Pages
 - Netlify  
@@ -232,7 +231,6 @@ Deploy your documentation anywhere static files are supported - no server requir
 - AWS S3
 - Azure Static Web Apps
 - Your own CDN/server
-```
 
 **Benefits:** Maximum flexibility and performance. Host on free platforms or enterprise infrastructure - your choice. No vendor lock-in for hosting either.
 
