@@ -26,7 +26,9 @@ menu:
     open: true
     items:
       - title: Custom Pricing Page
-        document: /examples/custom-pricing-page-example.md
+        document: /examples/custom-pricing-page-example.md        
+      - title: Custom Plain HTML
+        document: /examples/custom-plain-html-example.md
         badge:
           variant: info
           text: new

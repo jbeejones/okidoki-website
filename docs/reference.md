@@ -855,11 +855,11 @@ Place images in `docs/assets/images/` or any subdirectory:
 - Stylesheets: `docs/assets/css/`
 - Scripts: `docs/assets/js/`
 
-### Custom Pages
+## Custom Pages
 
 OkiDoki provides two methods for creating custom pages with complete design freedom. Both approaches allow you to override the default page layout and styling.
 
-#### Method 1: Frontmatter Configuration (Recommended)
+### Method 1: Frontmatter Configuration (Recommended)
 
 The simplest way to create custom pages is by using frontmatter configuration in your markdown files. This method allows you to embed custom HTML directly in markdown files while controlling layout options.
 
@@ -905,9 +905,43 @@ customHTML: true         # Allow custom HTML without prose constraints
 - Can still use markdown content alongside custom HTML
 - Integrates seamlessly with existing navigation and configuration
 
-#### Method 2: Custom Assets Folder
+**Design with DaisyUI and TailwindCSS:**
+
+OkiDoki includes DaisyUI and TailwindCSS by default, giving you access to hundreds of utility classes and beautiful component styles. This makes it incredibly easy to create any design that fits your needs.
+
+- **[TailwindCSS](https://tailwindcss.com/)** - Utility-first CSS framework with responsive design, spacing, colors, and typography utilities
+- **[DaisyUI](https://daisyui.com/)** - Component library with beautiful, accessible UI components built on TailwindCSS
+
+**Available Design Systems:**
+- Modern utility classes for spacing, sizing, colors, and layouts
+- Pre-built components: buttons, cards, modals, forms, navigation, and more
+- Responsive design utilities for mobile-first development
+- Accessibility features built-in
+- Multiple component themes and color schemes
+
+**Quick Example:**
+```html
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+  <div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">Feature One</h2>
+      <p>Description of your feature goes here.</p>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Learn More</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Visit [TailwindCSS Documentation](https://tailwindcss.com/docs) and [DaisyUI Components](https://daisyui.com/components/) for complete reference guides.
+
+### Method 2: Custom Assets Folder
 
 For complete control over the home page with separate HTML files, create a root-level `assets/` folder with custom resources.
+
+See a complete example in [Custom Plain HTML Example](/examples/custom-plain-html-example.md).
+
 
 **Setup:**
 
@@ -945,7 +979,7 @@ project-root/
 - **Multi-Product Sites**: Create a hub page that links to different documentation sections
 - **Custom Branding**: Implement your exact design requirements without theme limitations
 
-**Example Custom Home Page:**
+**Example Custom Home Page using Tailwindcss:**
 
 ```html
 <!DOCTYPE html>
@@ -954,26 +988,31 @@ project-root/
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Product - Documentation</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Product</h1>
-        <p>The best solution for your needs</p>
-    </header>
-    <main>
-        <div class="cta-buttons">
-            <a href="/start.html" class="btn-primary">Get Started</a>
-            <a href="/reference.html" class="btn-secondary">API Reference</a>
-        </div>
-    </main>
+<body class="bg-gradient-to-br from-blue-600 to-purple-700 min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg mx-4 text-center">
+        <header class="mb-6">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Welcome to My Product</h1>
+            <p class="text-gray-600 text-lg">The best solution for your needs</p>
+        </header>
+        <main>
+            <div class="space-y-4">
+                <a href="./docs/start.html" class="block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                    Get Started
+                </a>
+                <a href="./docs/reference.html" class="block bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                    API Reference
+                </a>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
 ```
 
 This is exactly how this site, the [OkiDoki](https://jbeejones.github.io/okidoki-website/index.html) official website, creates its custom home page while maintaining the documentation functionality.
 
-#### Choosing Between Methods
+### Choosing Between Methods
 
 **Use Method 1 (Frontmatter Configuration) when:**
 - You want to create custom pages within your existing documentation structure
