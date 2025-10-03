@@ -23,14 +23,19 @@ Get help with common issues and questions about OkiDoki.
 
 **Problem:** `npm install -g okidoki` fails with permission errors
 ```bash
-# Solution 1: Use sudo (not recommended)
-sudo npm install -g okidoki
+# Solution 1: Use npx to run without installation (recommended)
+npx okidoki init
+npx okidoki generate
+# etc.
 
-# Solution 2: Configure npm to use a different directory (recommended)
+# Solution 2: Configure npm to use a different directory
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 export PATH=~/.npm-global/bin:$PATH
 npm install -g okidoki
+
+# Solution 3: Use sudo (not recommended)
+sudo npm install -g okidoki
 ```
 
 **Problem:** "okidoki command not found" after installation

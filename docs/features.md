@@ -261,9 +261,12 @@ OkiDoki is **100% open source**, which means:
 
 {{#alert}}
 **Community matters**: 
-
-Open source ensures OkiDoki evolves with developer needs, not corporate agendas. Join the community and help shape the future of documentation!
-
+Open source ensures OkiDoki evolves with developer needs, not corporate agendas. 
+Join the community and help shape the future of documentation!
 {{/alert}}
 
-Get started in 30 seconds: `npm install -g okidoki && okidoki init` 🚀 
+Get started in 5 seconds 🚀: 
+
+```bash
+npx okidoki init && npx okidoki generate && npx serve dist
+``` 
