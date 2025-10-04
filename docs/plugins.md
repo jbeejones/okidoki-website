@@ -18,7 +18,7 @@ keywords: [
 
 # Plugin System
 
-OkiDoki supports a plugin system that allows you to create custom handlebars helpers without modifying the core codebase. This enables you to extend your documentation with custom functionality while keeping your setup clean and maintainable.
+OkiDoki supports a plugin system that allows you to create custom [Handlebars helpers](https://handlebarsjs.com/guide/block-helpers.html) without modifying the core codebase. This enables you to extend your documentation with custom functionality while keeping your setup clean and maintainable.
 
 ## Quick Start
 
