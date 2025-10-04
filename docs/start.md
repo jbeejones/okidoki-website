@@ -118,7 +118,7 @@ The run the `okidoki generate` command again and refresh your browser to see the
 
 ## Key Features
 
-- **Markdown First**: Write in standard markdown, no proprietary formats
+- **Markdown First**: Write in standard markdown with enhanced plugins for emojis, math, diagrams, and TOC
 - **Fast Search**: Full-text search across all documentation
 - **Clean Themes**: Beautiful, responsive themes out of the box
 - **Quick Build**: Generate docs in under 1 second

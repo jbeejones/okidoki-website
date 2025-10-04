@@ -13,7 +13,16 @@ keywords: [
   "handlebars helpers",
   "badge syntax",
   "alert syntax",
-  "okidoki complete guide"
+  "okidoki complete guide",
+  "markdown-it-emoji",
+  "markdown-it-mathjax3",
+  "markdown-it-mermaid",
+  "markdown-it-table-of-contents",
+  "advanced markdown plugins",
+  "emoji support",
+  "mathematical expressions",
+  "mermaid diagrams",
+  "automatic table of contents"
 ]
 ---
 
@@ -492,7 +501,7 @@ Navbar items appear in the top navigation bar and are perfect for external links
 ### Standard Markdown
 All standard markdown syntax is supported:
 
-```markdown
+````markdown
 # Headers (H1-H6)
 **Bold** and *italic* text
 `Code spans` and ```code blocks```
@@ -501,7 +510,7 @@ All standard markdown syntax is supported:
 1. Lists (ordered)
 | Tables | With | Columns |
 > Blockquotes
-```
+````
 
 ### Code Blocks with Syntax Highlighting
 
@@ -813,6 +822,137 @@ api:
 - **State persistence**: Selected tab remains active during page navigation
 - **Nested content support**: Full markdown formatting including alerts, badges, and links
 - **Performance optimized**: Content lazy-loaded for better page performance
+
+### Advanced Markdown Plugins
+
+OkiDoki includes several powerful markdown plugins that extend standard markdown functionality with enhanced features for emojis, mathematical expressions, diagrams, and automatic table of contents generation.
+
+#### Emoji Support (`markdown-it-emoji`)
+
+Add emojis to your documentation using standard emoji shortcodes:
+
+```markdown
+:rocket: Launch your documentation
+:heart: Made with love
+:warning: Important notice
+:check: Task completed
+:star: Featured content
+```
+
+**Features:**
+- Standard emoji shortcode syntax (`:emoji_name:`)
+- Full Unicode emoji support
+- Consistent rendering across all browsers
+- No additional configuration required
+
+#### Mathematical Expressions (`markdown-it-mathjax3`)
+
+Render beautiful mathematical expressions using MathJax3. Supports both inline and block math expressions:
+
+**Inline Math:**
+```markdown
+The quadratic formula is $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$ and it's very useful.
+```
+
+**Block Math:**
+```markdown
+$$
+\begin{align}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &= \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} &= 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &= \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &= 0
+\end{align}
+$$
+```
+
+**Features:**
+- LaTeX/TeX syntax support
+- Inline math with `$...$` delimiters
+- Block math with `$$...$$` delimiters
+- Full MathJax3 feature set
+- Automatic equation numbering
+- Cross-references and labels
+
+#### Mermaid Diagrams (`markdown-it-mermaid`)
+
+Create beautiful diagrams and flowcharts using Mermaid syntax. Perfect for visualizing processes, architectures, and relationships:
+
+**Flowchart:**
+````markdown
+```mermaid
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> E[Fix issue]
+    E --> B
+    C --> F[End]
+```
+````
+
+**Sequence Diagram:**
+````markdown
+```mermaid
+sequenceDiagram
+    participant User
+    participant API
+    participant Database
+    
+    User->>API: GET /users
+    API->>Database: SELECT * FROM users
+    Database-->>API: Return user data
+    API-->>User: JSON response
+```
+````
+
+**Supported Diagram Types:**
+- Flowcharts (`graph`, `flowchart`)
+- Sequence diagrams (`sequenceDiagram`)
+- Class diagrams (`classDiagram`)
+- State diagrams (`stateDiagram`)
+- Entity relationship diagrams (`erDiagram`)
+- User journey diagrams (`journey`)
+- Git graphs (`gitgraph`)
+- Pie charts (`pie`)
+- Gantt charts (`gantt`)
+- Timeline diagrams (`timeline`)
+
+**Features:**
+- Interactive diagrams with zoom and pan
+- Responsive design
+- Dark/light theme support
+- Export capabilities
+- Accessibility features
+
+#### Automatic Table of Contents (`markdown-it-table-of-contents`)
+
+Generate automatic table of contents using the `[TOC]` placeholder:
+
+```markdown
+[TOC]
+
+# Introduction
+This is the introduction section.
+
+## Getting Started
+Here's how to get started.
+
+### Prerequisites
+What you need before starting.
+
+## Advanced Topics
+More complex topics.
+```
+
+**Features:**
+- Automatic heading detection
+- Hierarchical structure
+- Clickable navigation links
+- Customizable styling
+- Anchor link generation
+- Responsive design
+
 
 ## File Organization
 

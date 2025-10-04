@@ -10,7 +10,15 @@ keywords: [
   "documentation search",
   "markdown variables",
   "documentation hosting options",
-  "SEO documentation generator"
+  "SEO documentation generator",
+  "markdown-it-emoji",
+  "markdown-it-mathjax3",
+  "markdown-it-mermaid",
+  "markdown-it-table-of-contents",
+  "emoji support",
+  "mathematical expressions",
+  "mermaid diagrams",
+  "automatic table of contents"
 ]
 pagenav: true
 ---
@@ -34,18 +42,27 @@ OkiDoki is an **open source** documentation generator designed for developers wh
 
 Write in standard markdown - no proprietary formats or vendor lock-in:
 
-```markdown
+````markdown
 # Your Documentation
 Just write **normal markdown** with `code blocks`, tables, and links.
 
 - No learning curve
 - Use any markdown editor
 - Version control friendly
-```
+````
 
 {{badge "New" "info"}} Convert [OpenAPI](https://www.openapis.org/) specifications to markdown with `okidoki openapi -i spec.yaml` - automatically generates comprehensive API documentation in standard markdown format.
 
-**Benefits:** Focus on content, not syntax. Your documentation remains portable and future-proof.
+### Enhanced Markdown Support
+
+OkiDoki includes powerful markdown plugins that extend standard markdown functionality:
+
+- **:rocket: Emoji Support**: Use standard emoji shortcodes (`:rocket:`, `:heart:`, `:warning:`)
+- **Mathematical Expressions**: Render LaTeX/TeX math with `$inline$` and `$$block$$` syntax
+- **Mermaid Diagrams**: Create flowcharts, sequence diagrams, and more with simple syntax
+- **Automatic TOC**: Generate table of contents with `[[toc]]` placeholder
+
+**Benefits:** Focus on content, not syntax. Your documentation remains portable and future-proof while gaining powerful extensions.
 
 ## 2. Dynamic Variables
 

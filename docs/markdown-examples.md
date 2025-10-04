@@ -11,7 +11,15 @@ keywords: [
   "okidoki alerts examples",
   "markdown formatting guide",
   "documentation formatting",
-  "okidoki syntax reference"
+  "okidoki syntax reference",
+  "emoji examples",
+  "mathematical expressions examples",
+  "mermaid diagram examples",
+  "table of contents examples",
+  "emoji support",
+  "mathematical expressions",
+  "mermaid diagrams",
+  "automatic table of contents"
 ]
 local_version: "1.0.1"
 api_url: "https://api.example.com"
@@ -766,6 +774,180 @@ Embed YouTube videos directly in your documentation using the built-in YouTube h
 ```
 
 
+## Advanced Markdown Plugins
+
+OkiDoki now supports several powerful markdown plugins that extend the standard markdown functionality with enhanced features for emojis, mathematical expressions, diagrams, and automatic table of contents generation.
+
+### Emoji Support
+
+Add emojis to your documentation. Simply use standard emoji shortcodes:
+
+```markdown
+:rocket: Launch your documentation
+:heart: Made with love
+:warning: Important notice
+:white_check_mark: Task completed
+:star: Featured content
+```
+
+**Result:** 👇
+
+:rocket: Launch your documentation  
+:heart: Made with love  
+:warning: Important notice  
+:white_check_mark: Task completed  
+:star: Featured content
+
+### Mathematical Expressions
+
+Render beautiful mathematical expressions using MathJax3. Support both inline and block math expressions:
+
+#### Inline Math
+
+```markdown
+The quadratic formula is $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$ and it's very useful.
+```
+
+**Result:** 👇
+
+The quadratic formula is $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$ and it's very useful.
+
+#### Block Math
+
+```markdown
+$$
+\begin{align}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &= \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} &= 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &= \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &= 0
+\end{align}
+$$
+```
+
+**Result:** 👇
+
+$$
+\begin{align}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &= \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} &= 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &= \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &= 0
+\end{align}
+$$
+
+### Mermaid Diagrams
+
+Create beautiful diagrams and flowcharts. Perfect for visualizing processes, architectures, and relationships:
+
+#### Flowchart Example
+
+````markdown
+```mermaid
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> E[Fix issue]
+    E --> B
+    C --> F[End]
+```
+````
+
+**Result:** 👇
+
+```mermaid
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> E[Fix issue]
+    E --> B
+    C --> F[End]
+```
+
+#### Sequence Diagram Example
+
+````markdown
+```mermaid
+sequenceDiagram
+    participant User
+    participant API
+    participant Database
+    
+    User->>API: GET /users
+    API->>Database: SELECT * FROM users
+    Database-->>API: Return user data
+    API-->>User: JSON response
+```
+````
+
+**Result:** 👇
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant API
+    participant Database
+    
+    User->>API: GET /users
+    API->>Database: SELECT * FROM users
+    Database-->>API: Return user data
+    API-->>User: JSON response
+```
+
+#### Git Graph Example
+
+````markdown
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Requirements Gathering    :done, req, 2024-01-01, 2024-01-15
+    Design Phase            :done, design, 2024-01-16, 2024-02-01
+    section Development
+    Frontend Development     :active, frontend, 2024-02-02, 2024-03-15
+    Backend Development      :backend, 2024-02-16, 2024-03-30
+    section Testing
+    Unit Testing            :test1, 2024-03-01, 2024-03-15
+    Integration Testing     :test2, 2024-03-16, 2024-04-01
+    section Deployment
+    Production Release      :release, 2024-04-02, 2024-04-05
+```
+````
+
+**Result:** 👇
+
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Requirements Gathering    :done, req, 2024-01-01, 2024-01-15
+    Design Phase            :done, design, 2024-01-16, 2024-02-01
+    section Development
+    Frontend Development     :active, frontend, 2024-02-02, 2024-03-15
+    Backend Development      :backend, 2024-02-16, 2024-03-30
+    section Testing
+    Unit Testing            :test1, 2024-03-01, 2024-03-15
+    Integration Testing     :test2, 2024-03-16, 2024-04-01
+    section Deployment
+    Production Release      :release, 2024-04-02, 2024-04-05
+```
+
+### Automatic Table of Contents
+
+Generate automatic table of contents. Simply add `[[TOC]]` anywhere in your document:
+
+```markdown
+My table of contents:
+[[TOC]]
+
+## This heading will show in the above TOC
+```
+
+
 ## Best Practices
 
 1. **Use descriptive headers** - Make it easy to scan and navigate
@@ -773,6 +955,10 @@ Embed YouTube videos directly in your documentation using the built-in YouTube h
 3. **Add context** - Explain when and why to use something
 4. **Keep it updated** - Outdated documentation is worse than no documentation
 5. **Link related content** - Help users discover relevant information
+6. **Use emojis sparingly** - Enhance readability without overwhelming content
+7. **Keep math expressions simple** - Complex equations should be in separate blocks
+8. **Test diagrams** - Ensure Mermaid diagrams render correctly
+9. **Place TOC strategically** - Usually at the beginning of long documents
 
 
 

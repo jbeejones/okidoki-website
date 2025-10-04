@@ -19,7 +19,10 @@ OkiDoki generates static files in the `dist/` folder that can be deployed anywhe
 
 ## GitHub Pages
 
-Deploy directly from your GitHub repository:
+Deploy directly from your GitHub repository.
+
+> **💡 Pro Tip:** For better SEO and a more professional appearance, consider using your own custom domain (e.g., `docs.yourcompany.com`) instead of the GitHub Pages subdirectory. This allows you to host your documentation at the root path `/` rather than `/repository-name/`, which is better for search engine optimization and user experience.
+
 
 ### 1. Create a GitHub Actions workflow (recommended):
 
@@ -73,9 +76,10 @@ jobs:
 - Source: "GitHub Actions"
 - Your site will be available at `https://username.github.io/repository-name`
 
-### 3. Configure URLs for GitHub Pages:
+### 3. Configure URLs for GitHub Pages (without custom domain):
 
-Add these URL settings to your `okidoki.yaml`:
+
+Add these URL settings to your `okidoki.yaml` for hosting without a custom domain:
 
 ```yaml
 site:
@@ -99,7 +103,9 @@ site:
     url: "https://john.github.io/my-awesome-docs"
   ```
 
-**For custom domains:** If using a custom domain (e.g., `docs.example.com`), set:
+### 4. Configure URLs for custom domain hosting:
+
+If using a custom domain (e.g., `docs.example.com`), set:
 ```yaml
 site:
   baseUrl: "/"
