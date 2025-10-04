@@ -10,22 +10,22 @@ searchable: false
 ---
 
 <!-- Hero Section -->
-<div class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+<div class="py-20 bg-gradient-to-br from-base-100 to-base-200">
   <div class="max-w-4xl mx-auto px-6 text-center">
-    <h1 class="text-5xl font-bold text-gray-900 mb-4">
+    <h1 class="text-5xl font-bold text-base-content mb-4">
       Simple, transparent pricing
     </h1>
-    <p class="text-xl text-gray-600 mb-8">
+    <p class="text-xl text-base-content/70 mb-8">
       Choose the perfect plan for your documentation needs
     </p>
-    <div class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+    <div class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
       {{badge "New" "info"}} &nbsp; Custom Pages Available
     </div>
   </div>
 </div>
 
 <!-- Pricing Cards -->
-<div class="py-20 bg-white">
+<div class="py-20 bg-base-100">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
       
@@ -36,7 +36,7 @@ searchable: false
             <h2 class="text-2xl font-bold">Starter</h2>
             <span class="text-xl font-semibold">Free</span>
           </div>
-          <p class="text-gray-600 mb-6">Perfect for personal projects and small teams</p>
+          <p class="text-base-content/70 mb-6">Perfect for personal projects and small teams</p>
           <ul class="flex flex-col gap-3 text-sm mb-8">
             <li class="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-3 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
@@ -69,7 +69,7 @@ searchable: false
             <h2 class="text-2xl font-bold">Professional</h2>
             <span class="text-xl font-semibold">$19/mo</span>
           </div>
-          <p class="text-gray-600 mb-6">For growing teams and businesses</p>
+          <p class="text-base-content/70 mb-6">For growing teams and businesses</p>
           <ul class="flex flex-col gap-3 text-sm mb-8">
             <li class="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-3 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
@@ -105,7 +105,7 @@ searchable: false
             <h2 class="text-2xl font-bold">Enterprise</h2>
             <span class="text-xl font-semibold">Custom</span>
           </div>
-          <p class="text-gray-600 mb-6">For large organizations with specific needs</p>
+          <p class="text-base-content/70 mb-6">For large organizations with specific needs</p>
           <ul class="flex flex-col gap-3 text-sm mb-8">
             <li class="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-3 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
@@ -142,7 +142,7 @@ searchable: false
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold mb-4">Compare all features</h2>
-      <p class="text-lg text-gray-600">Everything you need to create beautiful documentation</p>
+      <p class="text-lg text-base-content/70">Everything you need to create beautiful documentation</p>
     </div>
     
     <div class="overflow-x-auto">
@@ -199,7 +199,7 @@ searchable: false
 </div>
 
 <!-- FAQ -->
-<div class="py-20 bg-white">
+<div class="py-20 bg-base-100">
   <div class="max-w-3xl mx-auto px-6">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold mb-4">Frequently asked questions</h2>

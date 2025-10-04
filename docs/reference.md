@@ -1021,15 +1021,7 @@ hideBreadcrumbs: true    # Hide breadcrumb navigation
 hideFooter: true         # Hide page footer
 customHTML: true         # Allow custom HTML without prose constraints
 ---
-<div class="hero min-h-[35vh] relative overflow-hidden bg-gradient-to-br from-purple-900 to-blue-900">
-  <div class="hero-content text-center text-white">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">Welcome to My Product</h1>
-      <p class="mb-5">The best solution for your documentation needs</p>
-      <button class="btn btn-primary">Get Started</button>
-    </div>
-  </div>
-</div>
+<p>Your HTML goes here</p>
 ````
 
 **Frontmatter Options:**
@@ -1059,19 +1051,37 @@ OkiDoki includes DaisyUI and TailwindCSS by default, giving you access to hundre
 - Accessibility features built-in
 - Multiple component themes and color schemes
 
-**Quick Example:**
+**Quick Example: ([link to example page](/examples/custom-plain-html-example.html))**
 ```html
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-  <div class="card bg-base-100 shadow-xl">
-    <div class="card-body">
-      <h2 class="card-title">Feature One</h2>
-      <p>Description of your feature goes here.</p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Learn More</button>
-      </div>
+---
+customHTML: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Product - Documentation</title>
+</head>
+<body class="bg-gradient-to-br from-primary to-secondary min-h-screen flex items-center justify-center">
+    <div class="bg-base-100 rounded-lg shadow-2xl p-8 max-w-lg mx-4 text-center">
+        <header class="mb-6">
+            <h1 class="text-4xl font-bold text-base-content mb-2">Welcome to My Product</h1>
+            <p class="text-base-content/70 text-lg">The best solution for your needs</p>
+        </header>
+        <main>
+            <div class="space-y-4">
+                <a href="../start.html" class="block bg-primary hover:bg-primary/90 text-primary-content font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                    Get Started
+                </a>
+                <a href="../reference.html" class="block bg-base-200 hover:bg-base-300 text-base-content font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                    API Reference
+                </a>
+            </div>
+        </main>
     </div>
-  </div>
-</div>
+</body>
+</html>
 ```
 
 Visit [TailwindCSS Documentation](https://tailwindcss.com/docs) and [DaisyUI Components](https://daisyui.com/components/) for complete reference guides.
@@ -1119,36 +1129,6 @@ project-root/
 - **Multi-Product Sites**: Create a hub page that links to different documentation sections
 - **Custom Branding**: Implement your exact design requirements without theme limitations
 
-**Example Custom Home Page using Tailwindcss:**
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Product - Documentation</title>
-</head>
-<body class="bg-gradient-to-br from-blue-600 to-purple-700 min-h-screen flex items-center justify-center">
-    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg mx-4 text-center">
-        <header class="mb-6">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">Welcome to My Product</h1>
-            <p class="text-gray-600 text-lg">The best solution for your needs</p>
-        </header>
-        <main>
-            <div class="space-y-4">
-                <a href="./docs/start.html" class="block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
-                    Get Started
-                </a>
-                <a href="./docs/reference.html" class="block bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
-                    API Reference
-                </a>
-            </div>
-        </main>
-    </div>
-</body>
-</html>
-```
 
 This is exactly how this site, the [OkiDoki](https://jbeejones.github.io/okidoki-website/index.html) official website, creates its custom home page while maintaining the documentation functionality.
 
