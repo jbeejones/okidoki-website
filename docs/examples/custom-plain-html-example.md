@@ -16,10 +16,10 @@ customHTML: true
         </header>
         <main>
             <div class="space-y-4">
-                <a href="./docs/start.html" class="block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                <a href="../start.html" class="block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                     Get Started
                 </a>
-                <a href="./docs/reference.html" class="block bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                <a href="../reference.html" class="block bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                     API Reference
                 </a>
             </div>

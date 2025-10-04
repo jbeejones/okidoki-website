@@ -16,10 +16,7 @@ menu:
       - title: Deployment Guide
         document: /deployment.md
       - title: Plugins
-        document: /plugins.md
-        badge:
-          variant: success
-          text: new
+        document: /plugins.md        
       - title: Help & Troubleshooting
         document: /help.md
   - title: Examples
