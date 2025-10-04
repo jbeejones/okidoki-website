@@ -12,7 +12,7 @@ menu:
       - title: Complete Reference
         document: /reference.md
       - title: Markdown Examples
-        document: /markdown-examples.md
+        document: /markdown-examples.md      
       - title: Deployment Guide
         document: /deployment.md
       - title: Plugins

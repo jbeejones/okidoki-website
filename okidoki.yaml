@@ -2,7 +2,7 @@
 site:
   title: OkiDoki
   description: "Open source, simple, fast documentation generator that turns your markdown files into beautiful docs"
-  url: "https://jbeejones.github.io"  # Full domain for absolute sitemap URLs
+  url: "https://okidoki.dev"  # Full domain for absolute sitemap URLs
   baseUrl: "/"
   logo: "/okidokilogo.svg"
   theme:                    
