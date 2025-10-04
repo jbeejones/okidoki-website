@@ -235,7 +235,7 @@ cd my-docs && npm run docs:dev
 **Core Philosophy & Workflow:**
 GitBook transforms documentation from a developer-centric activity into a collaborative team process. It's designed for organizations where non-technical team members (product managers, technical writers, customer success teams) need to contribute to documentation alongside developers, creating a unified knowledge base that serves both internal and external audiences.
 
-![GitBook Documentation Interface](/img/gitbook-screenshot.png "GitBook's polished collaborative interface with real-time editing and team features")
+![GitBook Documentation Interface](/img/gitbook-screenshot.svg "GitBook's polished collaborative interface with real-time editing and team features")
 
 **Key Features & Capabilities:**
 
