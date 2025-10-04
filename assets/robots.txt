@@ -2,10 +2,6 @@ User-agent: *
 Allow: /
 # ✅ Explicitly allow sitemap access
 Allow: /sitemap.xml
-Allow: /okidoki-website/sitemap.xml
-
-# 🚫 Prevent duplicate indexing of /index.html
-Disallow: /index.html
 
 # ✅ Point search engines to your sitemap
-Sitemap: https://jbeejones.github.io/okidoki-website/sitemap.xml
+Sitemap: https://okidoki.dev/sitemap.xml

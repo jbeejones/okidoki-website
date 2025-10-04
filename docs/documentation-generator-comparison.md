@@ -598,7 +598,7 @@ bundle exec middleman server
 {{badge "Open Source" "success"}} {{badge "Node.js" "info"}} {{badge "Zero Dependencies in Output" "neutral"}}
 
 **Links & Resources:**
-- **Main Website:** [OkiDoki](https://jbeejones.github.io/okidoki-website/index.html)
+- **Main Website:** [OkiDoki](https://okidoki.dev/index.html)
 - **GitHub Repository:** [https://github.com/jbeejones/okidoki](https://github.com/jbeejones/okidoki)
 - **NPM Package:** [npmjs.com/package/okidoki](https://www.npmjs.com/package/okidoki)
 

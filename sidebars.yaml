@@ -77,5 +77,5 @@ footer:
         url: https://github.com/jbeejones/okidoki/blob/main/CONTRIBUTING.md
   - title: ''
     items:
-      - label: This site was created with OkiDoki
-        url: https://jbeejones.github.io/okidoki-website/index.html
+      - label: This site was created with OkiDoki.dev
+        url: https://okidoki.dev/index.html
