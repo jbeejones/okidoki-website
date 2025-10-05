@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-# ✅ Explicitly allow sitemap access
-Allow: /sitemap.xml
-
-# ✅ Point search engines to your sitemap
-Sitemap: https://okidoki.dev/sitemap.xml
