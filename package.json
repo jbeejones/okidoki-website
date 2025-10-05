@@ -5,7 +5,14 @@
   "type": "module",
   "scripts": {
     "build-css": "tailwindcss -i ./src/input.css -o ./assets/styles.css --watch",
-    "build-css-prod": "tailwindcss -i ./src/input.css -o ./assets/styles.css --minify"
+    "build-css-prod": "tailwindcss -i ./src/input.css -o ./assets/styles.css --minify",
+    "build-serve": "okidoki generate && npx serve dist",
+    "build": "okidoki generate"
+  ,
+    "dev": "nodemon --watch src --watch docs --ext md,html,css,js --exec 'npm run build-serve'"
+  },
+  "okidoki": {
+    "watch": true
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"

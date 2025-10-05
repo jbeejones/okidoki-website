@@ -6,8 +6,8 @@ site:
   baseUrl: "/"
   logo: "/okidokilogo.svg"
   theme:                    
-    light: "light"         
-    dark: "dark"           
+    light: "light"
+    dark: "dark"
   
 search:
   enabled: true
@@ -17,7 +17,7 @@ build:
   clean: true          
   minify: true         
 
-okidoki_version: "1.1.21"
+okidoki_version: "1.1.22"
 
 plugins:
   enabled: true

@@ -183,11 +183,14 @@ Main configuration file for your documentation site.
 #### Site Configuration
 ```yaml
 site:
-  title: "Site Title"           # Appears in browser title and header
-  description: "Site Description"  # Meta description for SEO
-  logo: "path/to/logo.png"      # Optional: Custom logo
-  favicon: "path/to/favicon.ico" # Optional: Custom favicon
-  baseUrl: "/docs/"             # Optional: base path for subdirectory hosting
+  title: "Site Title"             # Appears in browser title and header
+  description: "Site Description" # Meta description for SEO
+  logo: "/path/to/logo.png"       # Optional: Custom logo
+  favicon: "/path/to/favicon.ico" # Optional: Custom favicon
+  baseUrl: "/"                    # Optional: add path for subdirectory hosting
+  theme:
+    light: "light"                # DaisyUi theme
+    dark: "dark"
 ```
 
 **BaseUrl Configuration:**

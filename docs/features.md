@@ -152,17 +152,8 @@ Advice: Don't overuse alerts!
 \{{/alert}}
 ```
 
-##### Available Alert Types
-- **info** - Blue, for general information  
-- **success** - Green, for positive messages
-- **warning** - Orange/yellow, for important warnings
-- **error** - Red, for critical alerts
-- **blank** - Gray, for neutral information (default)
-
-##### Available Badge Variants
-- **primary**, **secondary**, **accent** - Brand colors
-- **info**, **success**, **warning**, **error** - Status colors
-- **outline** - Transparent with border
+##### Alert Types & Badge Variants
+There are many different alert types and badge variants available. See the [Markdown Examples](markdown-examples.md#important-messages-and-callouts) section for a complete reference with examples.
 
 {{#alert type="info"}}
 Advice: Don't overuse alerts!
@@ -217,20 +208,10 @@ search:
 Built-in SEO features for better discoverability:
 
 - **Automatic sitemap.xml** - Generated with every build for search engine indexing
-- **Meta descriptions** - Configure in `okidoki.yaml` for better search results  
+- **Meta descriptions** - Configure in markdown header (frontmatter) for better search results  
 - **Semantic HTML** - Clean, accessible markup for search engines
 - **Fast loading** - Optimized performance improves search rankings
 - **Subdirectory support** - Configure `baseUrl` for hosting under subdirectories (required for GitHub Pages)
-
-```yaml
-site:
-  title: "My Documentation"
-  description: "Complete API documentation and guides"  # Used in meta tags
-  baseUrl: "/my-repo/"  # Required for GitHub Pages: username.github.io/my-repo/
-```
-
-**GitHub Pages Example:** With `baseUrl: "/my-repo/"`, your site works correctly at `username.github.io/my-repo/`.
-
 **Benefits:** Better search engine visibility means more users find your documentation naturally.
 
 ## 7. 🌐 Host Anywhere
@@ -258,7 +239,7 @@ Deploy your documentation anywhere static files are supported - no server requir
 ## Why OkiDoki?
 
 - **Fast**: Generate docs in under 1 second
-- **Small**: ~50KB generated sites  
+- **Small**: Lightweight sites due to pure HTML, DaisyUI, and TailwindCSS  
 - **Simple**: Two config files, standard markdown
 - **Powerful**: Variables, themes, search, components
 - **SEO Ready**: Automatic sitemaps and optimized markup
