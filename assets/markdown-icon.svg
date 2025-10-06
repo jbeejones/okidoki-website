@@ -1,0 +1,31 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document background -->
+  <rect x="40" y="40" width="240" height="240" rx="8" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+  
+  <!-- Text lines -->
+  <rect x="60" y="80" width="180" height="4" fill="#6c757d"/>
+  <rect x="60" y="100" width="140" height="4" fill="#6c757d"/>
+  <rect x="60" y="120" width="160" height="4" fill="#6c757d"/>
+  <rect x="60" y="140" width="120" height="4" fill="#6c757d"/>
+  <rect x="60" y="160" width="200" height="4" fill="#6c757d"/>
+  <rect x="60" y="180" width="90" height="4" fill="#6c757d"/>
+  <rect x="60" y="200" width="170" height="4" fill="#6c757d"/>
+  <rect x="60" y="220" width="110" height="4" fill="#6c757d"/>
+  
+  <!-- Markdown symbols -->
+  <rect x="60" y="80" width="8" height="4" fill="#495057"/>
+  <rect x="60" y="100" width="8" height="4" fill="#495057"/>
+  <rect x="60" y="120" width="8" height="4" fill="#495057"/>
+  <rect x="60" y="140" width="8" height="4" fill="#495057"/>
+  <rect x="60" y="160" width="8" height="4" fill="#495057"/>
+  <rect x="60" y="180" width="8" height="4" fill="#495057"/>
+  <rect x="60" y="200" width="8" height="4" fill="#495057"/>
+  <rect x="60" y="220" width="8" height="4" fill="#495057"/>
+  
+  <!-- Code block indicator -->
+  <rect x="60" y="240" width="180" height="20" rx="4" fill="#e9ecef" stroke="#dee2e6" stroke-width="1"/>
+  <rect x="70" y="245" width="4" height="10" fill="#6c757d"/>
+  <rect x="80" y="245" width="4" height="10" fill="#6c757d"/>
+  <rect x="90" y="245" width="4" height="10" fill="#6c757d"/>
+  <rect x="100" y="245" width="4" height="10" fill="#6c757d"/>
+</svg>

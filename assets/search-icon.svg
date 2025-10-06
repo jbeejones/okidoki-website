@@ -1,0 +1,22 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Search circle -->
+  <circle cx="140" cy="140" r="80" fill="none" stroke="#6c757d" stroke-width="12"/>
+  
+  <!-- Search handle -->
+  <path d="M200 200 L240 240" stroke="#6c757d" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Inner highlight -->
+  <circle cx="140" cy="140" r="60" fill="none" stroke="#adb5bd" stroke-width="4"/>
+  
+  <!-- Search rays -->
+  <path d="M140 60 L140 80" stroke="#dee2e6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M140 200 L140 220" stroke="#dee2e6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M60 140 L80 140" stroke="#dee2e6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M200 140 L220 140" stroke="#dee2e6" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Diagonal rays -->
+  <path d="M85 85 L100 100" stroke="#dee2e6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M195 195 L210 210" stroke="#dee2e6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M195 85 L210 100" stroke="#dee2e6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M85 195 L100 210" stroke="#dee2e6" stroke-width="4" stroke-linecap="round"/>
+</svg>
