@@ -29,53 +29,6 @@ keywords: [
 
 OkiDoki supports a plugin system that allows you to create custom [Handlebars helpers](https://handlebarsjs.com/guide/block-helpers.html) without modifying the core codebase. This enables you to extend your documentation with custom functionality while keeping your setup clean and maintainable.
 
-## Built-in Markdown Plugins
-
-OkiDoki includes several powerful markdown plugins that extend standard markdown functionality:
-
-### Emoji Support (`markdown-it-emoji`)
-Add emojis using standard shortcodes:
-```markdown
-:rocket: Launch your documentation
-:heart: Made with love
-:warning: Important notice
-```
-
-### Mathematical Expressions (`markdown-it-mathjax3`)
-Render LaTeX/TeX math expressions:
-```markdown
-Inline: $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$
-
-Block:
-$$
-\begin{align}
-\nabla \times \vec{\mathbf{B}} &= \frac{4\pi}{c}\vec{\mathbf{j}}
-\end{align}
-$$
-```
-
-### Mermaid Diagrams (`markdown-it-mermaid`)
-Create beautiful diagrams and flowcharts:
-````markdown
-```mermaid
-graph TD
-    A[Start] --> B[Success]
-```
-````
-
-### Automatic Table of Contents (`markdown-it-table-of-contents`)
-Generate TOC with a simple placeholder:
-```markdown
-[TOC]
-
-# Introduction
-## Getting Started
-### Prerequisites
-```
-
-These plugins are automatically enabled and require no configuration. For more examples and detailed usage, see the [Markdown Examples](markdown-examples.md) page.
-
-## Custom Handlebars Plugins
 
 ## Quick Start
 
