@@ -502,21 +502,162 @@ Navbar items appear in the top navigation bar and are perfect for external links
 ## Markdown Features
 
 ### Standard Markdown
-All standard markdown syntax is supported:
 
-````markdown
-# Headers (H1-H6)
-**Bold** and *italic* text
-`Code spans` and ```code blocks```
-[Links](reference.md) and ![Images](image.jpg)
-- Lists (unordered)
-1. Lists (ordered)
-| Tables | With | Columns |
-> Blockquotes
-````
+OkiDoki supports all standard markdown syntax as defined in the [CommonMark specification](https://commonmark.org/). This section covers the fundamental markdown elements you can use in your documentation.
 
-### Code Blocks with Syntax Highlighting
+#### Headers
 
+Create hierarchical headings using hash symbols. 
+
+```markdown
+# H1 - Main Title
+## H2 - Section Title  
+### H3 - Subsection
+#### H4 - Sub-subsection
+##### H5 - Minor Heading
+###### H6 - Smallest Heading
+```
+
+**Best Practices:**
+- Use only one H1 per page (usually the page title)
+- Maintain logical heading hierarchy (don't skip levels)
+- Keep headings descriptive and concise
+
+#### Text Formatting
+
+Apply emphasis and styling to your text. 
+
+```markdown
+**Bold text** or __bold text__
+*Italic text* or _italic text_
+***Bold and italic*** or ___bold and italic___
+~~Strikethrough text~~
+`Inline code`
+```
+
+**Formatting Options:**
+- **Bold**: Use `**text**` or `__text__`
+- **Italic**: Use `*text*` or `_text_`
+- **Bold + Italic**: Use `***text***` or `___text___`
+- **Strikethrough**: Use `~~text~~`
+- **Inline Code**: Use `` `code` ``
+
+#### Lists
+
+Create ordered and unordered lists with nesting support. 
+
+**Unordered Lists:**
+```markdown
+- First item
+- Second item
+  - Nested item
+  - Another nested item
+- Third item
+```
+
+**Ordered Lists:**
+```markdown
+1. First step
+2. Second step
+   1. Nested step
+   2. Another nested step
+3. Third step
+```
+
+**List Best Practices:**
+- Use consistent indentation (2 or 4 spaces)
+- Keep list items parallel in structure
+- Use ordered lists for sequential steps
+- Use unordered lists for related items
+
+#### Links and Images
+
+Create hyperlinks and embed images in your documentation.
+
+**Basic Links:**
+```markdown
+[Link text](https://example.com)
+[Internal link](reference.md)
+[Link with title](https://example.com "Example Website")
+```
+
+**Images:**
+```markdown
+![Alt text](image.jpg)
+![Logo](logo.png =100x50)
+[![Clickable image](image.jpg)](https://example.com)
+```
+
+**Link Types:**
+- **External**: Full URLs like `https://example.com`
+- **Internal**: Relative paths like `reference.md`
+- **Anchors**: Link to sections with `page.md#section`
+- **Images**: Use `![alt text](path)` syntax
+- **Sized Images**: Add dimensions with `=widthxheight`
+
+#### Tables
+
+Create structured data tables with alignment options. 
+
+```markdown
+| Column 1 | Column 2 | Column 3 |
+|:---------|:--------:|---------:|
+| Left     | Center   | Right    |
+| Aligned  | Aligned  | Aligned  |
+```
+
+**Table Alignment:**
+- `:---` - Left aligned (default)
+- `:---:` - Center aligned  
+- `---:` - Right aligned
+
+**Table Features:**
+- Supports markdown formatting within cells
+- Automatic column width adjustment
+- Responsive design on mobile devices
+- HTML `<br>` tags for line breaks
+
+#### Blockquotes
+
+Highlight important information, quotes, or notes. 
+
+```markdown
+> This is a blockquote. It can be used for highlighting important information,
+> quotes, or notes.
+
+> **Tip:** You can also use blockquotes for tips and warnings.
+```
+
+**Blockquote Uses:**
+- Important notices and warnings
+- Quotations from external sources
+- Tips and best practices
+- Callout information
+
+#### Horizontal Rules
+
+Create visual separators between sections.
+
+```markdown
+---
+
+***
+
+___
+```
+
+All three syntaxes (`---`, `***`, `___`) create horizontal rules. Use them sparingly to separate major sections.
+
+#### Code Spans and Blocks
+
+Include code snippets with syntax highlighting. 
+
+**Inline Code:**
+```markdown
+Use the `console.log()` function to output messages.
+```
+
+**Code Blocks:**
 ````markdown
 ```javascript
 function greet(name) {
@@ -527,6 +668,34 @@ function greet(name) {
 
 **Supported Languages:**
 javascript, typescript, python, java, php, go, rust, c, cpp, html, css, yaml, json, bash, shell, sql, and many more.
+
+#### Escaping Characters
+
+Use backslashes to escape special markdown characters:
+
+```markdown
+\*This text won't be italic\*
+\`This won't be code\`
+\# This won't be a heading
+\[This won't be a link\]
+```
+
+#### Line Breaks
+
+Control line breaks in your content:
+
+```markdown
+This is a paragraph with a line break.  
+This line appears on a new line.
+
+This is a new paragraph.
+```
+
+- Use two spaces at the end of a line for a line break
+- Use a blank line for a new paragraph
+- Use `<br>` in tables for line breaks within cells
+
+
 
 
 ### Tables
@@ -848,6 +1017,8 @@ Add emojis to your documentation using standard emoji shortcodes:
 - Consistent rendering across all browsers
 - No additional configuration required
 
+Check out this useful [link to all emojicons](https://gist.github.com/rxaviers/7360908)
+
 #### Mathematical Expressions (`markdown-it-mathjax3`)
 
 Render beautiful mathematical expressions using MathJax3. Supports both inline and block math expressions:
@@ -876,6 +1047,11 @@ $$
 - Full MathJax3 feature set
 - Automatic equation numbering
 - Cross-references and labels
+
+
+For more information about MathJax3 syntax and features, visit the [MathJax documentation](https://docs.mathjax.org/).
+
+
 
 #### Mermaid Diagrams (`markdown-it-mermaid`)
 
@@ -927,6 +1103,11 @@ sequenceDiagram
 - Dark/light theme support
 - Export capabilities
 - Accessibility features
+
+
+For more information about Mermaid diagrams and syntax, visit the [Mermaid documentation](https://mermaid.js.org/intro/).
+
+
 
 #### Automatic Table of Contents (`markdown-it-table-of-contents`)
 

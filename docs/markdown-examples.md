@@ -38,6 +38,8 @@ This page demonstrates various markdown formatting and documentation patterns yo
 
 ## Headers
 
+See the [Headers section](reference.md#standard-markdown) in the reference guide for more details.
+
 ```markdown
 # H1 - Main Title
 ## H2 - Section Title  
@@ -58,6 +60,8 @@ This page demonstrates various markdown formatting and documentation patterns yo
 
 ## Text Formatting
 
+See the [Text Formatting section](reference.md#standard-markdown) in the reference guide for more details.
+
 ```markdown
 **Bold text** or __bold text__
 *Italic text* or _italic text_
@@ -71,6 +75,8 @@ This page demonstrates various markdown formatting and documentation patterns yo
 **Bold text**, *italic text*, ***bold and italic***, ~~strikethrough text~~, `inline code`
 
 ## Lists
+
+See the [Lists section](reference.md#standard-markdown) in the reference guide for more details.
 
 ### Unordered Lists
 ```markdown
@@ -107,6 +113,8 @@ This page demonstrates various markdown formatting and documentation patterns yo
 
 ## Links and Images
 
+See the [Links and Images section](reference.md#standard-markdown) in the reference guide for more details.
+
 ```markdown
 [Link text](https://example.com)
 
@@ -136,6 +144,8 @@ Full size image: ![full size image](okidokilogo.svg)
 Clickable image: [![small image with link](okidokilogo.svg =32x32)](https://example.com)
 
 ## Code Blocks
+
+See the [Code Blocks section](reference.md#code-blocks-with-syntax-highlighting) in the reference guide for more details.
 
 ### JavaScript Example
 ````markdown
@@ -290,6 +300,8 @@ npm test
 
 ## Tables
 
+See the [Tables section](reference.md#tables) in the reference guide for more details.
+
 ```markdown
 | Method   | Endpoint          | Parameters         | Response         | Notes            |
 |:---------|:------------------|:-------------------|:-----------------|:-----------------|
@@ -308,6 +320,8 @@ npm test
 | `DELETE` | `/api/users/{id}` | User ID only       | `204 No Content` | Permanent        |
 
 ## Blockquotes
+
+See the [Blockquotes section](reference.md#standard-markdown) in the reference guide for more details.
 
 ```markdown
 > This is a blockquote. It can be used for highlighting important information,
@@ -336,6 +350,8 @@ ___
 ---
 
 ## Global Variables
+
+See the [Global Variables section](reference.md#global-variables) in the reference guide for more details.
 
 Use variables defined in your `okidoki.yaml` configuration file, or in the markdown heading, to inject dynamic content into your markdown documentation. This powerful feature allows you to:
 
@@ -389,6 +405,8 @@ Support email: {{support_email}}
 
 
 ## Important Messages & Callouts
+
+See the [Important Messages & Callouts section](reference.md#important-messages-and-callouts) in the reference guide for more details.
 
 Create important message callouts using Handlebars alert helpers to enhance your documentation with visually distinct notifications, warnings, and informational blocks. These alerts help draw attention to critical information, warnings, success messages, and other important content.
 
@@ -480,6 +498,8 @@ Please check your [code file](index.js) and ensure that your code is sanitized.
 
 ## Badges
 
+See the [Badges section](reference.md#badges) in the reference guide for more details.
+
 Here are some examples of the badge functionality. Badges are a powerful way to highlight important information, status indicators, or metadata in your documentation. They can be used standalone, inline with text, or to enhance headings and sections.
 
 You can customize badges with different colors and styles to create visual hierarchies and improve the scannability of your documentation. The following examples demonstrate various ways to use badges effectively:
@@ -562,6 +582,8 @@ Features:
 
 ## HTML in Markdown
 
+See the [Custom Pages section](reference.md#custom-pages) in the reference guide for more details.
+
 You can also use HTML for more complex formatting:
 
 ```html
@@ -586,6 +608,8 @@ You can also use HTML for more complex formatting:
 
 
 ## Tabs Demo
+
+See the [Interactive Tabs section](reference.md#interactive-tabs) in the reference guide for more details.
 
 This page demonstrates the powerful Handlebars tabs syntax, which allows you to create interactive tabbed content perfect for:
 
@@ -756,6 +780,8 @@ features:
 
 ## YouTube Videos
 
+See the [YouTube Videos section](reference.md#you-tube-videos) in the reference guide for more details.
+
 Embed YouTube videos directly in your documentation using the built-in YouTube helper:
 
 ### Basic Video Embed
@@ -780,6 +806,8 @@ OkiDoki now supports several powerful markdown plugins that extend the standard 
 
 ### Emoji Support
 
+See the [Emoji Support section](reference.md#emoji-support-markdown-it-emoji) in the reference guide for more details.
+
 Add emojis to your documentation. Simply use standard emoji shortcodes:
 
 ```markdown
@@ -799,6 +827,8 @@ Add emojis to your documentation. Simply use standard emoji shortcodes:
 :star: Featured content
 
 ### Mathematical Expressions
+
+See the [Mathematical Expressions section](reference.md#mathematical-expressions-markdown-it-mathjax3) in the reference guide for more details.
 
 Render beautiful mathematical expressions using MathJax3. Support both inline and block math expressions:
 
@@ -837,6 +867,8 @@ $$
 $$
 
 ### Mermaid Diagrams
+
+See the [Mermaid Diagrams section](reference.md#mermaid-diagrams-markdown-it-mermaid) in the reference guide for more details.
 
 Create beautiful diagrams and flowcharts. Perfect for visualizing processes, architectures, and relationships:
 
@@ -937,6 +969,8 @@ gantt
 ```
 
 ### Automatic Table of Contents
+
+See the [Automatic Table of Contents section](reference.md#automatic-table-of-contents-markdown-it-table-of-contents) in the reference guide for more details.
 
 Generate automatic table of contents. Simply add `[[TOC]]` anywhere in your document:
 
