@@ -188,6 +188,7 @@ site:
   logo: "/path/to/logo.png"       # Optional: Custom logo
   favicon: "/path/to/favicon.ico" # Optional: Custom favicon
   baseUrl: "/"                    # Optional: add path for subdirectory hosting
+  friendlyUrl: true               # Optional: remove .html extensions from URLs
   theme:
     light: "light"                # DaisyUi theme
     dark: "dark"
@@ -199,6 +200,15 @@ site:
 - Omit this field when hosting at the root domain (e.g., `docs.example.com`)
 - Must start and end with `/` when used (e.g., `"/docs/"`, `"/my-repo/"`)
 - Affects all internal links and asset paths
+
+**FriendlyUrl Configuration:**
+- `friendlyUrl: true` - Removes `.html` extensions from all generated URLs and links
+- `friendlyUrl: false` (default) - Keeps `.html` extensions in URLs
+- When enabled, `reference.html` becomes `reference` in URLs
+- Improves URL aesthetics and SEO friendliness
+- All internal navigation links automatically use friendly URLs
+- External links and assets remain unchanged
+- **Note:** Some hosting providers may require additional server configuration for clean URLs
 
 #### Theme Configuration
 ```yaml
