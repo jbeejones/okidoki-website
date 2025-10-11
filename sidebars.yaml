@@ -1,6 +1,6 @@
 menu:
   - title: OkiDoki Home
-    document: /index.md
+    document: /
   - title: 🚀 Getting Started
     document: /start.md
   - title: ✨ Features
