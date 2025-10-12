@@ -185,6 +185,7 @@ Main configuration file for your documentation site.
 site:
   title: "Site Title"             # Appears in browser title and header
   description: "Site Description" # Meta description for SEO
+  url: "https://okidoki.dev"      # Full domain for absolute sitemap URLs
   logo: "/path/to/logo.png"       # Optional: Custom logo
   favicon: "/path/to/favicon.ico" # Optional: Custom favicon
   baseUrl: "/"                    # Optional: add path for subdirectory hosting
@@ -195,12 +196,47 @@ site:
     dark: "dark"
 ```
 
+**URL Configuration:**
+- `url: "https://okidoki.dev"` - Full domain URL where your documentation is hosted
+- Used to generate absolute URLs in the sitemap.xml file
+- **Required for proper SEO**: Search engines use absolute URLs from sitemaps
+- Must include the protocol (`https://` or `http://`)
+- Should not include trailing slash
+- Should not include path segments (use `baseUrl` for subdirectories)
+
+**URL Examples:**
+```yaml
+# Root domain hosting
+site:
+  url: "https://docs.example.com"
+
+# Subdomain hosting
+site:
+  url: "https://docs.myapp.io"
+
+# GitHub Pages with custom domain
+site:
+  url: "https://myproject.com"
+
+# GitHub Pages with subdirectory (use baseUrl too)
+site:
+  url: "https://username.github.io"
+  baseUrl: "/repository-name/"
+```
+
+**Sitemap Benefits:**
+- **SEO Optimization**: Helps search engines discover and index all your pages
+- **Crawling Efficiency**: Provides a clear map of your documentation structure
+- **Update Notifications**: Search engines know when pages are added or modified
+- **Priority Signals**: Can indicate relative importance of pages
+
 **BaseUrl Configuration:**
 - Use `baseUrl` when hosting your documentation under a subdirectory (e.g., `example.com/docs/`)
 - **GitHub Pages:** Required when hosting at `username.github.io/repository-name` (use `baseUrl: "/repository-name/"`)
 - Omit this field when hosting at the root domain (e.g., `docs.example.com`)
 - Must start and end with `/` when used (e.g., `"/docs/"`, `"/my-repo/"`)
 - Affects all internal links and asset paths
+- Works together with `url` for proper sitemap generation
 
 **FriendlyUrl Configuration:**
 - `friendlyUrl: true` - Removes `.html` extensions from all generated URLs and links
