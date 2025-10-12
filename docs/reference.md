@@ -180,7 +180,49 @@ okidoki openapi -i spec.yaml --docs documentation -c config.yaml -b nav.yaml
 
 Main configuration file for your documentation site.
 
-#### Site Configuration
+#### Configuration Overview
+
+Complete reference of all available configuration options:
+
+| Setting | Type | Default | Description |
+|:--------|:-----|:--------|:------------|
+| **Site Configuration** ||||
+| `site.title` | String | Required | Site title (browser title and header) |
+| `site.description` | String | Required | Meta description for SEO |
+| `site.url` | String | Optional | Full domain URL for sitemap generation |
+| `site.logo` | String | Optional | Path to custom logo image |
+| `site.favicon` | String | Optional | Path to custom favicon |
+| `site.baseUrl` | String | `"/"` | Base path for subdirectory hosting |
+| `site.friendlyUrl` | Boolean | `false` | Remove .html extensions from URLs |
+| `site.language` | String | `"en"` | Default language (ISO 639-1 code) |
+| `site.theme.light` | String | `"light"` | DaisyUI light theme name |
+| `site.theme.dark` | String | `"dark"` | DaisyUI dark theme name |
+| **Global Variables** ||||
+| `globals.*` | Any | Optional | Custom variables accessible in markdown |
+| **Search Configuration** ||||
+| `search.enabled` | Boolean | `true` | Enable/disable search functionality |
+| `search.maxResults` | Number | `10` | Maximum search results to display |
+| `search.minSearchLength` | Number | `2` | Minimum characters to trigger search |
+| `search.placeholder` | String | `"Search..."` | Search input placeholder text |
+| **Build Configuration** ||||
+| `build.outputDir` | String | `"dist"` | Output directory for generated files |
+| `build.clean` | Boolean | `true` | Clean output directory before build |
+| `build.minify` | Boolean | `true` | Minify HTML, CSS, and JS files |
+
+**Quick Example:**
+```yaml
+site:
+  title: "My Documentation"
+  description: "Complete guide and API reference"
+  url: "https://docs.example.com"
+  friendlyUrl: true
+  language: "en"
+  theme:
+    light: "lemonade"
+    dark: "coffee"
+```
+
+#### Site Configuration details
 ```yaml
 site:
   title: "Site Title"             # Appears in browser title and header
@@ -192,12 +234,12 @@ site:
   friendlyUrl: true               # Optional: remove .html extensions from URLs
   language: "en"                  # Optional: default language for all pages
   theme:
-    light: "light"                # DaisyUi theme
-    dark: "dark"
+    light: "light"                # DaisyUi light theme
+    dark: "dark"                  # DaisyUI dark theme
 ```
 
 **URL Configuration:**
-- `url: "https://okidoki.dev"` - Full domain URL where your documentation is hosted
+- `url: "https://example.com"` - Full domain URL where your documentation is hosted
 - Used to generate absolute URLs in the sitemap.xml file
 - **Required for proper SEO**: Search engines use absolute URLs from sitemaps
 - Must include the protocol (`https://` or `http://`)
@@ -206,17 +248,14 @@ site:
 
 **URL Examples:**
 ```yaml
-# Root domain hosting
+# Root domain hosting, e.g. on GitHub pages with a custom domain setup
 site:
-  url: "https://docs.example.com"
+  url: "https://okidoki.dev"
 
 # Subdomain hosting
 site:
-  url: "https://docs.myapp.io"
+  url: "https://docs.mysaas.io"
 
-# GitHub Pages with custom domain
-site:
-  url: "https://myproject.com"
 
 # GitHub Pages with subdirectory (use baseUrl too)
 site:
@@ -310,38 +349,6 @@ Based on [DaisyUI themes](https://daisyui.com/docs/themes/), OkiDoki supports al
 **All Available Themes:**
 - `light`, `dark`, `cupcake`, `bumblebee`, `emerald`, `corporate`, `synthwave`, `retro`, `cyberpunk`, `valentine`, `halloween`, `garden`, `forest`, `aqua`, `lofi`, `pastel`, `fantasy`, `wireframe`, `black`, `luxury`, `dracula`, `cmyk`, `autumn`, `business`, `acid`, `lemonade`, `night`, `coffee`, `winter`, `dim`, `nord`, `sunset`, `caramellatte`, `abyss`, `silk`
 
-**Popular Combinations:**
-```yaml
-# Modern & Clean
-site:
-  theme:
-    light: "corporate"
-    dark: "luxury"
-
-# Playful & Colorful  
-site:
-  theme:
-    light: "cupcake"
-    dark: "synthwave"
-
-# Developer Friendly
-site:
-  theme:
-    light: "wireframe"
-    dark: "dracula"
-
-# Warm & Cozy (New DaisyUI 5.0 themes)
-site:
-  theme:
-    light: "caramellatte"
-    dark: "abyss"
-
-# Elegant & Refined
-site:
-  theme:
-    light: "silk"
-    dark: "nord"
-```
 
 #### Global Variables
 ```yaml
@@ -594,6 +601,81 @@ navbar:
 
 Navbar items appear in the top navigation bar and are perfect for external links, help sections, or important internal pages that need quick access.
 
+#### Page Language Configuration
+
+Set the language for individual pages using the `language` frontmatter setting. This changes the HTML `lang` attribute for that specific page, which improves accessibility, SEO, and browser behavior.
+
+```yaml
+---
+title: Prueba de Idioma Español
+description: Esta página demuestra el soporte para el idioma español en OkiDoki
+language: es
+---
+```
+
+**Language Configuration:**
+- `language: "xx"` - Sets the language using [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+- Affects the HTML `<html lang="xx">` attribute for the page
+- Improves accessibility for screen readers and assistive technologies
+- Helps search engines understand the page content language
+- Enables proper browser features like translation, spell-checking, and hyphenation
+
+**Common Language Codes:**
+- `en` - English
+- `es` - Spanish (Español)
+- `fr` - French (Français)
+- `de` - German (Deutsch)
+- `pt` - Portuguese (Português)
+- `ja` - Japanese (日本語)
+- `zh` - Chinese (中文)
+- `ar` - Arabic (العربية)
+- `ru` - Russian (Русский)
+- `it` - Italian (Italiano)
+
+**Use Cases:**
+
+**1. Multilingual Documentation:**
+```yaml
+---
+title: Documentation en Français
+description: Guide complet en français
+language: fr
+---
+```
+
+**2. Markdown Pages with Different Languages:**
+```markdown
+---
+title: Bienvenido
+description: Página de inicio en español
+language: es
+---
+# ¡Bienvenido!
+
+Esta es una página personalizada en español.
+```
+
+**3. Language-Specific Sections:**
+```yaml
+# Create separate folders for different languages
+docs/
+├── en/
+│   └── guide.md          # language: en
+├── es/
+│   └── guide.md          # language: es
+└── fr/
+    └── guide.md          # language: fr
+```
+
+**Benefits:**
+- **Accessibility**: Screen readers use the correct language pronunciation
+- **SEO**: Search engines can properly index content by language
+- **Browser Features**: Automatic translation prompts, spell-checking in the correct language
+- **User Experience**: Better typography and text rendering for specific languages
+- **hreflang Support**: Helps with international SEO when combined with proper hreflang tags
+
+{{alert "The language setting only affects the current page. Set a default language in your site configuration for all pages." "info"}}
+
 ## Markdown Features
 
 ### Standard Markdown
@@ -841,82 +923,6 @@ Some markdown content here written by \{{author}}
 ```
 {{alert "A global variable with the same name will overwrite the page variable"}}
 
-### Page Language Configuration
-
-Set the language for individual pages using the `language` frontmatter setting. This changes the HTML `lang` attribute for that specific page, which improves accessibility, SEO, and browser behavior.
-
-```yaml
----
-title: Prueba de Idioma Español
-description: Esta página demuestra el soporte para el idioma español en OkiDoki
-language: es
----
-```
-
-**Language Configuration:**
-- `language: "xx"` - Sets the language using [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-- Affects the HTML `<html lang="xx">` attribute for the page
-- Improves accessibility for screen readers and assistive technologies
-- Helps search engines understand the page content language
-- Enables proper browser features like translation, spell-checking, and hyphenation
-
-**Common Language Codes:**
-- `en` - English
-- `es` - Spanish (Español)
-- `fr` - French (Français)
-- `de` - German (Deutsch)
-- `pt` - Portuguese (Português)
-- `ja` - Japanese (日本語)
-- `zh` - Chinese (中文)
-- `ar` - Arabic (العربية)
-- `ru` - Russian (Русский)
-- `it` - Italian (Italiano)
-
-**Use Cases:**
-
-**1. Multilingual Documentation:**
-```yaml
----
-title: Documentation en Français
-description: Guide complet en français
-language: fr
----
-```
-
-**2. Custom HTML Pages with Different Languages:**
-```yaml
----
-title: Bienvenido
-description: Página de inicio en español
-language: es
-customHTML: true
----
-<div class="container">
-  <h1>¡Bienvenido!</h1>
-  <p>Esta es una página personalizada en español.</p>
-</div>
-```
-
-**3. Language-Specific Sections:**
-```yaml
-# Create separate folders for different languages
-docs/
-├── en/
-│   └── guide.md          # language: en
-├── es/
-│   └── guide.md          # language: es
-└── fr/
-    └── guide.md          # language: fr
-```
-
-**Benefits:**
-- **Accessibility**: Screen readers use the correct language pronunciation
-- **SEO**: Search engines can properly index content by language
-- **Browser Features**: Automatic translation prompts, spell-checking in the correct language
-- **User Experience**: Better typography and text rendering for specific languages
-- **hreflang Support**: Helps with international SEO when combined with proper hreflang tags
-
-{{alert "The language setting only affects the current page. Set a default language in your site configuration for all pages." "info"}}
 
 ### Page Navigation Configuration
 
