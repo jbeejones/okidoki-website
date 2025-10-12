@@ -189,6 +189,7 @@ site:
   favicon: "/path/to/favicon.ico" # Optional: Custom favicon
   baseUrl: "/"                    # Optional: add path for subdirectory hosting
   friendlyUrl: true               # Optional: remove .html extensions from URLs
+  language: "en"                  # Optional: default language for all pages
   theme:
     light: "light"                # DaisyUi theme
     dark: "dark"
@@ -209,6 +210,54 @@ site:
 - All internal navigation links automatically use friendly URLs
 - External links and assets remain unchanged
 - **Note:** Some hosting providers may require additional server configuration for clean URLs
+
+**Language Configuration:**
+- `language: "en"` - Sets the default language for all pages using [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+- Applies to all pages unless overridden by page-specific `language` frontmatter setting
+- Sets the HTML `<html lang="xx">` attribute site-wide
+- Improves accessibility for screen readers and assistive technologies
+- Helps search engines understand your documentation language
+- Enables proper browser features (translation, spell-checking, hyphenation)
+- **Default**: `"en"` (English) if not specified
+
+**Common Language Codes:**
+- `"en"` - English (default)
+- `"es"` - Spanish (Español)
+- `"fr"` - French (Français)
+- `"de"` - German (Deutsch)
+- `"pt"` - Portuguese (Português)
+- `"ja"` - Japanese (日本語)
+- `"zh"` - Chinese (中文)
+- `"ar"` - Arabic (العربية)
+
+**Example Configurations:**
+
+```yaml
+# English documentation (default)
+site:
+  language: "en"
+
+# Spanish documentation
+site:
+  language: "es"
+
+# Multilingual site with default language
+site:
+  language: "en"  # Default for most pages
+# Individual pages can override with frontmatter:
+# ---
+# language: "es"
+# ---
+```
+
+**Benefits:**
+- **Consistency**: Single setting applies to all pages by default
+- **Accessibility**: Proper language declaration for assistive technologies
+- **SEO**: Better search engine indexing for your target language
+- **Override Support**: Individual pages can specify different languages using frontmatter
+- **International Support**: Easy to change the entire site language
+
+{{alert "Individual pages can override the site language using the `language` frontmatter setting. See [Page Language Configuration](#page-language-configuration) for details." "info"}}
 
 #### Theme Configuration
 ```yaml
@@ -755,6 +804,83 @@ author: Jane Doe
 Some markdown content here written by \{{author}}
 ```
 {{alert "A global variable with the same name will overwrite the page variable"}}
+
+### Page Language Configuration
+
+Set the language for individual pages using the `language` frontmatter setting. This changes the HTML `lang` attribute for that specific page, which improves accessibility, SEO, and browser behavior.
+
+```yaml
+---
+title: Prueba de Idioma Español
+description: Esta página demuestra el soporte para el idioma español en OkiDoki
+language: es
+---
+```
+
+**Language Configuration:**
+- `language: "xx"` - Sets the language using [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+- Affects the HTML `<html lang="xx">` attribute for the page
+- Improves accessibility for screen readers and assistive technologies
+- Helps search engines understand the page content language
+- Enables proper browser features like translation, spell-checking, and hyphenation
+
+**Common Language Codes:**
+- `en` - English
+- `es` - Spanish (Español)
+- `fr` - French (Français)
+- `de` - German (Deutsch)
+- `pt` - Portuguese (Português)
+- `ja` - Japanese (日本語)
+- `zh` - Chinese (中文)
+- `ar` - Arabic (العربية)
+- `ru` - Russian (Русский)
+- `it` - Italian (Italiano)
+
+**Use Cases:**
+
+**1. Multilingual Documentation:**
+```yaml
+---
+title: Documentation en Français
+description: Guide complet en français
+language: fr
+---
+```
+
+**2. Custom HTML Pages with Different Languages:**
+```yaml
+---
+title: Bienvenido
+description: Página de inicio en español
+language: es
+customHTML: true
+---
+<div class="container">
+  <h1>¡Bienvenido!</h1>
+  <p>Esta es una página personalizada en español.</p>
+</div>
+```
+
+**3. Language-Specific Sections:**
+```yaml
+# Create separate folders for different languages
+docs/
+├── en/
+│   └── guide.md          # language: en
+├── es/
+│   └── guide.md          # language: es
+└── fr/
+    └── guide.md          # language: fr
+```
+
+**Benefits:**
+- **Accessibility**: Screen readers use the correct language pronunciation
+- **SEO**: Search engines can properly index content by language
+- **Browser Features**: Automatic translation prompts, spell-checking in the correct language
+- **User Experience**: Better typography and text rendering for specific languages
+- **hreflang Support**: Helps with international SEO when combined with proper hreflang tags
+
+{{alert "The language setting only affects the current page. Set a default language in your site configuration for all pages." "info"}}
 
 ### Page Navigation Configuration
 
