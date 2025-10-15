@@ -164,7 +164,7 @@ blog:
 Use absolute paths when linking between different sections:
 
 ```markdown
-Check out our [API documentation](/api/index.html) for more details.
+Check out our [API documentation](/api/index) for more details.
 ```
 
 ### 4. Consistent Path Prefixes
