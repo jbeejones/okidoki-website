@@ -846,6 +846,33 @@ function greet(name) {
 **Supported Languages:**
 javascript, typescript, python, java, php, go, rust, c, cpp, html, css, yaml, json, bash, shell, sql, and many more.
 
+**Highlighting Lines and Adding Titles:**
+
+You can highlight specific lines in code blocks and add descriptive titles:
+
+````markdown
+```python{3-4, 6} title="mylib.py"
+def calculate_sum(a, b):
+    # These three lines are highlighted
+    result = a + b
+    return result
+
+print(calculate_sum(5, 3))
+```
+````
+
+**Line Highlighting Syntax:**
+- Use `{line_numbers}` after the language identifier
+- Single lines: `{3}` highlights line 3
+- Multiple lines: `{3, 5, 7}` highlights lines 3, 5, and 7
+- Ranges: `{3-6}` highlights lines 3 through 6
+- Combined: `{1, 3-5, 8}` highlights line 1, lines 3-5, and line 8
+
+**Title Syntax:**
+- Add `title="filename"` after line numbers (or directly after language)
+- Example: `title="config.yaml"`
+- Displays as a header above the code block
+
 #### Escaping Characters
 
 Use backslashes to escape special markdown characters:

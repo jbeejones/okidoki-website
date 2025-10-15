@@ -145,7 +145,7 @@ Clickable image: [![small image with link](okidokilogo.svg =32x32)](https://exam
 
 ## Code Blocks
 
-See the [Code Blocks section](reference.md#code-blocks-with-syntax-highlighting) in the reference guide for more details.
+See the [Code Blocks section](reference.md#code-spans-and-blocks) in the reference guide for more details.
 
 ### JavaScript Example
 ````markdown
@@ -296,6 +296,31 @@ npm run build
 
 # Run tests
 npm test
+```
+
+### Highlighting lines, and add title
+Use ranges to highlight single and multiple consecutive lines. 
+Add a title heading for the codeblock area.
+
+````markdown
+```python{3-4, 6} title="mylib.py"
+def calculate_sum(a, b):
+    # These three lines are highlighted
+    result = a + b
+    return result
+
+print(calculate_sum(5, 3))
+```
+````
+**Result:** 👇
+
+```python{3-4, 6} title="mylib.py"
+def calculate_sum(a, b):
+    # These three lines are highlighted
+    result = a + b
+    return result
+
+print(calculate_sum(5, 3))
 ```
 
 ## Tables
