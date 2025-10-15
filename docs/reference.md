@@ -1492,7 +1492,7 @@ project-root/
 - **Custom Branding**: Implement your exact design requirements without theme limitations
 
 
-This is exactly how this site, the [OkiDoki](https://jbeejones.github.io/okidoki-website/index.html) official website, creates its custom home page while maintaining the documentation functionality.
+This is exactly how this site, the [OkiDoki](https://okidoki.dev) official website, creates its custom home page while maintaining the documentation functionality.
 
 ### Choosing Between Methods
 

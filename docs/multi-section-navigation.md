@@ -66,11 +66,11 @@ api:
 # Top navigation bar (shared across all sections)
 navbar:
   - title: Home
-    document: /index.html
+    document: /index.md
   - title: Blog
-    document: /blog/index.html
+    document: /blog/index.md
   - title: API
-    document: /api/index.html
+    document: /api/index.md
 
 # Footer (shared across all sections)
 footer:
@@ -181,11 +181,11 @@ Add links to different sections in your navbar so users can easily navigate betw
 ```yaml
 navbar:
   - title: Docs
-    document: /index.html
+    document: /index.md
   - title: Blog
-    document: /blog/index.html
+    document: /blog/index.md
   - title: API
-    document: /api/index.html
+    document: /api/index.md
 ```
 
 ## Advanced Configuration
