@@ -42,7 +42,7 @@ OkiDoki is an **open source** documentation generator designed for developers wh
 
 Write in standard markdown - no proprietary formats or vendor lock-in:
 
-````markdown
+````markdown title="mydoc.md"
 # Your Documentation
 Just write **normal markdown** with `code blocks`, tables, and links.
 
@@ -68,8 +68,8 @@ OkiDoki includes powerful markdown plugins that extend standard markdown functio
 
 Inject dynamic content with global and local variables:
 
-### Global Variables (`okidoki.yaml`)
-```yaml
+### Global Variables
+```yaml title="okidoki.yaml"
 site:
   title: MyDocs
 globals:
@@ -79,7 +79,7 @@ globals:
 ```
 
 ### Local Variables
-```markdown
+```markdown title="./docs/mydoc.md"
 ---
 title: "API Guide"
 author: "John Doe"
@@ -99,7 +99,7 @@ Rich interactive components enhance your documentation with tabs, badges, and al
 
 ### Tabs
 
-````handlebars
+````handlebars{3-6,10-13}
 \{{#tabs}}
     \{{#tab title="JavaScript"}}
     ```js
