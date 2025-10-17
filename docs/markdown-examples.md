@@ -923,6 +923,40 @@ graph TD
     C --> F[End]
 ```
 
+#### Git Graph Diagram
+
+````markdown
+```mermaid
+gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit
+```
+````
+**Result:** 👇
+
+```mermaid
+gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit
+```
+
+
 #### Sequence Diagram Example
 
 ````markdown
@@ -953,7 +987,7 @@ sequenceDiagram
     API-->>User: JSON response
 ```
 
-#### Git Graph Example
+#### Gantt Diagram Example
 
 ````markdown
 ```mermaid
