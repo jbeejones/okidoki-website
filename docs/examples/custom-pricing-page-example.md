@@ -257,10 +257,10 @@ searchable: false
       Join thousands of teams using OkiDoki for their documentation
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="../start.html" class="btn btn-secondary btn-lg px-8">
+      <a href="../start" class="btn btn-secondary btn-lg px-8">
         Start Free Trial
       </a>
-      <a href="../reference.html#custom-pages" class="btn btn-outline border-primary-content text-primary-content hover:bg-primary-content hover:text-primary btn-lg px-8">
+      <a href="../reference#custom-pages" class="btn btn-outline border-primary-content text-primary-content hover:bg-primary-content hover:text-primary btn-lg px-8">
         View Documentation
       </a>
     </div>

@@ -24,7 +24,7 @@ With multi-section navigation, you can create separate content areas that each h
 
 When a page is rendered, OkiDoki:
 
-1. Checks the page's path (e.g., `/blog/my-post.html`)
+1. Checks the page's path (e.g., `/blog/my-post.md`)
 2. Searches all sections in `sidebars.yaml` to find which one contains this page
 3. Renders the page with that section's sidebar menu
 4. Falls back to the default `menu` section if not found in any section
@@ -116,8 +116,8 @@ Welcome to our blog! Here you'll find articles and tutorials.
 
 ## Recent Posts
 
-- [Getting Started with OkiDoki](/blog/getting-started.html)
-- [Advanced Features](/blog/advanced-features.html)
+- [Getting Started with OkiDoki](/blog/getting-started)
+- [Advanced Features](/blog/advanced-features)
 ```
 
 ### 4. Generate Documentation

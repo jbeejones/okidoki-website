@@ -9,10 +9,10 @@ customHTML: true
     </header>
     <main>
         <div class="space-y-4">
-            <a href="../start.html" class="block bg-primary hover:bg-primary/90 text-primary-content font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+            <a href="../start" class="block bg-primary hover:bg-primary/90 text-primary-content font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                 Get Started
             </a>
-            <a href="../reference.html" class="block bg-base-200 hover:bg-base-300 text-base-content font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+            <a href="../reference" class="block bg-base-200 hover:bg-base-300 text-base-content font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                 API Reference
             </a>
         </div>

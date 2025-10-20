@@ -391,5 +391,5 @@ rm ~/.xutil-completion.*
 {{#alert type="success"}}
 **Installation Complete!** 
 
-You're now ready to use XUtil. Start with `xutil --help` to explore available commands, or visit our [Getting Started Guide](./xutil-quickstart.html) for tutorials and examples.
+You're now ready to use XUtil. Start with `xutil --help` to explore available commands, or visit our [Getting Started Guide](./xutil-quickstart) for tutorials and examples.
 {{/alert}} 
