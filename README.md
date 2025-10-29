@@ -2,7 +2,7 @@
 
 The official documentation website for OkiDoki - a modern documentation generator that transforms Markdown files into beautiful, interactive websites.
 
-🌐 **[View the live documentation site →](https://okidoki.dev/)**
+🌐 **[View the live documentation site →](https://okidoki.dev)**
 
 
 
@@ -35,7 +35,7 @@ This website is itself built using [OkiDoki](https://github.com/jbeejones/okidok
 
 ## 🌐 Live Website
 
-Visit the live documentation at: **[Github](https://okidoki.dev/)** *(deployed automatically from this repository)*
+Visit the live documentation at: **[Github](https://okidoki.dev)** *(deployed automatically from this repository)*
 
 ## 📝 Contributing
 
@@ -67,6 +67,6 @@ This documentation is licensed under the MIT License. See [LICENSE](LICENSE) for
 
 - **[GitHub Repository](https://github.com/jbeejones/okidoki)** - Source code and documentation
 - **[NPM Package](https://www.npmjs.com/package/okidoki)** - Install with `npm install -g okidoki`
-- **[Live Documentation](https://okidoki.dev/)** - This website showcasing OkiDoki in action
+- **[Live Documentation](https://okidoki.dev)** - This website showcasing OkiDoki in action
 
 Start building your own documentation website today with just a few commands! 
